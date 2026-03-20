@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fyxo | Websites die razendsnel laden</title>
+    <title>Fyxo | Meer klanten via een professionele website</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
         
         :root {
-            --fyxo-blue: #3b82f6; /* Matching the 'Home' link in your image */
+            --fyxo-blue: #3b82f6;
             --fyxo-cyan: #22d3ee;
         }
 
@@ -67,6 +67,12 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(12px);
             border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         section { padding: 80px 20px; }
@@ -78,25 +84,25 @@
 </head>
 <body>
 
-    <!-- Header (Matching your attachment) -->
+    <!-- Header -->
     <nav class="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
             <div class="text-2xl font-black tracking-tighter">FYXO<span class="text-blue-500">.</span></div>
             
             <div class="hidden md:flex gap-10 font-medium text-gray-400">
-                <a href="#home" class="nav-link active-link">Home</a>
-                <a href="#werkwijze" class="nav-link">Werkwijze</a>
-                <a href="#prijzen" class="nav-link">Prijzen</a>
-                <a href="#over-ons" class="nav-link">Over ons</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#home" class="nav-link active-link" data-i18n="nav-home">Home</a>
+                <a href="#werkwijze" class="nav-link" data-i18n="nav-work">Werkwijze</a>
+                <a href="#prijzen" class="nav-link" data-i18n="nav-prices">Prijzen</a>
+                <a href="#over-ons" class="nav-link" data-i18n="nav-about">Over ons</a>
+                <a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a>
             </div>
 
-            <div class="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 text-gray-400 hover:text-white transition cursor-pointer">
+            <button id="lang-toggle" class="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 text-gray-400 hover:text-white transition cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                   <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M2.04 4.326c.325 1.329.996 2.532 1.917 3.556-1.49.577-2.9 1.467-3.678 2.429a7 7 0 0 1 1.761-5.985zM4.569 4h6.862c.152.624.233 1.288.233 1.977 0 1.222-.258 2.373-.717 3.42a17 17 0 0 1-5.666 0c-.459-1.047-.717-2.198-.717-3.42 0-.689.08-1.353.233-1.977M4.74 11c.145-.306.31-.606.495-.899a16 16 0 0 0 5.53 0c.185.293.35.593.496.9a7.1 7.1 0 0 1-6.521 0m6.76.733c-.779-.962-2.188-1.852-3.678-2.43a9 9 0 0 1 1.917-3.555 7 7 0 0 1 1.761 5.985m-8.002 0a7 7 0 0 1 1.762-5.986 9 9 0 0 1 1.917 3.556c-1.49.577-2.9 1.467-3.679 2.43zM8.5 14a6.5 6.5 0 0 0 5.422-2.91 14 14 0 0 0-4.664-1.29A5.6 5.6 0 0 1 8.5 14M7.5 14a5.6 5.6 0 0 1-.758-4.2 14 14 0 0 0-4.664 1.29A6.5 6.5 0 0 0 7.5 14"/>
                 </svg>
-                <span class="text-sm font-bold">EN</span>
-            </div>
+                <span class="text-sm font-bold" id="lang-text">EN</span>
+            </button>
         </div>
     </nav>
 
@@ -109,36 +115,53 @@
 
         <div class="max-w-5xl mx-auto text-center relative z-10 px-6">
             <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tighter">
-                SNELHEID IS <span class="text-blue-500">ALLES.</span>
+                <span data-i18n="hero-1">SNELHEID IS</span> <span class="text-blue-500" data-i18n="hero-2">ALLES.</span>
             </h1>
-            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto" data-i18n="hero-p">
                 Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker, beter voor Google.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-10 py-4 rounded-full transition-all hover:scale-105">Start een Project</a>
-                <a href="#werkwijze" class="bg-white/5 hover:bg-white/10 border border-white/10 px-10 py-4 rounded-full transition">Onze Werkwijze</a>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-10 py-4 rounded-full transition-all hover:scale-105" data-i18n="hero-btn-1">Start een Project</a>
+                <a href="#werkwijze" class="bg-white/5 hover:bg-white/10 border border-white/10 px-10 py-4 rounded-full transition" data-i18n="hero-btn-2">Onze Werkwijze</a>
             </div>
         </div>
     </section>
 
-    <!-- Werkwijze Section -->
+    <!-- NEW: De Weg naar Succes (Process Steps from Image) -->
     <section id="werkwijze" class="max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center">Hoe wij <span class="text-blue-500">werken</span></h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass-card p-8">
-                <div class="text-blue-500 text-3xl font-black mb-4">01.</div>
-                <h3 class="text-xl font-bold mb-3">Strategie & Design</h3>
-                <p class="text-gray-400">Geen standaard templates. We ontwerpen een unieke website die past bij jouw merkidentiteit.</p>
+        <h2 class="text-4xl font-bold mb-12 text-center" data-i18n="steps-title">Jouw weg naar succes in <span class="text-blue-500">4 stappen</span></h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Step 1 -->
+            <div class="glass-card p-8 flex flex-col gap-4">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold" data-i18n="step-1-t">1. Kennismaking</h3>
+                <p class="text-gray-400 leading-relaxed" data-i18n="step-1-p">We starten met een vrijblijvend gesprek. Wat zijn uw wensen? Wie zijn uw klanten? We brengen alles in kaart en leggen de tarieven helder uit. Geen kleine lettertjes.</p>
             </div>
-            <div class="glass-card p-8">
-                <div class="text-blue-500 text-3xl font-black mb-4">02.</div>
-                <h3 class="text-xl font-bold mb-3">Clean Code Development</h3>
-                <p class="text-gray-400">Onze developers schrijven schone, efficiënte code voor maximale snelheid en veiligheid.</p>
+            <!-- Step 2 -->
+            <div class="glass-card p-8 flex flex-col gap-4">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold" data-i18n="step-2-t">2. Eerste ontwerp</h3>
+                <p class="text-gray-400 leading-relaxed" data-i18n="step-2-p">Op basis van ons gesprek gaan we aan de slag met het design van uw website. U ontvangt een eerste versie die u in alle rust kunt bekijken.</p>
             </div>
-            <div class="glass-card p-8">
-                <div class="text-blue-500 text-3xl font-black mb-4">03.</div>
-                <h3 class="text-xl font-bold mb-3">Optimalisatie & Launch</h3>
-                <p class="text-gray-400">We finetunen elke pixel en byte voor een 100/100 PageSpeed score voor we live gaan.</p>
+            <!-- Step 3 -->
+            <div class="glass-card p-8 flex flex-col gap-4">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold" data-i18n="step-3-t">3. Correctieronde</h3>
+                <p class="text-gray-400 leading-relaxed" data-i18n="step-3-p">Niet helemaal tevreden? Geen probleem. U krijgt ruimte voor aanpassingen binnen de afgesproken uren. Samen maken we het perfect.</p>
+            </div>
+            <!-- Step 4 -->
+            <div class="glass-card p-8 flex flex-col gap-4">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.5-1 1-4c2 0 3 .5 3 2.5a2 2 0 0 1 1 1.5z"></path><path d="M15 9V4s1 .5 4 1c0 2-.5 3-2.5 3a2 2 0 0 1-1.5 1z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold" data-i18n="step-4-t">4. Oplevering</h3>
+                <p class="text-gray-400 leading-relaxed" data-i18n="step-4-p">Uw website gaat live! Wij zetten alles klaar op uw eigen hosting of regelen dit via ons. U hoeft zich nergens zorgen over te maken.</p>
             </div>
         </div>
     </section>
@@ -146,43 +169,49 @@
     <!-- Prijzen Section -->
     <section id="prijzen" class="bg-[#080808]">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold mb-4 text-center">Transparante <span class="text-blue-500">Prijzen</span></h2>
-            <p class="text-gray-500 text-center mb-16">Kwaliteit hoeft niet onbetaalbaar te zijn.</p>
+            <h2 class="text-4xl font-bold mb-4 text-center" data-i18n="price-title">Transparante <span class="text-blue-500">Prijzen</span></h2>
+            <p class="text-gray-500 text-center mb-16" data-i18n="price-p">Kwaliteit hoeft niet onbetaalbaar te zijn.</p>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-10 border-blue-500/20">
+                <!-- Starter -->
+                <div class="glass-card p-10">
                     <h3 class="text-xl font-bold mb-2">Starter</h3>
-                    <div class="text-4xl font-black mb-6">€300 <span class="text-sm font-normal text-gray-500">ex. btw</span></div>
+                    <div class="text-4xl font-black mb-6">€199 <span class="text-sm font-normal text-gray-500">ex. btw</span></div>
                     <ul class="text-gray-400 space-y-4 mb-8">
-                        <li>⚡ Single Page Website</li>
-                        <li>⚡ Volledig Responsive</li>
-                        <li>⚡ Contactformulier</li>
-                        <li>⚡ Hosting Setup</li>
+                        <li>⚡ <span data-i18n="p1-1">Single Page Website</span></li>
+                        <li>⚡ <span data-i18n="p1-2">Volledig Responsive</span></li>
+                        <li>⚡ <span data-i18n="p1-3">Contactformulier</span></li>
+                        <li>⚡ <span data-i18n="p1-4">Hosting Setup</span></li>
                     </ul>
-                    <a href="#" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5">Kies Starter</a>
+                    <a href="#" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5" data-i18n="p-btn">Kies Starter</a>
                 </div>
+                <!-- Business -->
                 <div class="glass-card p-10 border-blue-500 bg-blue-500/5 relative overflow-hidden">
-                    <div class="absolute top-4 right-[-35px] bg-blue-600 text-xs font-bold py-1 px-10 rotate-45">POPULAIR</div>
+                    <div class="absolute top-4 right-[-35px] bg-blue-600 text-xs font-bold py-1 px-10 rotate-45" data-i18n="populair">POPULAIR</div>
                     <h3 class="text-xl font-bold mb-2">Business</h3>
-                    <div class="text-4xl font-black mb-6">€750 <span class="text-sm font-normal text-gray-500">ex. btw</span></div>
-                    <ul class="text-gray-400 space-y-4 mb-8">
-                        <li>⚡ Tot 5 Pagina's</li>
-                        <li>⚡ SEO Geoptimaliseerd</li>
-                        <li>⚡ CMS Integratie</li>
-                        <li>⚡ Premium Support</li>
+                    <div class="text-4xl font-black mb-6">€299 <span class="text-sm font-normal text-gray-500">ex. btw</span></div>
+                    <ul class="text-gray-400 space-y-4 mb-8 font-semibold text-white">
+                        <li data-i18n="p-plus">Alles van Starter plus...</li>
                     </ul>
-                    <a href="#" class="block text-center py-3 rounded-lg bg-blue-600 font-bold hover:bg-blue-500">Kies Business</a>
+                    <ul class="text-gray-400 space-y-4 mb-8">
+                        <li>⚡ <span data-i18n="p2-1">Tot 5 Pagina's</span></li>
+                        <li>⚡ <span data-i18n="p2-2">SEO Geoptimaliseerd</span></li>
+                        <li>⚡ <span data-i18n="p2-3">CMS Integratie</span></li>
+                        <li>⚡ <span data-i18n="p2-4">Premium Support</span></li>
+                    </ul>
+                    <a href="#" class="block text-center py-3 rounded-lg bg-blue-600 font-bold hover:bg-blue-500" data-i18n="p-btn">Kies Business</a>
                 </div>
+                <!-- Custom -->
                 <div class="glass-card p-10">
                     <h3 class="text-xl font-bold mb-2">Custom</h3>
-                    <div class="text-4xl font-black mb-6">Op aanvraag</div>
+                    <div class="text-4xl font-black mb-6" data-i18n="p3-p">Op aanvraag</div>
                     <ul class="text-gray-400 space-y-4 mb-8">
-                        <li>⚡ Webapplicaties</li>
-                        <li>⚡ Webshops</li>
-                        <li>⚡ API Integraties</li>
-                        <li>⚡ Maatwerk Functies</li>
+                        <li>⚡ <span data-i18n="p3-1">Webapplicaties</span></li>
+                        <li>⚡ <span data-i18n="p3-2">Webshops</span></li>
+                        <li>⚡ <span data-i18n="p3-3">API Integraties</span></li>
+                        <li>⚡ <span data-i18n="p3-4">Maatwerk Functies</span></li>
                     </ul>
-                    <a href="#" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5">Neem Contact Op</a>
+                    <a href="#" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5" data-i18n="contact-btn">Neem Contact Op</a>
                 </div>
             </div>
         </div>
@@ -195,11 +224,11 @@
                 <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" alt="Team" class="rounded-2xl grayscale hover:grayscale-0 transition-all duration-700">
             </div>
             <div>
-                <h2 class="text-4xl font-bold mb-6">Wij zijn <span class="text-blue-500">Fyxo.</span></h2>
-                <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                <h2 class="text-4xl font-bold mb-6" data-i18n="about-title">Wij zijn <span class="text-blue-500">Fyxo.</span></h2>
+                <p class="text-gray-400 text-lg leading-relaxed mb-6" data-i18n="about-p1">
                     Fyxo is ontstaan uit een frustratie over trage, logge websites die vol zitten met overbodige plug-ins. Wij geloven dat het internet sneller kan.
                 </p>
-                <p class="text-gray-400 text-lg leading-relaxed">
+                <p class="text-gray-400 text-lg leading-relaxed" data-i18n="about-p2">
                     Ons team van perfectionistische developers focust zich puur op performance. Wij bouwen geen 'sites', wij bouwen digitale raceauto's.
                 </p>
             </div>
@@ -208,16 +237,16 @@
 
     <!-- Contact Section -->
     <section id="contact" class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-4">Laten we <span class="text-blue-500">praten</span></h2>
-        <p class="text-gray-500 mb-12">Klaar voor een website die echt resultaat levert?</p>
+        <h2 class="text-4xl font-bold mb-4" data-i18n="contact-title">Laten we <span class="text-blue-500">praten</span></h2>
+        <p class="text-gray-500 mb-12" data-i18n="contact-p">Klaar voor een website die echt resultaat levert?</p>
         
         <form class="space-y-4">
             <div class="grid md:grid-cols-2 gap-4">
-                <input type="text" placeholder="Naam" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full">
-                <input type="email" placeholder="E-mail" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full">
+                <input type="text" id="form-name" placeholder="Naam" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full">
+                <input type="email" id="form-email" placeholder="E-mail" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full">
             </div>
-            <textarea placeholder="Je bericht..." rows="5" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full"></textarea>
-            <button class="bg-blue-600 hover:bg-blue-500 text-white font-bold w-full py-4 rounded-lg transition-all">Verstuur Bericht</button>
+            <textarea id="form-msg" placeholder="Je bericht..." rows="5" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full"></textarea>
+            <button class="bg-blue-600 hover:bg-blue-500 text-white font-bold w-full py-4 rounded-lg transition-all" data-i18n="send-btn">Verstuur Bericht</button>
         </form>
     </section>
 
@@ -225,33 +254,87 @@
     <footer class="py-12 border-t border-white/5 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
             <div class="mb-4 md:mb-0">
-                <span class="font-bold text-white tracking-tighter">FYXO<span class="text-blue-500">.</span></span> &copy; 2026 Alle rechten voorbehouden.
+                <span class="font-bold text-white tracking-tighter">FYXO<span class="text-blue-500">.</span></span> &copy; 2026 <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
             </div>
             <div class="flex gap-8">
-                <a href="#" class="hover:text-white">Privacy</a>
-                <a href="#" class="hover:text-white">Voorwaarden</a>
+                <a href="#" class="hover:text-white" data-i18n="f-1">Privacy</a>
+                <a href="#" class="hover:text-white" data-i18n="f-2">Voorwaarden</a>
                 <a href="https://www.linkedin.com" class="hover:text-white">LinkedIn</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Update active link on scroll
+        // --- TRANSLATION DATA ---
+        const translations = {
+            nl: {
+                "nav-home": "Home", "nav-work": "Werkwijze", "nav-prices": "Prijzen", "nav-about": "Over ons", "nav-contact": "Contact",
+                "hero-1": "SNELHEID IS", "hero-2": "ALLES.", "hero-p": "Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker, beter voor Google.",
+                "hero-btn-1": "Start een Project", "hero-btn-2": "Onze Werkwijze",
+                "steps-title": "Jouw weg naar succes in 4 stappen",
+                "step-1-t": "1. Kennismaking", "step-1-p": "We starten met een vrijblijvend gesprek. Wat zijn uw wensen? Wie zijn uw klanten? We brengen alles in kaart en leggen de tarieven helder uit.",
+                "step-2-t": "2. Eerste ontwerp", "step-2-p": "Op basis van ons gesprek gaan we aan de slag met het design van uw website. U ontvangt een eerste versie die u in alle rust kunt bekijken.",
+                "step-3-t": "3. Correctieronde", "step-3-p": "Niet helemaal tevreden? Geen probleem. U krijgt ruimte voor aanpassingen binnen de afgesproken uren. Samen maken we het perfect.",
+                "step-4-t": "4. Oplevering", "step-4-p": "Uw website gaat live! Wij zetten alles klaar op uw eigen hosting of regelen dit via ons.",
+                "price-title": "Transparante Prijzen", "price-p": "Kwaliteit hoeft niet onbetaalbaar te zijn.", "populair": "POPULAIR", "p-plus": "Alles van Starter plus...", "p-btn": "Kies Plan", "contact-btn": "Neem Contact Op",
+                "p1-1": "Single Page Website", "p1-2": "Volledig Responsive", "p1-3": "Contactformulier", "p1-4": "Hosting Setup",
+                "p2-1": "Tot 5 Pagina's", "p2-2": "SEO Geoptimaliseerd", "p2-3": "CMS Integratie", "p2-4": "Premium Support",
+                "p3-1": "Webapplicaties", "p3-2": "Webshops", "p3-3": "API Integraties", "p3-4": "Maatwerk Functies", "p3-p": "Op aanvraag",
+                "about-title": "Wij zijn Fyxo.", "about-p1": "Fyxo is ontstaan uit een frustratie over trage, logge websites die vol zitten met overbodige plug-ins.", "about-p2": "Ons team van perfectionistische developers focust zich puur op performance.",
+                "contact-title": "Laten we praten", "contact-p": "Klaar voor een website die echt resultaat levert?", "send-btn": "Verstuur Bericht",
+                "footer-copy": "Alle rechten voorbehouden.", "f-1": "Privacy", "f-2": "Voorwaarden",
+                "ph-name": "Naam", "ph-msg": "Je bericht..."
+            },
+            en: {
+                "nav-home": "Home", "nav-work": "Method", "nav-prices": "Pricing", "nav-about": "About", "nav-contact": "Contact",
+                "hero-1": "SPEED IS", "hero-2": "EVERYTHING.", "hero-p": "We build high-performance websites that load in the blink of an eye. Better for the user, better for Google.",
+                "hero-btn-1": "Start a Project", "hero-btn-2": "Our Method",
+                "steps-title": "Your path to success in 4 steps",
+                "step-1-t": "1. Introduction", "step-1-p": "We start with a non-binding conversation. What are your wishes? Who are your customers? We map everything out clearly.",
+                "step-2-t": "2. First Design", "step-2-p": "Based on our conversation, we start designing your website. You receive a first version to review at your convenience.",
+                "step-3-t": "3. Revision Round", "step-3-p": "Not completely satisfied? No problem. You get room for adjustments within the agreed hours.",
+                "step-4-t": "4. Delivery", "step-4-p": "Your website goes live! We set everything up on your own hosting or arrange this via our services.",
+                "price-title": "Transparent Pricing", "price-p": "Quality doesn't have to be unaffordable.", "populair": "POPULAR", "p-plus": "Everything in Starter plus...", "p-btn": "Choose Plan", "contact-btn": "Contact Us",
+                "p1-1": "Single Page Website", "p1-2": "Fully Responsive", "p1-3": "Contact Form", "p1-4": "Hosting Setup",
+                "p2-1": "Up to 5 Pages", "p2-2": "SEO Optimized", "p2-3": "CMS Integration", "p2-4": "Premium Support",
+                "p3-1": "Web Applications", "p3-2": "Webshops", "p3-3": "API Integrations", "p3-4": "Custom Features", "p3-p": "On request",
+                "about-title": "We are Fyxo.", "about-p1": "Fyxo was born out of frustration with slow, clunky websites full of unnecessary plug-ins.", "about-p2": "Our team of perfectionist developers focuses purely on performance.",
+                "contact-title": "Let's talk", "contact-p": "Ready for a website that actually delivers results?", "send-btn": "Send Message",
+                "footer-copy": "All rights reserved.", "f-1": "Privacy", "f-2": "Terms",
+                "ph-name": "Name", "ph-msg": "Your message..."
+            }
+        };
+
+        let currentLang = 'nl';
+        const langToggle = document.getElementById('lang-toggle');
+        const langText = document.getElementById('lang-text');
+
+        function updateLanguage() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.innerText = translations[currentLang][key];
+            });
+            // Update Placeholders
+            document.getElementById('form-name').placeholder = currentLang === 'nl' ? "Naam" : "Name";
+            document.getElementById('form-msg').placeholder = currentLang === 'nl' ? "Je bericht..." : "Your message...";
+            
+            langText.innerText = currentLang === 'nl' ? 'EN' : 'NL';
+        }
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'nl' ? 'en' : 'nl';
+            updateLanguage();
+        });
+
+        // --- Active Link on Scroll ---
         window.addEventListener('scroll', () => {
             let current = '';
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
+            document.querySelectorAll('section').forEach(section => {
+                if (pageYOffset >= section.offsetTop - 100) { current = section.getAttribute('id'); }
             });
-
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active-link');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active-link');
-                }
+                if (link.getAttribute('href').includes(current)) { link.classList.add('active-link'); }
             });
         });
     </script>
