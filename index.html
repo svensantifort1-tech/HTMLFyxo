@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fyxo | Websites die razendsnel laden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Lightning Animation Styles */
+        .lightning-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .lightning-bolt {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            width: 2px;
+            height: 300px;
+            background: linear-gradient(to bottom, transparent, #00d4ff, #ffffff);
+            filter: blur(2px) drop-shadow(0 0 15px #00d4ff);
+            opacity: 0;
+            transform: skewX(-20deg);
+        }
+
+        @keyframes strike {
+            0% { opacity: 0; }
+            10% { opacity: 1; height: 400px; }
+            15% { opacity: 0; }
+            20% { opacity: 0.8; height: 450px; }
+            25% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        .animate-strike {
+            animation: strike 4s infinite;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: #00d4ff;
+            transform: translateY(-5px);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto relative z-10">
+        <div class="text-2xl font-black tracking-tighter">FYXO<span class="text-cyan-400">.</span></div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+            <a href="#" class="hover:text-white">Home</a>
+            <a href="#" class="hover:text-white">Werkwijze</a>
+            <a href="#" class="hover:text-white">Prijzen</a>
+            <a href="#" class="hover:text-white">Over ons</a>
+            <a href="#" class="hover:text-white">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="text-xs font-bold px-2 py-1 border border-gray-700 rounded">EN</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-32 px-6 hero-gradient overflow-hidden">
+        <!-- Lightning Element -->
+        <div class="lightning-container">
+            <div class="lightning-bolt animate-strike" style="left: 45%;"></div>
+            <div class="lightning-bolt animate-strike" style="left: 60%; animation-delay: 1.5s; opacity: 0.5;"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+                Websites die <span class="text-cyan-400">razendsnel</span> laden.
+            </h1>
+            <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Fyxo bouwt snelle, op maat gemaakte websites met schone code. Geen zware templates, geen overbodige plug-ins. Alleen pure performance die je concurrentie verslaat in Google.
+            </p>
+            <div class="mb-10 inline-block bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <span class="text-cyan-400 font-bold">Complete website vanaf €300</span>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-cyan-500 hover:bg-cyan-400 text-black font-bold px-8 py-4 rounded-lg transition">Neem contact op</a>
+                <a href="#" class="bg-white/5 hover:bg-white/10 border border-white/10 px-8 py-4 rounded-lg transition">Hoe werkt het?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="stat-card p-10 rounded-2xl text-center">
+                <div class="text-5xl font-black text-cyan-400 mb-2">90+/100</div>
+                <div class="text-gray-400 uppercase tracking-widest text-xs font-bold">PageSpeed Score</div>
+            </div>
+            <div class="stat-card p-10 rounded-2xl text-center">
+                <div class="text-5xl font-black text-cyan-400 mb-2"><1s</div>
+                <div class="text-gray-400 uppercase tracking-widest text-xs font-bold">Laadtijd</div>
+            </div>
+            <div class="stat-card p-10 rounded-2xl text-center">
+                <div class="text-5xl font-black text-cyan-400 mb-2">0</div>
+                <div class="text-gray-400 uppercase tracking-widest text-xs font-bold">Onnodige plug-ins</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Fyxo Section -->
+    <section class="max-w-7xl mx-auto px-6 py-24 border-t border-white/5">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Waarom Fyxo?</h2>
+                <h3 class="text-2xl text-cyan-400 font-bold mb-4">Snelheid is geen luxe. Het is de standaard.</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Elke seconde vertraging kost je bezoekers en omzet. Onze op maat gemaakte code laadt tot 10x sneller dan een gemiddelde WordPress-site.
+                </p>
+            </div>
+            <div class="space-y-6">
+                <div class="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/5">
+                    <div class="text-cyan-400 text-2xl">⚡</div>
+                    <div>
+                        <h4 class="font-bold mb-1">Op Maat Gebouwd</h4>
+                        <p class="text-sm text-gray-400 text-balance">Geen templates, geen page builders. Elke website wordt speciaal voor jouw bedrijf ontwikkeld.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/5">
+                    <div class="text-cyan-400 text-2xl">⚡</div>
+                    <div>
+                        <h4 class="font-bold mb-1">Razendsnelle Laadtijden</h4>
+                        <p class="text-sm text-gray-400">Schone code betekent bliksemsnelle websites. Beter voor je bezoekers én je Google-ranking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-cyan-500 py-20 px-6 text-center">
+        <h2 class="text-black text-4xl md:text-5xl font-black mb-8">Klaar om je concurrentie voorbij te racen?</h2>
+        <a href="#" class="bg-black text-white hover:bg-gray-900 font-bold px-12 py-5 rounded-xl transition inline-block">Vraag gesprek aan</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+        <div class="mb-4 md:mb-0">
+            <span class="font-bold text-white">FYXO.</span> © 2026. Snelle websites met liefde voor code.
+        </div>
+        <div class="flex gap-6">
+            <a href="#" class="hover:text-white">Werkwijze</a>
+            <a href="#" class="hover:text-white">Prijzen</a>
+            <a href="#" class="hover:text-white">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
