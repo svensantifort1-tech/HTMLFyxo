@@ -3,178 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fyxo | Websites die razentsnel laden</title>
+    <title>Fyxo | Websites die razendsnel laden</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
         
+        :root {
+            --fyxo-blue: #3b82f6; /* Matching the 'Home' link in your image */
+            --fyxo-cyan: #22d3ee;
+        }
+
         body {
             background-color: #050505;
             color: #ffffff;
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* Lightning Animation Styles */
-        .lightning-container {
+        /* --- Lightning Animation --- */
+        .lightning-overlay {
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 0;
+            z-index: 1;
+            overflow: hidden;
         }
 
-        .lightning-bolt {
+        .bolt {
             position: absolute;
-            top: -100px;
-            left: 50%;
-            width: 2px;
-            height: 300px;
-            background: linear-gradient(to bottom, transparent, #00d4ff, #ffffff);
-            filter: blur(2px) drop-shadow(0 0 15px #00d4ff);
+            width: 1px;
+            height: 50%;
+            background: white;
             opacity: 0;
-            transform: skewX(-20deg);
+            filter: blur(1px) drop-shadow(0 0 10px var(--fyxo-cyan));
         }
 
         @keyframes strike {
-            0% { opacity: 0; }
-            10% { opacity: 1; height: 400px; }
-            15% { opacity: 0; }
-            20% { opacity: 0.8; height: 450px; }
-            25% { opacity: 0; }
+            0% { opacity: 0; transform: scaleY(0); }
+            5% { opacity: 1; transform: scaleY(1); }
+            10% { opacity: 0; }
+            15% { opacity: 1; }
+            20% { opacity: 0; }
             100% { opacity: 0; }
         }
 
-        .animate-strike {
-            animation: strike 4s infinite;
+        .animate-bolt {
+            animation: strike 5s infinite;
         }
 
-        .stat-card {
+        /* --- Layout Styles --- */
+        .nav-link {
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        .nav-link:hover { color: var(--fyxo-blue); }
+        .active-link { color: var(--fyxo-blue) !important; }
+
+        .glass-card {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 1rem;
         }
 
-        .stat-card:hover {
-            border-color: #00d4ff;
-            transform: translateY(-5px);
-        }
-
-        .hero-gradient {
-            background: radial-gradient(circle at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+        section { padding: 80px 20px; }
+        
+        .hero-bg {
+            background: radial-gradient(circle at 50% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto relative z-10">
-        <div class="text-2xl font-black tracking-tighter">FYXO<span class="text-cyan-400">.</span></div>
-        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-            <a href="#" class="hover:text-white">Home</a>
-            <a href="#" class="hover:text-white">Werkwijze</a>
-            <a href="#" class="hover:text-white">Prijzen</a>
-            <a href="#" class="hover:text-white">Over ons</a>
-            <a href="#" class="hover:text-white">Contact</a>
-        </div>
-        <div class="flex items-center gap-4">
-            <span class="text-xs font-bold px-2 py-1 border border-gray-700 rounded">EN</span>
+    <!-- Header (Matching your attachment) -->
+    <nav class="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="text-2xl font-black tracking-tighter">FYXO<span class="text-blue-500">.</span></div>
+            
+            <div class="hidden md:flex gap-10 font-medium text-gray-400">
+                <a href="#home" class="nav-link active-link">Home</a>
+                <a href="#werkwijze" class="nav-link">Werkwijze</a>
+                <a href="#prijzen" class="nav-link">Prijzen</a>
+                <a href="#over-ons" class="nav-link">Over ons</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 text-gray-400 hover:text-white transition cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M2.04 4.326c.325 1.329.996 2.532 1.917 3.556-1.49.577-2.9 1.467-3.678 2.429a7 7 0 0 1 1.761-5.985zM4.569 4h6.862c.152.624.233 1.288.233 1.977 0 1.222-.258 2.373-.717 3.42a17 17 0 0 1-5.666 0c-.459-1.047-.717-2.198-.717-3.42 0-.689.08-1.353.233-1.977M4.74 11c.145-.306.31-.606.495-.899a16 16 0 0 0 5.53 0c.185.293.35.593.496.9a7.1 7.1 0 0 1-6.521 0m6.76.733c-.779-.962-2.188-1.852-3.678-2.43a9 9 0 0 1 1.917-3.555 7 7 0 0 1 1.761 5.985m-8.002 0a7 7 0 0 1 1.762-5.986 9 9 0 0 1 1.917 3.556c-1.49.577-2.9 1.467-3.679 2.43zM8.5 14a6.5 6.5 0 0 0 5.422-2.91 14 14 0 0 0-4.664-1.29A5.6 5.6 0 0 1 8.5 14M7.5 14a5.6 5.6 0 0 1-.758-4.2 14 14 0 0 0-4.664 1.29A6.5 6.5 0 0 0 7.5 14"/>
+                </svg>
+                <span class="text-sm font-bold">EN</span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-32 px-6 hero-gradient overflow-hidden">
-        <!-- Lightning Element -->
-        <div class="lightning-container">
-            <div class="lightning-bolt animate-strike" style="left: 45%;"></div>
-            <div class="lightning-bolt animate-strike" style="left: 60%; animation-delay: 1.5s; opacity: 0.5;"></div>
+    <section id="home" class="relative pt-40 pb-20 hero-bg overflow-hidden">
+        <div class="lightning-overlay">
+            <div class="bolt animate-bolt" style="left: 20%; top: -10%; transform: rotate(15deg); animation-delay: 1s;"></div>
+            <div class="bolt animate-bolt" style="left: 70%; top: -20%; transform: rotate(-10deg); animation-delay: 3s;"></div>
         </div>
 
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-                Websites die <span class="text-cyan-400">razendsnel</span> laden.
+        <div class="max-w-5xl mx-auto text-center relative z-10 px-6">
+            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tighter">
+                SNELHEID IS <span class="text-blue-500">ALLES.</span>
             </h1>
-            <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Fyxo bouwt snelle, op maat gemaakte websites met schone code. Geen zware templates, geen overbodige plug-ins. Alleen pure performance die je concurrentie verslaat in Google.
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker, beter voor Google.
             </p>
-            <div class="mb-10 inline-block bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                <span class="text-cyan-400 font-bold">Complete website vanaf €300</span>
-            </div>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="bg-cyan-500 hover:bg-cyan-400 text-black font-bold px-8 py-4 rounded-lg transition">Neem contact op</a>
-                <a href="#" class="bg-white/5 hover:bg-white/10 border border-white/10 px-8 py-4 rounded-lg transition">Hoe werkt het?</a>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-10 py-4 rounded-full transition-all hover:scale-105">Start een Project</a>
+                <a href="#werkwijze" class="bg-white/5 hover:bg-white/10 border border-white/10 px-10 py-4 rounded-full transition">Onze Werkwijze</a>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="max-w-7xl mx-auto px-6 py-20">
+    <!-- Werkwijze Section -->
+    <section id="werkwijze" class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center">Hoe wij <span class="text-blue-500">werken</span></h2>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="stat-card p-10 rounded-2xl text-center">
-                <div class="text-5xl font-black text-cyan-400 mb-2">90+/100</div>
-                <div class="text-gray-400 uppercase tracking-widest text-xs font-bold">PageSpeed Score</div>
+            <div class="glass-card p-8">
+                <div class="text-blue-500 text-3xl font-black mb-4">01.</div>
+                <h3 class="text-xl font-bold mb-3">Strategie & Design</h3>
+                <p class="text-gray-400">Geen standaard templates. We ontwerpen een unieke website die past bij jouw merkidentiteit.</p>
             </div>
-            <div class="stat-card p-10 rounded-2xl text-center">
-                <div class="text-5xl font-black text-cyan-400 mb-2"><1s</div>
-                <div class="text-gray-400 uppercase tracking-widest text-xs font-bold">Laadtijd</div>
+            <div class="glass-card p-8">
+                <div class="text-blue-500 text-3xl font-black mb-4">02.</div>
+                <h3 class="text-xl font-bold mb-3">Clean Code Development</h3>
+                <p class="text-gray-400">Onze developers schrijven schone, efficiënte code voor maximale snelheid en veiligheid.</p>
             </div>
-            <div class="stat-card p-10 rounded-2xl text-center">
-                <div class="text-5xl font-black text-cyan-400 mb-2">0</div>
-                <div class="text-gray-400 uppercase tracking-widest text-xs font-bold">Onnodige plug-ins</div>
+            <div class="glass-card p-8">
+                <div class="text-blue-500 text-3xl font-black mb-4">03.</div>
+                <h3 class="text-xl font-bold mb-3">Optimalisatie & Launch</h3>
+                <p class="text-gray-400">We finetunen elke pixel en byte voor een 100/100 PageSpeed score voor we live gaan.</p>
             </div>
         </div>
     </section>
 
-    <!-- Why Fyxo Section -->
-    <section class="max-w-7xl mx-auto px-6 py-24 border-t border-white/5">
+    <!-- Prijzen Section -->
+    <section id="prijzen" class="bg-[#080808]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">Transparante <span class="text-blue-500">Prijzen</span></h2>
+            <p class="text-gray-500 text-center mb-16">Kwaliteit hoeft niet onbetaalbaar te zijn.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 border-blue-500/20">
+                    <h3 class="text-xl font-bold mb-2">Starter</h3>
+                    <div class="text-4xl font-black mb-6">€300 <span class="text-sm font-normal text-gray-500">ex. btw</span></div>
+                    <ul class="text-gray-400 space-y-4 mb-8">
+                        <li>⚡ Single Page Website</li>
+                        <li>⚡ Volledig Responsive</li>
+                        <li>⚡ Contactformulier</li>
+                        <li>⚡ Hosting Setup</li>
+                    </ul>
+                    <a href="#" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5">Kies Starter</a>
+                </div>
+                <div class="glass-card p-10 border-blue-500 bg-blue-500/5 relative overflow-hidden">
+                    <div class="absolute top-4 right-[-35px] bg-blue-600 text-xs font-bold py-1 px-10 rotate-45">POPULAIR</div>
+                    <h3 class="text-xl font-bold mb-2">Business</h3>
+                    <div class="text-4xl font-black mb-6">€750 <span class="text-sm font-normal text-gray-500">ex. btw</span></div>
+                    <ul class="text-gray-400 space-y-4 mb-8">
+                        <li>⚡ Tot 5 Pagina's</li>
+                        <li>⚡ SEO Geoptimaliseerd</li>
+                        <li>⚡ CMS Integratie</li>
+                        <li>⚡ Premium Support</li>
+                    </ul>
+                    <a href="#" class="block text-center py-3 rounded-lg bg-blue-600 font-bold hover:bg-blue-500">Kies Business</a>
+                </div>
+                <div class="glass-card p-10">
+                    <h3 class="text-xl font-bold mb-2">Custom</h3>
+                    <div class="text-4xl font-black mb-6">Op aanvraag</div>
+                    <ul class="text-gray-400 space-y-4 mb-8">
+                        <li>⚡ Webapplicaties</li>
+                        <li>⚡ Webshops</li>
+                        <li>⚡ API Integraties</li>
+                        <li>⚡ Maatwerk Functies</li>
+                    </ul>
+                    <a href="#" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5">Neem Contact Op</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Over Ons -->
+    <section id="over-ons" class="max-w-7xl mx-auto py-32">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-                <h2 class="text-4xl font-bold mb-6">Waarom Fyxo?</h2>
-                <h3 class="text-2xl text-cyan-400 font-bold mb-4">Snelheid is geen luxe. Het is de standaard.</h3>
-                <p class="text-gray-400 leading-relaxed mb-6">
-                    Elke seconde vertraging kost je bezoekers en omzet. Onze op maat gemaakte code laadt tot 10x sneller dan een gemiddelde WordPress-site.
-                </p>
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" alt="Team" class="rounded-2xl grayscale hover:grayscale-0 transition-all duration-700">
             </div>
-            <div class="space-y-6">
-                <div class="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/5">
-                    <div class="text-cyan-400 text-2xl">⚡</div>
-                    <div>
-                        <h4 class="font-bold mb-1">Op Maat Gebouwd</h4>
-                        <p class="text-sm text-gray-400 text-balance">Geen templates, geen page builders. Elke website wordt speciaal voor jouw bedrijf ontwikkeld.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/5">
-                    <div class="text-cyan-400 text-2xl">⚡</div>
-                    <div>
-                        <h4 class="font-bold mb-1">Razendsnelle Laadtijden</h4>
-                        <p class="text-sm text-gray-400">Schone code betekent bliksemsnelle websites. Beter voor je bezoekers én je Google-ranking.</p>
-                    </div>
-                </div>
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Wij zijn <span class="text-blue-500">Fyxo.</span></h2>
+                <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                    Fyxo is ontstaan uit een frustratie over trage, logge websites die vol zitten met overbodige plug-ins. Wij geloven dat het internet sneller kan.
+                </p>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    Ons team van perfectionistische developers focust zich puur op performance. Wij bouwen geen 'sites', wij bouwen digitale raceauto's.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="bg-cyan-500 py-20 px-6 text-center">
-        <h2 class="text-black text-4xl md:text-5xl font-black mb-8">Klaar om je concurrentie voorbij te racen?</h2>
-        <a href="#" class="bg-black text-white hover:bg-gray-900 font-bold px-12 py-5 rounded-xl transition inline-block">Vraag gesprek aan</a>
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-4">Laten we <span class="text-blue-500">praten</span></h2>
+        <p class="text-gray-500 mb-12">Klaar voor een website die echt resultaat levert?</p>
+        
+        <form class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+                <input type="text" placeholder="Naam" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full">
+                <input type="email" placeholder="E-mail" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full">
+            </div>
+            <textarea placeholder="Je bericht..." rows="5" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full"></textarea>
+            <button class="bg-blue-600 hover:bg-blue-500 text-white font-bold w-full py-4 rounded-lg transition-all">Verstuur Bericht</button>
+        </form>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-        <div class="mb-4 md:mb-0">
-            <span class="font-bold text-white">FYXO.</span> © 2026. Snelle websites met liefde voor code.
-        </div>
-        <div class="flex gap-6">
-            <a href="#" class="hover:text-white">Werkwijze</a>
-            <a href="#" class="hover:text-white">Prijzen</a>
-            <a href="#" class="hover:text-white">Contact</a>
+    <footer class="py-12 border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <div class="mb-4 md:mb-0">
+                <span class="font-bold text-white tracking-tighter">FYXO<span class="text-blue-500">.</span></span> &copy; 2026 Alle rechten voorbehouden.
+            </div>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white">Privacy</a>
+                <a href="#" class="hover:text-white">Voorwaarden</a>
+                <a href="https://www.linkedin.com" class="hover:text-white">LinkedIn</a>
+            </div>
         </div>
     </footer>
 
+    <script>
+        // Update active link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active-link');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active-link');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
