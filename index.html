@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="FYXO bouwt snelle, professionele websites voor ondernemers. Binnen 7 dagen live. Vanaf €199 ex. btw. Vraag vrijblijvend aan.">
-    <title>FYXO | Snel & Betaalbaar</title>
+    <title>FYXO – Professionele Website Laten Maken | Snel & Betaalbaar</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2338bdf8'><path d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -581,7 +581,7 @@
         resize();
         window.addEventListener('resize', resize);
 
-        // Draw a recursive branching lightning bolt
+        // Draw a recursive branching lightning bolt (optimized)
         function drawBolt(ctx, x1, y1, x2, y2, depth, alpha) {
             if (depth === 0 || alpha < 0.05) return;
 
@@ -593,46 +593,37 @@
             const midX = (x1 + x2) / 2 + (Math.random() - 0.5) * len * 0.45;
             const midY = (y1 + y2) / 2 + (Math.random() - 0.5) * len * 0.45;
 
-            // Draw glow layers (outermost to innermost)
-            const glowLayers = [
-                { blur: 18, color: `rgba(14, 165, 233, ${alpha * 0.25})`, width: 12 },
-                { blur: 10, color: `rgba(56, 189, 248, ${alpha * 0.45})`, width: 6 },
-                { blur: 4,  color: `rgba(125, 211, 252, ${alpha * 0.7})`, width: 2.5 },
-                { blur: 0,  color: `rgba(248, 250, 252, ${alpha})`,       width: 1 }
-            ];
-
-            glowLayers.forEach(layer => {
-                ctx.save();
-                ctx.shadowBlur = layer.blur;
-                ctx.shadowColor = layer.color;
-                ctx.strokeStyle = layer.color;
-                ctx.lineWidth = layer.width;
-                ctx.lineCap = 'round';
-                ctx.beginPath();
-                ctx.moveTo(x1, y1);
-                ctx.lineTo(midX, midY);
-                ctx.lineTo(x2, y2);
-                ctx.stroke();
-                ctx.restore();
-            });
+            // Optimized: Reduce glow layers and use simpler rendering
+            ctx.save();
+            ctx.shadowBlur = 12;
+            ctx.shadowColor = `rgba(56, 189, 248, ${alpha * 0.6})`;
+            ctx.strokeStyle = `rgba(248, 250, 252, ${alpha})`;
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(midX, midY);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+            ctx.restore();
 
             // Recurse on both halves
             drawBolt(ctx, x1, y1, midX, midY, depth - 1, alpha);
             drawBolt(ctx, midX, midY, x2, y2, depth - 1, alpha);
 
-            // Random branches
-            if (depth > 2 && Math.random() < 0.45) {
+            // Random branches (reduced frequency)
+            if (depth > 2 && Math.random() < 0.3) {
                 const branchEndX = midX + (Math.random() - 0.5) * len * 0.8;
                 const branchEndY = midY + Math.random() * len * 0.6;
                 drawBolt(ctx, midX, midY, branchEndX, branchEndY, depth - 2, alpha * 0.55);
             }
         }
 
-        // Strike configuration: each entry defines a bolt's timing
+        // Strike configuration: each entry defines a bolt's timing (optimized for performance)
         const strikes = [
-            { xFrac: 0.15, delay: 500,  interval: 7000 },
-            { xFrac: 0.80, delay: 4200, interval: 7000 },
-            { xFrac: 0.45, delay: 2100, interval: 7000 }
+            { xFrac: 0.15, delay: 500,  interval: 9000 },
+            { xFrac: 0.80, delay: 4500, interval: 9000 },
+            { xFrac: 0.45, delay: 2200, interval: 9000 }
         ];
 
         function doStrike(xFrac) {
@@ -662,16 +653,16 @@
                     if (frame >= 1) { phase = 2; frame = 0; }
                     requestAnimationFrame(animate);
                 } else if (phase === 2) {
-                    // Second dimmer flash (3 frames)
-                    drawBolt(ctx, startX, startY, endX, endY, 7, alpha * 0.7);
+                    // Second dimmer flash (2 frames instead of 3)
+                    drawBolt(ctx, startX, startY, endX, endY, 6, alpha * 0.7);
                     frame++;
-                    if (frame >= 3) { phase = 3; frame = 0; }
+                    if (frame >= 2) { phase = 3; frame = 0; }
                     requestAnimationFrame(animate);
                 } else {
-                    // Fade out
-                    alpha -= 0.08;
+                    // Fade out (faster fade)
+                    alpha -= 0.12;
                     if (alpha > 0.05) {
-                        drawBolt(ctx, startX, startY, endX, endY, 6, alpha);
+                        drawBolt(ctx, startX, startY, endX, endY, 5, alpha);
                         requestAnimationFrame(animate);
                     } else {
                         ctx.clearRect(0, 0, W, H);
