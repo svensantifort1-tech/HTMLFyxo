@@ -95,19 +95,11 @@
 
         .logo-lightning {
             transition: all 0.3s ease;
-            transform-origin: center;
         }
 
-        /* Animation for the lightning bolt moving slightly down and up on hover */
-        @keyframes boltJiggle {
-            0% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 0px rgba(56, 189, 248, 0)); }
-            50% { transform: translateY(5px) scale(1.05); filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.8)); }
-            100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5)); }
-        }
-
+        /* Animation for the lightning bolt glowing on hover */
         .logo-container:hover .logo-lightning {
-            animation: boltJiggle 0.4s ease forwards;
-            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
+            filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.9));
         }
 
         /* Select dropdown dark mode styling */
@@ -124,24 +116,25 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             
             <a href="#home" class="logo-container">
-                <!-- Recreated SVG Logo -->
-                <svg height="40" viewBox="0 0 350 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Recreated SVG Logo based on the attachment -->
+                <svg height="45" viewBox="0 0 450 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- F -->
-                    <path d="M20 25H70V40H40V55H65V70H40V90H20V25Z" fill="white"/>
+                    <path d="M30 35H100V42H40V65H90V72H40V100H30V35Z" fill="white"/>
                     <!-- Y -->
-                    <path d="M85 25H110L125 50L140 25H165L135 65V90H115V65L85 25Z" fill="white"/>
-                    <!-- X (Left part) -->
-                    <path d="M175 25H200L215 45L200 65H175L195 40L175 25Z" fill="white"/>
-                    <!-- X (Right part) -->
-                    <path d="M230 45L245 25H270L250 50L275 85H250L230 55L245 45Z" fill="white"/>
+                    <path d="M120 35H132L165 70V100H155V72L120 35ZM190 35H202L160 80V100H150V77L190 35Z" fill="white"/>
+                    
+                    <!-- X -> The Lightning Bolt -->
+                    <path class="logo-lightning" d="M285 20L230 65H260L210 110L275 55H245L285 20Z" fill="url(#bolt_grad)"/>
+                    
+                    <!-- Remaining partial white lines of the X (Optional, for full fidelity to the image) -->
+                    <path d="M225 35L245 55H230L215 40H225Z" fill="white"/>
+                    <path d="M285 95L265 75H280L295 90H285Z" fill="white"/>
+
                     <!-- O -->
-                    <path d="M310 20C290.67 20 275 35.67 275 55C275 74.33 290.67 90 310 90C329.33 90 345 74.33 345 55C345 35.67 329.33 20 310 20ZM310 75C298.954 75 290 66.046 290 55C290 43.954 298.954 35 310 35C321.046 35 330 43.954 330 55C330 66.046 321.046 75 310 75Z" fill="white"/>
-                    <!-- Dot -->
-                    <circle cx="360" cy="80" r="10" fill="#38bdf8"/>
-                    <!-- Lightning Bolt piercing the X -->
-                    <path class="logo-lightning" d="M235 10L190 60H225L210 100L260 45H225L235 10Z" fill="url(#bolt_grad)"/>
+                    <path d="M360 35C330 35 315 45 315 67.5C315 90 330 100 360 100C390 100 405 90 405 67.5C405 45 390 35 360 35ZM360 93C338 93 325 85 325 67.5C325 50 338 42 360 42C382 42 395 50 395 67.5C395 85 382 93 360 93Z" fill="white"/>
+                    
                     <defs>
-                        <linearGradient id="bolt_grad" x1="190" y1="10" x2="260" y2="100" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="bolt_grad" x1="210" y1="20" x2="285" y2="110" gradientUnits="userSpaceOnUse">
                             <stop stop-color="#38bdf8"/>
                             <stop offset="1" stop-color="#2563eb"/>
                         </linearGradient>
@@ -341,24 +334,16 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
             <div class="mb-4 md:mb-0 flex items-center gap-2">
                 <a href="#home" class="logo-container">
-                    <!-- Smaller Footer Interactive SVG Logo -->
-                    <svg height="25" viewBox="0 0 350 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- F -->
-                        <path d="M20 25H70V40H40V55H65V70H40V90H20V25Z" fill="white"/>
-                        <!-- Y -->
-                        <path d="M85 25H110L125 50L140 25H165L135 65V90H115V65L85 25Z" fill="white"/>
-                        <!-- X (Left part) -->
-                        <path d="M175 25H200L215 45L200 65H175L195 40L175 25Z" fill="white"/>
-                        <!-- X (Right part) -->
-                        <path d="M230 45L245 25H270L250 50L275 85H250L230 55L245 45Z" fill="white"/>
-                        <!-- O -->
-                        <path d="M310 20C290.67 20 275 35.67 275 55C275 74.33 290.67 90 310 90C329.33 90 345 74.33 345 55C345 35.67 329.33 20 310 20ZM310 75C298.954 75 290 66.046 290 55C290 43.954 298.954 35 310 35C321.046 35 330 43.954 330 55C330 66.046 321.046 75 310 75Z" fill="white"/>
-                        <!-- Dot -->
-                        <circle cx="360" cy="80" r="10" fill="#38bdf8"/>
-                        <!-- Lightning Bolt piercing the X -->
-                        <path class="logo-lightning" d="M235 10L190 60H225L210 100L260 45H225L235 10Z" fill="url(#bolt_grad_foot)"/>
+                    <!-- Smaller Footer SVG Logo -->
+                    <svg height="20" viewBox="0 0 450 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30 35H100V42H40V65H90V72H40V100H30V35Z" fill="white"/>
+                        <path d="M120 35H132L165 70V100H155V72L120 35ZM190 35H202L160 80V100H150V77L190 35Z" fill="white"/>
+                        <path class="logo-lightning" d="M285 20L230 65H260L210 110L275 55H245L285 20Z" fill="url(#bolt_grad_foot)"/>
+                        <path d="M225 35L245 55H230L215 40H225Z" fill="white"/>
+                        <path d="M285 95L265 75H280L295 90H285Z" fill="white"/>
+                        <path d="M360 35C330 35 315 45 315 67.5C315 90 330 100 360 100C390 100 405 90 405 67.5C405 45 390 35 360 35ZM360 93C338 93 325 85 325 67.5C325 50 338 42 360 42C382 42 395 50 395 67.5C395 85 382 93 360 93Z" fill="white"/>
                         <defs>
-                            <linearGradient id="bolt_grad_foot" x1="190" y1="10" x2="260" y2="100" gradientUnits="userSpaceOnUse">
+                            <linearGradient id="bolt_grad_foot" x1="210" y1="20" x2="285" y2="110" gradientUnits="userSpaceOnUse">
                                 <stop stop-color="#38bdf8"/>
                                 <stop offset="1" stop-color="#2563eb"/>
                             </linearGradient>
