@@ -91,6 +91,30 @@
             font-weight: 900;
             letter-spacing: -0.05em;
             font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .logo-container {
+            cursor: pointer;
+        }
+
+        .logo-svg {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .logo-container:hover .logo-svg {
+            transform: scale(1.1) rotate(10deg);
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+        }
+        
+        .logo-container:hover .logo-text {
+            color: #f3f4f6; /* Lichter bij hover */
+        }
+        
+        /* Select dropdown dark mode styling */
+        select option {
+            background-color: #050505;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -99,9 +123,9 @@
     <!-- Header -->
     <nav class="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <!-- Custom SVG Logo -->
-                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="#home" class="flex items-center gap-2 logo-container">
+                <!-- Interactive SVG Logo -->
+                <svg class="logo-svg" width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M55 10L25 55H45L35 90L75 35H50L60 10H55Z" fill="url(#logo_grad)" filter="url(#glow)"/>
                     <defs>
                         <linearGradient id="logo_grad" x1="25" y1="10" x2="75" y2="90" gradientUnits="userSpaceOnUse">
@@ -109,13 +133,13 @@
                             <stop offset="1" stop-color="#38bdf8"/>
                         </linearGradient>
                         <filter id="glow">
-                            <feGaussianBlur stdDeviation="2" result="blur"/>
+                            <feGaussianBlur stdDeviation="1.5" result="blur"/>
                             <feComposite in="SourceGraphic" in2="blur" operator="over"/>
                         </filter>
                     </defs>
                 </svg>
                 <span class="logo-text tracking-tighter">FYXO<span class="text-blue-500">.</span></span>
-            </div>
+            </a>
             
             <div class="hidden md:flex gap-10 font-medium text-gray-400">
                 <a href="#home" class="nav-link active-link" data-i18n="nav-home">Home</a>
@@ -206,7 +230,7 @@
                         <li>⚡ <span data-i18n="p1-3">Contactformulier</span></li>
                         <li>⚡ <span data-i18n="p1-4">Hosting Setup</span></li>
                     </ul>
-                    <a href="#" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5" data-i18n="p-btn">Kies Starter</a>
+                    <a href="#contact" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5" data-i18n="p-btn">Kies Starter</a>
                 </div>
                 <div class="glass-card p-10 border-brand-blue bg-blue-500/5 relative overflow-hidden" style="border-width: 1px;">
                     <div class="absolute top-4 right-[-35px] bg-blue-600 text-xs font-bold py-1 px-10 rotate-45" data-i18n="populair">POPULAIR</div>
@@ -221,7 +245,7 @@
                         <li>⚡ <span data-i18n="p2-3">CMS Integratie</span></li>
                         <li>⚡ <span data-i18n="p2-4">Premium Support</span></li>
                     </ul>
-                    <a href="#" class="block text-center py-3 rounded-lg bg-brand-blue font-bold hover:opacity-90" data-i18n="p-btn">Kies Business</a>
+                    <a href="#contact" class="block text-center py-3 rounded-lg bg-brand-blue font-bold hover:opacity-90" data-i18n="p-btn">Kies Business</a>
                 </div>
                 <div class="glass-card p-10">
                     <h3 class="text-xl font-bold mb-2">Custom</h3>
@@ -232,7 +256,7 @@
                         <li>⚡ <span data-i18n="p3-3">API Integraties</span></li>
                         <li>⚡ <span data-i18n="p3-4">Maatwerk Functies</span></li>
                     </ul>
-                    <a href="#" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5" data-i18n="contact-btn">Neem Contact Op</a>
+                    <a href="#contact" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5" data-i18n="contact-btn">Neem Contact Op</a>
                 </div>
             </div>
         </div>
@@ -256,18 +280,51 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="max-w-3xl mx-auto text-center">
+    <!-- UITGEBREIDE Contact Section -->
+    <section id="contact" class="max-w-3xl mx-auto text-center py-32">
         <h2 class="text-4xl font-bold mb-4" data-i18n="contact-title">Laten we <span class="text-brand-blue">praten</span></h2>
         <p class="text-gray-500 mb-12" data-i18n="contact-p">Klaar voor een website die echt resultaat levert?</p>
         
-        <form class="space-y-4">
+        <form class="space-y-4 text-left">
             <div class="grid md:grid-cols-2 gap-4">
-                <input type="text" id="form-name" placeholder="Naam" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full">
-                <input type="email" id="form-email" placeholder="E-mail" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full">
+                <div>
+                    <label class="block text-sm text-gray-400 mb-1 ml-1" data-i18n="label-name">Naam *</label>
+                    <input type="text" id="form-name" placeholder="John Doe" required class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full text-white">
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-400 mb-1 ml-1" data-i18n="label-company">Bedrijfsnaam</label>
+                    <input type="text" id="form-company" placeholder="Fyxo B.V." class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full text-white">
+                </div>
             </div>
-            <textarea id="form-msg" placeholder="Je bericht..." rows="5" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full"></textarea>
-            <button class="bg-brand-blue hover:opacity-90 text-white font-bold w-full py-4 rounded-lg transition-all" data-i18n="send-btn">Verstuur Bericht</button>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm text-gray-400 mb-1 ml-1" data-i18n="label-email">E-mailadres *</label>
+                    <input type="email" id="form-email" placeholder="info@voorbeeld.nl" required class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full text-white">
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-400 mb-1 ml-1" data-i18n="label-package">Welk pakket heeft je interesse?</label>
+                    <div class="relative">
+                        <select id="form-package" class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full text-gray-300 appearance-none cursor-pointer">
+                            <option value="none" disabled selected data-i18n="opt-choose">-- Kies een optie --</option>
+                            <option value="starter">Starter (€199)</option>
+                            <option value="business">Business (€299)</option>
+                            <option value="custom" data-i18n="opt-custom">Custom (Op aanvraag)</option>
+                            <option value="other" data-i18n="opt-other">Ik heb alleen een vraag</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm text-gray-400 mb-1 ml-1" data-i18n="label-msg">Bericht *</label>
+                <textarea id="form-msg" placeholder="Vertel ons over je project..." rows="5" required class="bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-blue-500 transition w-full text-white"></textarea>
+            </div>
+            
+            <button class="bg-brand-blue hover:opacity-90 text-white font-bold w-full py-4 rounded-lg transition-all mt-4 shadow-lg shadow-blue-500/20" data-i18n="send-btn">Verstuur Aanvraag</button>
         </form>
     </section>
 
@@ -311,7 +368,9 @@
                 "p2-1": "Tot 5 Pagina's", "p2-2": "SEO Geoptimaliseerd", "p2-3": "CMS Integratie", "p2-4": "Premium Support",
                 "p3-1": "Webapplicaties", "p3-2": "Webshops", "p3-3": "API Integraties", "p3-4": "Maatwerk Functies", "p3-p": "Op aanvraag",
                 "about-title": "Wij zijn Fyxo.", "about-p1": "Fyxo is ontstaan uit een frustratie over trage, logge websites die vol zitten met overbodige plug-ins.", "about-p2": "Ons team van perfectionistische developers focust zich puur op performance.",
-                "contact-title": "Laten we praten", "contact-p": "Klaar voor een website die echt resultaat levert?", "send-btn": "Verstuur Bericht",
+                "contact-title": "Laten we praten", "contact-p": "Klaar voor een website die echt resultaat levert?", "send-btn": "Verstuur Aanvraag",
+                "label-name": "Naam *", "label-company": "Bedrijfsnaam", "label-email": "E-mailadres *", "label-package": "Welk pakket heeft je interesse?", "label-msg": "Bericht *",
+                "opt-choose": "-- Kies een optie --", "opt-custom": "Custom (Op aanvraag)", "opt-other": "Ik heb alleen een vraag",
                 "footer-copy": "Alle rechten voorbehouden.", "f-1": "Privacy", "f-2": "Voorwaarden"
             },
             en: {
@@ -328,7 +387,9 @@
                 "p2-1": "Up to 5 Pages", "p2-2": "SEO Optimized", "p2-3": "CMS Integration", "p2-4": "Premium Support",
                 "p3-1": "Web Applications", "p3-2": "Webshops", "p3-3": "API Integrations", "p3-4": "Custom Features", "p3-p": "On request",
                 "about-title": "We are Fyxo.", "about-p1": "Fyxo was born out of frustration with slow, clunky websites full of unnecessary plug-ins.", "about-p2": "Our team of perfectionist developers focuses purely on performance.",
-                "contact-title": "Let's talk", "contact-p": "Ready for a website that actually delivers results?", "send-btn": "Send Message",
+                "contact-title": "Let's talk", "contact-p": "Ready for a website that actually delivers results?", "send-btn": "Send Request",
+                "label-name": "Name *", "label-company": "Company Name", "label-email": "Email Address *", "label-package": "Which package are you interested in?", "label-msg": "Message *",
+                "opt-choose": "-- Choose an option --", "opt-custom": "Custom (On request)", "opt-other": "I just have a question",
                 "footer-copy": "All rights reserved.", "f-1": "Privacy", "f-2": "Terms"
             }
         };
@@ -342,8 +403,13 @@
                 const key = el.getAttribute('data-i18n');
                 el.innerText = translations[currentLang][key];
             });
-            document.getElementById('form-name').placeholder = currentLang === 'nl' ? "Naam" : "Name";
-            document.getElementById('form-msg').placeholder = currentLang === 'nl' ? "Je bericht..." : "Your message...";
+            
+            // Update inputs placeholders based on language
+            document.getElementById('form-name').placeholder = currentLang === 'nl' ? "John Doe" : "John Doe";
+            document.getElementById('form-company').placeholder = currentLang === 'nl' ? "Fyxo B.V." : "Fyxo Inc.";
+            document.getElementById('form-email').placeholder = currentLang === 'nl' ? "info@voorbeeld.nl" : "info@example.com";
+            document.getElementById('form-msg').placeholder = currentLang === 'nl' ? "Vertel ons over je project..." : "Tell us about your project...";
+            
             langText.innerText = currentLang === 'nl' ? 'EN' : 'NL';
         }
 
