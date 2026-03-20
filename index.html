@@ -86,31 +86,30 @@
         .bg-brand-blue { background-color: var(--fyxo-blue); }
         .border-brand-blue { border-color: var(--fyxo-blue); }
 
-        /* Custom Logo Styles */
-        .logo-text {
-            font-weight: 900;
-            letter-spacing: -0.05em;
-            font-size: 2rem;
-            transition: color 0.3s ease;
-        }
-        
+        /* --- Custom Interactive Logo Styles --- */
         .logo-container {
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .logo-svg {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .logo-lightning {
+            transition: all 0.3s ease;
+            transform-origin: center;
         }
 
-        .logo-container:hover .logo-svg {
-            transform: scale(1.1) rotate(10deg);
-            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+        /* Animation for the lightning bolt moving slightly down and up on hover */
+        @keyframes boltJiggle {
+            0% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 0px rgba(56, 189, 248, 0)); }
+            50% { transform: translateY(5px) scale(1.05); filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.8)); }
+            100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5)); }
         }
-        
-        .logo-container:hover .logo-text {
-            color: #f3f4f6; /* Lichter bij hover */
+
+        .logo-container:hover .logo-lightning {
+            animation: boltJiggle 0.4s ease forwards;
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
         }
-        
+
         /* Select dropdown dark mode styling */
         select option {
             background-color: #050505;
@@ -123,22 +122,31 @@
     <!-- Header -->
     <nav class="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#home" class="flex items-center gap-2 logo-container">
-                <!-- Interactive SVG Logo -->
-                <svg class="logo-svg" width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M55 10L25 55H45L35 90L75 35H50L60 10H55Z" fill="url(#logo_grad)" filter="url(#glow)"/>
+            
+            <a href="#home" class="logo-container">
+                <!-- Recreated SVG Logo -->
+                <svg height="40" viewBox="0 0 350 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- F -->
+                    <path d="M20 25H70V40H40V55H65V70H40V90H20V25Z" fill="white"/>
+                    <!-- Y -->
+                    <path d="M85 25H110L125 50L140 25H165L135 65V90H115V65L85 25Z" fill="white"/>
+                    <!-- X (Left part) -->
+                    <path d="M175 25H200L215 45L200 65H175L195 40L175 25Z" fill="white"/>
+                    <!-- X (Right part) -->
+                    <path d="M230 45L245 25H270L250 50L275 85H250L230 55L245 45Z" fill="white"/>
+                    <!-- O -->
+                    <path d="M310 20C290.67 20 275 35.67 275 55C275 74.33 290.67 90 310 90C329.33 90 345 74.33 345 55C345 35.67 329.33 20 310 20ZM310 75C298.954 75 290 66.046 290 55C290 43.954 298.954 35 310 35C321.046 35 330 43.954 330 55C330 66.046 321.046 75 310 75Z" fill="white"/>
+                    <!-- Dot -->
+                    <circle cx="360" cy="80" r="10" fill="#38bdf8"/>
+                    <!-- Lightning Bolt piercing the X -->
+                    <path class="logo-lightning" d="M235 10L190 60H225L210 100L260 45H225L235 10Z" fill="url(#bolt_grad)"/>
                     <defs>
-                        <linearGradient id="logo_grad" x1="25" y1="10" x2="75" y2="90" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#2563eb"/>
-                            <stop offset="1" stop-color="#38bdf8"/>
+                        <linearGradient id="bolt_grad" x1="190" y1="10" x2="260" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#38bdf8"/>
+                            <stop offset="1" stop-color="#2563eb"/>
                         </linearGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="1.5" result="blur"/>
-                            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-                        </filter>
                     </defs>
                 </svg>
-                <span class="logo-text tracking-tighter">FYXO<span class="text-blue-500">.</span></span>
             </a>
             
             <div class="hidden md:flex gap-10 font-medium text-gray-400">
@@ -332,17 +340,32 @@
     <footer class="py-12 border-t border-white/5 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
             <div class="mb-4 md:mb-0 flex items-center gap-2">
-                <!-- Footer Logo -->
-                <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M55 10L25 55H45L35 90L75 35H50L60 10H55Z" fill="url(#logo_grad_footer)"/>
-                    <defs>
-                        <linearGradient id="logo_grad_footer" x1="25" y1="10" x2="75" y2="90" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#2563eb"/>
-                            <stop offset="1" stop-color="#38bdf8"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <span class="font-bold text-white tracking-tighter">FYXO.</span> &copy; 2026 <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
+                <a href="#home" class="logo-container">
+                    <!-- Smaller Footer Interactive SVG Logo -->
+                    <svg height="25" viewBox="0 0 350 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- F -->
+                        <path d="M20 25H70V40H40V55H65V70H40V90H20V25Z" fill="white"/>
+                        <!-- Y -->
+                        <path d="M85 25H110L125 50L140 25H165L135 65V90H115V65L85 25Z" fill="white"/>
+                        <!-- X (Left part) -->
+                        <path d="M175 25H200L215 45L200 65H175L195 40L175 25Z" fill="white"/>
+                        <!-- X (Right part) -->
+                        <path d="M230 45L245 25H270L250 50L275 85H250L230 55L245 45Z" fill="white"/>
+                        <!-- O -->
+                        <path d="M310 20C290.67 20 275 35.67 275 55C275 74.33 290.67 90 310 90C329.33 90 345 74.33 345 55C345 35.67 329.33 20 310 20ZM310 75C298.954 75 290 66.046 290 55C290 43.954 298.954 35 310 35C321.046 35 330 43.954 330 55C330 66.046 321.046 75 310 75Z" fill="white"/>
+                        <!-- Dot -->
+                        <circle cx="360" cy="80" r="10" fill="#38bdf8"/>
+                        <!-- Lightning Bolt piercing the X -->
+                        <path class="logo-lightning" d="M235 10L190 60H225L210 100L260 45H225L235 10Z" fill="url(#bolt_grad_foot)"/>
+                        <defs>
+                            <linearGradient id="bolt_grad_foot" x1="190" y1="10" x2="260" y2="100" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#38bdf8"/>
+                                <stop offset="1" stop-color="#2563eb"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </a>
+                <span class="ml-2">&copy; 2026</span> <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
             </div>
             <div class="flex gap-8">
                 <a href="#" class="hover:text-white" data-i18n="f-1">Privacy</a>
