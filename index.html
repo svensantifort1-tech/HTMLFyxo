@@ -10,7 +10,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
         
         :root {
-            /* De kleur blauw uit het logo */
             --fyxo-blue: #2563eb; 
             --fyxo-cyan: #38bdf8;
         }
@@ -86,6 +85,13 @@
         .text-brand-blue { color: var(--fyxo-blue); }
         .bg-brand-blue { background-color: var(--fyxo-blue); }
         .border-brand-blue { border-color: var(--fyxo-blue); }
+
+        /* Custom Logo Styles */
+        .logo-text {
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            font-size: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -93,9 +99,22 @@
     <!-- Header -->
     <nav class="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center">
-                <!-- Logo 4x vergroot: van h-8/h-10 naar h-32/h-40 -->
-                <img src="https://i.postimg.cc/sG3QhDLc/fyxo-logo-transparent.png" alt="FYXO Logo" class="h-32 md:h-40">
+            <div class="flex items-center gap-2">
+                <!-- Custom SVG Logo -->
+                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M55 10L25 55H45L35 90L75 35H50L60 10H55Z" fill="url(#logo_grad)" filter="url(#glow)"/>
+                    <defs>
+                        <linearGradient id="logo_grad" x1="25" y1="10" x2="75" y2="90" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#2563eb"/>
+                            <stop offset="1" stop-color="#38bdf8"/>
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2" result="blur"/>
+                            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                        </filter>
+                    </defs>
+                </svg>
+                <span class="logo-text tracking-tighter">FYXO<span class="text-blue-500">.</span></span>
             </div>
             
             <div class="hidden md:flex gap-10 font-medium text-gray-400">
@@ -136,11 +155,10 @@
         </div>
     </section>
 
-    <!-- NEW: De Weg naar Succes (Process Steps from Image) -->
+    <!-- Werkwijze Section -->
     <section id="werkwijze" class="max-w-7xl mx-auto">
         <h2 class="text-4xl font-bold mb-12 text-center" data-i18n="steps-title">Jouw weg naar succes in <span class="text-brand-blue">4 stappen</span></h2>
         <div class="grid md:grid-cols-2 gap-8">
-            <!-- Step 1 -->
             <div class="glass-card p-8 flex flex-col gap-4">
                 <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-brand-blue">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -148,7 +166,6 @@
                 <h3 class="text-2xl font-bold" data-i18n="step-1-t">1. Kennismaking</h3>
                 <p class="text-gray-400 leading-relaxed" data-i18n="step-1-p">We starten met een vrijblijvend gesprek. Wat zijn uw wensen? Wie zijn uw klanten? We brengen alles in kaart en leggen de tarieven helder uit. Geen kleine lettertjes.</p>
             </div>
-            <!-- Step 2 -->
             <div class="glass-card p-8 flex flex-col gap-4">
                 <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-brand-blue">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
@@ -156,7 +173,6 @@
                 <h3 class="text-2xl font-bold" data-i18n="step-2-t">2. Eerste ontwerp</h3>
                 <p class="text-gray-400 leading-relaxed" data-i18n="step-2-p">Op basis van ons gesprek gaan we aan de slag met het design van uw website. U ontvangt een eerste versie die u in alle rust kunt bekijken.</p>
             </div>
-            <!-- Step 3 -->
             <div class="glass-card p-8 flex flex-col gap-4">
                 <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-brand-blue">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
@@ -164,7 +180,6 @@
                 <h3 class="text-2xl font-bold" data-i18n="step-3-t">3. Correctieronde</h3>
                 <p class="text-gray-400 leading-relaxed" data-i18n="step-3-p">Niet helemaal tevreden? Geen probleem. U krijgt ruimte voor aanpassingen binnen de afgesproken uren. Samen maken we het perfect.</p>
             </div>
-            <!-- Step 4 -->
             <div class="glass-card p-8 flex flex-col gap-4">
                 <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-brand-blue">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.5-1 1-4c2 0 3 .5 3 2.5a2 2 0 0 1 1 1.5z"></path><path d="M15 9V4s1 .5 4 1c0 2-.5 3-2.5 3a2 2 0 0 1-1.5 1z"></path></svg>
@@ -182,7 +197,6 @@
             <p class="text-gray-500 text-center mb-16" data-i18n="price-p">Kwaliteit hoeft niet onbetaalbaar te zijn.</p>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Starter -->
                 <div class="glass-card p-10">
                     <h3 class="text-xl font-bold mb-2">Starter</h3>
                     <div class="text-4xl font-black mb-6">€199 <span class="text-sm font-normal text-gray-500">ex. btw</span></div>
@@ -194,7 +208,6 @@
                     </ul>
                     <a href="#" class="block text-center py-3 rounded-lg border border-white/10 hover:bg-white/5" data-i18n="p-btn">Kies Starter</a>
                 </div>
-                <!-- Business -->
                 <div class="glass-card p-10 border-brand-blue bg-blue-500/5 relative overflow-hidden" style="border-width: 1px;">
                     <div class="absolute top-4 right-[-35px] bg-blue-600 text-xs font-bold py-1 px-10 rotate-45" data-i18n="populair">POPULAIR</div>
                     <h3 class="text-xl font-bold mb-2">Business</h3>
@@ -210,7 +223,6 @@
                     </ul>
                     <a href="#" class="block text-center py-3 rounded-lg bg-brand-blue font-bold hover:opacity-90" data-i18n="p-btn">Kies Business</a>
                 </div>
-                <!-- Custom -->
                 <div class="glass-card p-10">
                     <h3 class="text-xl font-bold mb-2">Custom</h3>
                     <div class="text-4xl font-black mb-6" data-i18n="p3-p">Op aanvraag</div>
@@ -263,8 +275,17 @@
     <footer class="py-12 border-t border-white/5 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
             <div class="mb-4 md:mb-0 flex items-center gap-2">
-                <!-- Logo 3x vergroot: van h-6 naar h-18 (Tailwind h-[72px]) -->
-                <img src="https://i.postimg.cc/sG3QhDLc/fyxo-logo-transparent.png" alt="FYXO" class="h-[72px]"> &copy; 2026 <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
+                <!-- Footer Logo -->
+                <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M55 10L25 55H45L35 90L75 35H50L60 10H55Z" fill="url(#logo_grad_footer)"/>
+                    <defs>
+                        <linearGradient id="logo_grad_footer" x1="25" y1="10" x2="75" y2="90" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#2563eb"/>
+                            <stop offset="1" stop-color="#38bdf8"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="font-bold text-white tracking-tighter">FYXO.</span> &copy; 2026 <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
             </div>
             <div class="flex gap-8">
                 <a href="#" class="hover:text-white" data-i18n="f-1">Privacy</a>
@@ -275,7 +296,6 @@
     </footer>
 
     <script>
-        // --- TRANSLATION DATA ---
         const translations = {
             nl: {
                 "nav-home": "Home", "nav-work": "Werkwijze", "nav-prices": "Prijzen", "nav-about": "Over ons", "nav-contact": "Contact",
@@ -322,10 +342,8 @@
                 const key = el.getAttribute('data-i18n');
                 el.innerText = translations[currentLang][key];
             });
-            // Update Placeholders
             document.getElementById('form-name').placeholder = currentLang === 'nl' ? "Naam" : "Name";
             document.getElementById('form-msg').placeholder = currentLang === 'nl' ? "Je bericht..." : "Your message...";
-            
             langText.innerText = currentLang === 'nl' ? 'EN' : 'NL';
         }
 
@@ -334,7 +352,6 @@
             updateLanguage();
         });
 
-        // --- Active Link on Scroll ---
         window.addEventListener('scroll', () => {
             let current = '';
             document.querySelectorAll('section').forEach(section => {
