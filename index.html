@@ -233,38 +233,27 @@
         </form>
         </div>
     </section>
-    <!-- Thank You Section (Hidden by default) -->
-    <section id="thank-you-section" class="hidden fixed inset-0 z-50 bg-[#0B111E] overflow-y-auto">
-        <nav class="fixed top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-md border-b border-[#1e293b]">
+    <section id="thank-you-section" class="hidden relative bg-[#0B111E] min-h-screen flex items-center justify-center">
+        <nav class="absolute top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-md border-b border-[#1e293b]">
             <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                <a href="#home" class="logo-container" onclick="document.getElementById('thank-you-section').classList.add('hidden'); document.querySelectorAll('section').forEach(s => {if(s.id !== 'thank-you-section') s.style.display = '';});">
+                <a href="#home" class="logo-container">
                     <span class="logo-svg" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.6rem; color: #F8FAFC; letter-spacing: -0.04em; line-height: 1;">FYXO</span>
                 </a>
             </div>
         </nav>
-        <div class="relative pt-32 pb-20 hero-bg overflow-hidden min-h-screen flex items-center justify-center">
+        <div class="relative pt-32 pb-20 hero-bg overflow-hidden w-full flex items-center justify-center">
             <div class="lightning-overlay"></div>
             <div class="max-w-2xl mx-auto text-center relative z-10 px-6">
                 <div class="mb-8">
-                    <svg class="success-icon w-16 h-16 sm:w-24 sm:h-24 mx-auto text-brand-blue" style="animation: bounce 1s ease-in-out infinite;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-16 h-16 sm:w-24 sm:h-24 mx-auto text-brand-blue" style="animation: bounce 1s ease-in-out infinite;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
-                <h1 class="text-3xl sm:text-5xl md:text-6xl font-black mb-4 md:mb-6 leading-tight" style="-webkit-text-stroke: 1px rgba(255,255,255,0.15);" data-i18n="ty-title">
-                    Bedankt!
-                </h1>
-                <p class="text-base sm:text-lg md:text-xl text-muted mb-3 md:mb-4" data-i18n="ty-p1">
-                    Uw bericht is succesvol verzonden.
-                </p>
-                <p class="text-sm sm:text-base md:text-lg text-muted mb-8 md:mb-12 max-w-xl mx-auto" data-i18n="ty-p2">
-                    Wij hebben uw aanvraag ontvangen en zullen zo snel mogelijk contact met u opnemen. In de tussentijd kunt u meer informatie vinden op onze website.
-                </p>
-                <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-3 md:gap-4">
-                    <a href="#home" class="bg-brand-blue hover:bg-[#0284c7] text-white font-bold px-6 sm:px-10 py-3 md:py-4 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(14,165,233,0.3)] text-sm sm:text-base" data-i18n="ty-btn1">Terug naar Home</a>
-                    <a href="#contact" class="bg-[#111827]/60 backdrop-blur-sm hover:bg-[#1e293b]/80 border border-[#1e293b] px-6 sm:px-10 py-3 md:py-4 rounded-full transition text-white font-bold text-sm sm:text-base" data-i18n="ty-btn2">Meer informatie</a>
-                </div>
-                <div class="mt-12 md:mt-16 pt-8 md:pt-12 border-t border-[#1e293b]">
-                    <p class="text-muted text-xs sm:text-sm"><span data-i18n="ty-contact">Vragen? Neem direct contact op via</span> <a href="mailto:info@fyxo.online" class="text-brand-blue hover:text-cyan-300 transition">info@fyxo.online</a> of <a href="https://wa.me/31644740265" target="_blank" class="text-green-500 hover:text-green-400 transition">WhatsApp</a></p>
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-black mb-4 md:mb-6 leading-tight text-white">Bedankt!</h1>
+                <p class="text-base sm:text-lg md:text-xl text-muted mb-8" data-i18n="ty-p1">Uw bericht is succesvol verzonden.</p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#home" class="bg-brand-blue hover:bg-[#0284c7] text-white font-bold px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg">Terug naar Home</a>
                 </div>
             </div>
         </div>
@@ -290,7 +279,30 @@
     <!-- AI Chat Box -->
     <style>#ai-chat-container{position:fixed;bottom:30px;right:30px;width:380px;max-height:600px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:999;display:flex;flex-direction:column;transform:translateY(400px);transition:transform 0.3s ease;}#ai-chat-container.open{transform:translateY(0);}#ai-chat-header{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);color:white;padding:16px;border-radius:12px 12px 0 0;font-weight:bold;display:flex;justify-content:space-between;align-items:center;}#ai-chat-close{background:none;border:none;color:white;cursor:pointer;font-size:20px;}#ai-chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}.chat-message{padding:10px 12px;border-radius:8px;max-width:85%;word-wrap:break-word;font-size:14px;}.chat-message.user{align-self:flex-end;background:#0ea5e9;color:white;}.chat-message.ai{align-self:flex-start;background:#1e293b;color:#F8FAFC;}#ai-chat-input-area{padding:12px;border-top:1px solid var(--border-color);display:flex;gap:8px;}#ai-chat-input{flex:1;background:#0B111E;border:1px solid var(--border-color);color:var(--text-main);padding:8px 12px;border-radius:6px;outline:none;font-family:'Inter',sans-serif;}#ai-chat-input:focus{border-color:#38bdf8;}#ai-chat-send{background:#0ea5e9;border:none;color:white;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:bold;transition:background 0.3s;}#ai-chat-send:hover{background:#0284c7;}#ai-chat-btn{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:998;transition:all 0.3s ease;border:none;font-family:'Inter',sans-serif;}#ai-chat-btn:hover{transform:scale(1.1);}#ai-chat-btn.hidden{display:none;}</style>
     <script>(function(){const chatContainer=document.createElement('div');chatContainer.id='ai-chat-container';chatContainer.innerHTML=`<div id="ai-chat-header"><span>FYXA</span><button id="ai-chat-close">×</button></div><div id="ai-chat-messages"></div><div id="ai-chat-input-area"><input type="text" id="ai-chat-input" placeholder="Stel een vraag..."/><button id="ai-chat-send">Verzend</button></div>`;const chatBtn=document.createElement('button');chatBtn.id='ai-chat-btn';chatBtn.innerHTML=`<span style="font-size:28px;font-weight:900;color:white;line-height:1;">F</span>`;const aiResponses={'hallo':'Hallo!Welkom bij Fyxo. Hoe kan ik je helpen?','prijzen':'Wij bieden drie pakketten:Starter(€199),Business(€299),en Custom(op aanvraag). Wil je meer details?','starter':'Het Starter pakket(€199)bevat:Single Page Website,Volledig Responsive,Contactformulier,en Hosting Setup.','business':'Het Business pakket(€299)bevat alles van Starter plus:Tot 5 Pagina\'s,SEO Geoptimaliseerd,CMS Integratie,en Premium Support.','contact':'Je kunt ons bereiken via email(info@fyxo.online)of WhatsApp(06 44740265). Vul ook het contactformulier in!','werkwijze':'Onze werkwijze bestaat uit 4 stappen:1. Kennismaking,2. Eerste ontwerp,3. Correctieronde,4. Oplevering.','locatie':'We zijn gevestigd in Ouddorp,Zuid-Holland,Nederland.','dank':'Graag gedaan!Heb je nog meer vragen?','bedankt':'Graag gedaan!Heb je nog meer vragen?','ja':'Prima!Wat wil je graag weten?','nee':'Oké!Voel je vrij om ons te contacteren via het formulier of WhatsApp.','website':'Professionele website in 14 dagen of minder.','chatbot':'We kunnen ook kleine taken uitvoeren zoals het installeren van een chatbot of het maken van een webshop.','default':'Interessante vraag!Ik ben hier om je te helpen. Kun je meer details geven of een ander onderwerp kiezen?(bijv. prijzen,werkwijze,contact)'};function getAIResponse(userMessage){const message=userMessage.toLowerCase().trim();for(const[key,response]of Object.entries(aiResponses)){if(message.includes(key)){return response;}}return aiResponses['default'];}function addMessage(text,sender){const messagesDiv=document.getElementById('ai-chat-messages');const messageEl=document.createElement('div');messageEl.className=`chat-message ${sender}`;messageEl.textContent=text;messagesDiv.appendChild(messageEl);messagesDiv.scrollTop=messagesDiv.scrollHeight;}chatBtn.addEventListener('click',()=>{chatContainer.classList.toggle('open');if(chatContainer.classList.contains('open')){document.getElementById('ai-chat-input').focus();}});document.addEventListener('DOMContentLoaded',()=>{document.getElementById('ai-chat-close').addEventListener('click',()=>{chatContainer.classList.remove('open');});document.getElementById('ai-chat-send').addEventListener('click',()=>{const input=document.getElementById('ai-chat-input');const message=input.value.trim();if(message){addMessage(message,'user');input.value='';setTimeout(()=>{addMessage(getAIResponse(message),'ai');},500);}});document.getElementById('ai-chat-input').addEventListener('keypress',(e)=>{if(e.key==='Enter'){document.getElementById('ai-chat-send').click();}});});if(document.body){document.body.appendChild(chatContainer);document.body.appendChild(chatBtn);}else{document.addEventListener('DOMContentLoaded',()=>{document.body.appendChild(chatContainer);document.body.appendChild(chatBtn);});}})();</script>
-    <!-- Thank You Page Display Script -->
-    <script>window.addEventListener('load',function(){if(window.location.hash==='#thank-you-section'){document.querySelectorAll('section').forEach(section=>{if(section.id!=='thank-you-section'){section.style.display='none';}});const thankYouSection=document.getElementById('thank-you-section');if(thankYouSection){thankYouSection.classList.remove('hidden');thankYouSection.style.display='flex';window.scrollTo(0,0);}}});</script>
+    <script>
+window.addEventListener('load', function() {
+    if (window.location.hash === '#thank-you-section') {
+        // Verberg alleen de elementen van de hoofdpagina
+        // We selecteren alles wat GEEN onderdeel is van de thank-you-section
+        document.querySelectorAll('body > nav, body > section, body > footer, #ai-chat-btn').forEach(el => {
+            if (el.id !== 'thank-you-section') {
+                el.style.display = 'none';
+            }
+        });
+
+        const tySection = document.getElementById('thank-you-section');
+        if (tySection) {
+            tySection.classList.remove('hidden');
+            tySection.style.display = 'flex';
+
+            // Zorg dat de vertalingen ook hier direct werken
+            if (typeof updateLanguage === 'function') {
+                updateLanguage();
+            }
+            window.scrollTo(0, 0);
+        }
+    }
+});
+    </script>
 </body>
 </html>
