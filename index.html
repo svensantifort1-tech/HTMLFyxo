@@ -236,9 +236,9 @@
     <section id="thank-you-section" class="hidden relative bg-[#0B111E] min-h-screen flex items-center justify-center">
         <nav class="absolute top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-md border-b border-[#1e293b]">
             <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                <a href="#home" class="logo-container">
+                <button onclick="returnToHome()" class="logo-container cursor-pointer" style="background: none; border: none; padding: 0;">
                     <span class="logo-svg" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.6rem; color: #F8FAFC; letter-spacing: -0.04em; line-height: 1;">FYXO</span>
-                </a>
+                </button>
             </div>
         </nav>
         <div class="relative pt-32 pb-20 hero-bg overflow-hidden w-full flex items-center justify-center">
@@ -253,7 +253,7 @@
                 <p class="text-base sm:text-lg md:text-xl text-muted mb-8" data-i18n="ty-p1">Uw bericht is succesvol verzonden.</p>
                 
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#home" class="bg-brand-blue hover:bg-[#0284c7] text-white font-bold px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg">Terug naar Home</a>
+                    <button onclick="returnToHome()" class="bg-brand-blue hover:bg-[#0284c7] text-white font-bold px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg" style="border: none; cursor: pointer;">Terug naar Home</button>
                 </div>
             </div>
         </div>
@@ -280,27 +280,51 @@
     <style>#ai-chat-container{position:fixed;bottom:30px;right:30px;width:380px;max-height:600px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:999;display:flex;flex-direction:column;transform:translateY(400px);transition:transform 0.3s ease;}#ai-chat-container.open{transform:translateY(0);}#ai-chat-header{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);color:white;padding:16px;border-radius:12px 12px 0 0;font-weight:bold;display:flex;justify-content:space-between;align-items:center;}#ai-chat-close{background:none;border:none;color:white;cursor:pointer;font-size:20px;}#ai-chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}.chat-message{padding:10px 12px;border-radius:8px;max-width:85%;word-wrap:break-word;font-size:14px;}.chat-message.user{align-self:flex-end;background:#0ea5e9;color:white;}.chat-message.ai{align-self:flex-start;background:#1e293b;color:#F8FAFC;}#ai-chat-input-area{padding:12px;border-top:1px solid var(--border-color);display:flex;gap:8px;}#ai-chat-input{flex:1;background:#0B111E;border:1px solid var(--border-color);color:var(--text-main);padding:8px 12px;border-radius:6px;outline:none;font-family:'Inter',sans-serif;}#ai-chat-input:focus{border-color:#38bdf8;}#ai-chat-send{background:#0ea5e9;border:none;color:white;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:bold;transition:background 0.3s;}#ai-chat-send:hover{background:#0284c7;}#ai-chat-btn{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:998;transition:all 0.3s ease;border:none;font-family:'Inter',sans-serif;}#ai-chat-btn:hover{transform:scale(1.1);}#ai-chat-btn.hidden{display:none;}</style>
     <script>(function(){const chatContainer=document.createElement('div');chatContainer.id='ai-chat-container';chatContainer.innerHTML=`<div id="ai-chat-header"><span>FYXA</span><button id="ai-chat-close">×</button></div><div id="ai-chat-messages"></div><div id="ai-chat-input-area"><input type="text" id="ai-chat-input" placeholder="Stel een vraag..."/><button id="ai-chat-send">Verzend</button></div>`;const chatBtn=document.createElement('button');chatBtn.id='ai-chat-btn';chatBtn.innerHTML=`<span style="font-size:28px;font-weight:900;color:white;line-height:1;">F</span>`;const aiResponses={'hallo':'Hallo!Welkom bij Fyxo. Hoe kan ik je helpen?','prijzen':'Wij bieden drie pakketten:Starter(€199),Business(€299),en Custom(op aanvraag). Wil je meer details?','starter':'Het Starter pakket(€199)bevat:Single Page Website,Volledig Responsive,Contactformulier,en Hosting Setup.','business':'Het Business pakket(€299)bevat alles van Starter plus:Tot 5 Pagina\'s,SEO Geoptimaliseerd,CMS Integratie,en Premium Support.','contact':'Je kunt ons bereiken via email(info@fyxo.online)of WhatsApp(06 44740265). Vul ook het contactformulier in!','werkwijze':'Onze werkwijze bestaat uit 4 stappen:1. Kennismaking,2. Eerste ontwerp,3. Correctieronde,4. Oplevering.','locatie':'We zijn gevestigd in Ouddorp,Zuid-Holland,Nederland.','dank':'Graag gedaan!Heb je nog meer vragen?','bedankt':'Graag gedaan!Heb je nog meer vragen?','ja':'Prima!Wat wil je graag weten?','nee':'Oké!Voel je vrij om ons te contacteren via het formulier of WhatsApp.','website':'Professionele website in 14 dagen of minder.','chatbot':'We kunnen ook kleine taken uitvoeren zoals het installeren van een chatbot of het maken van een webshop.','default':'Interessante vraag!Ik ben hier om je te helpen. Kun je meer details geven of een ander onderwerp kiezen?(bijv. prijzen,werkwijze,contact)'};function getAIResponse(userMessage){const message=userMessage.toLowerCase().trim();for(const[key,response]of Object.entries(aiResponses)){if(message.includes(key)){return response;}}return aiResponses['default'];}function addMessage(text,sender){const messagesDiv=document.getElementById('ai-chat-messages');const messageEl=document.createElement('div');messageEl.className=`chat-message ${sender}`;messageEl.textContent=text;messagesDiv.appendChild(messageEl);messagesDiv.scrollTop=messagesDiv.scrollHeight;}chatBtn.addEventListener('click',()=>{chatContainer.classList.toggle('open');if(chatContainer.classList.contains('open')){document.getElementById('ai-chat-input').focus();}});document.addEventListener('DOMContentLoaded',()=>{document.getElementById('ai-chat-close').addEventListener('click',()=>{chatContainer.classList.remove('open');});document.getElementById('ai-chat-send').addEventListener('click',()=>{const input=document.getElementById('ai-chat-input');const message=input.value.trim();if(message){addMessage(message,'user');input.value='';setTimeout(()=>{addMessage(getAIResponse(message),'ai');},500);}});document.getElementById('ai-chat-input').addEventListener('keypress',(e)=>{if(e.key==='Enter'){document.getElementById('ai-chat-send').click();}});});if(document.body){document.body.appendChild(chatContainer);document.body.appendChild(chatBtn);}else{document.addEventListener('DOMContentLoaded',()=>{document.body.appendChild(chatContainer);document.body.appendChild(chatBtn);});}})();</script>
     <script>
+function showThankYouPage() {
+    document.querySelectorAll('body > nav, body > section, body > footer, #ai-chat-btn').forEach(el => {
+        if (el.id !== 'thank-you-section') {
+            el.style.display = 'none';
+        }
+    });
+    const tySection = document.getElementById('thank-you-section');
+    if (tySection) {
+        tySection.classList.remove('hidden');
+        tySection.style.display = 'flex';
+        if (typeof updateLanguage === 'function') {
+            updateLanguage();
+        }
+        window.scrollTo(0, 0);
+    }
+}
+
+function returnToHome() {
+    document.querySelectorAll('body > nav, body > section, body > footer, #ai-chat-btn').forEach(el => {
+        if (el.id !== 'thank-you-section') {
+            el.style.display = '';
+        }
+    });
+    const tySection = document.getElementById('thank-you-section');
+    if (tySection) {
+        tySection.classList.add('hidden');
+        tySection.style.display = 'none';
+    }
+    window.scrollTo(0, 0);
+    if (typeof updateLanguage === 'function') {
+        updateLanguage();
+    }
+}
+
 window.addEventListener('load', function() {
     if (window.location.hash === '#thank-you-section') {
-        // Verberg alleen de elementen van de hoofdpagina
-        // We selecteren alles wat GEEN onderdeel is van de thank-you-section
-        document.querySelectorAll('body > nav, body > section, body > footer, #ai-chat-btn').forEach(el => {
-            if (el.id !== 'thank-you-section') {
-                el.style.display = 'none';
-            }
-        });
+        showThankYouPage();
+    }
+});
 
-        const tySection = document.getElementById('thank-you-section');
-        if (tySection) {
-            tySection.classList.remove('hidden');
-            tySection.style.display = 'flex';
-
-            // Zorg dat de vertalingen ook hier direct werken
-            if (typeof updateLanguage === 'function') {
-                updateLanguage();
-            }
-            window.scrollTo(0, 0);
-        }
+window.addEventListener('hashchange', function() {
+    if (window.location.hash === '#thank-you-section') {
+        showThankYouPage();
+    } else if (window.location.hash === '#home' || window.location.hash === '') {
+        returnToHome();
     }
 });
     </script>
