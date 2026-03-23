@@ -104,9 +104,9 @@
                         
                         <div class="relative w-full md:w-[65%] max-w-[700px] mx-auto md:mx-0 z-10">
                             
-                            <div class="absolute -top-16 left-0 md:-top-20 md:-left-8 z-40 pointer-events-auto">
+                            <div class="absolute -top-16 left-0 md:-top-20 md:-left-8 z-40 pointer-events-auto hover:z-50">
                                 <a id="portfolio-link" href="#" target="_blank" class="flex flex-col items-center group cursor-pointer decoration-transparent">
-                                    <span class="text-brand-blue font-bold text-xl transform -rotate-12 mb-1 group-hover:text-white transition-colors whitespace-nowrap" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Bezoek de website</span>
+                                    <span class="text-brand-blue font-bold text-xl transform -rotate-12 mb-1 group-hover:text-white transition-colors whitespace-nowrap" style="font-family: 'Comic Sans MS', cursive, sans-serif;" data-i18n="port-visit">Bezoek de website</span>
                                     <svg class="w-12 h-12 text-brand-blue group-hover:text-white group-hover:scale-110 group-hover:translate-x-1 group-hover:translate-y-1 transition-all" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M20,20 Q50,40 70,80" />
                                         <path d="M50,80 L70,80 L75,55" />
@@ -116,8 +116,10 @@
 
                             <div class="bg-[#2d3748] rounded-t-2xl p-2 md:p-3 border-t-2 border-x-2 border-gray-600 shadow-2xl relative">
                                 <div class="absolute top-1 md:top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-gray-900 border border-gray-700"></div>
-                                <div class="bg-black aspect-[16/10] rounded-sm overflow-hidden relative border border-gray-900">
-                                    <img id="portfolio-desktop-img" src="" alt="Desktop View" class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105">
+                                <div class="bg-black aspect-[16/10] rounded-sm overflow-hidden relative border border-gray-900 group">
+                                    <a id="portfolio-desktop-link" href="#" target="_blank" class="block w-full h-full cursor-pointer">
+                                        <img id="portfolio-desktop-img" src="" alt="Desktop View" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+                                    </a>
                                 </div>
                             </div>
                             <div class="bg-[#e2e8f0] h-3 md:h-4 rounded-b-2xl w-[106%] -ml-[3%] relative z-10 shadow-xl flex justify-center items-start border-b-2 border-gray-400">
@@ -127,9 +129,11 @@
 
                         <div class="relative w-1/3 md:w-[22%] max-w-[200px] min-w-[120px] mx-auto md:mx-0 mt-8 md:mt-0 md:-ml-16 z-20 md:mb-[-15px]">
                             <div class="bg-[#1a202c] rounded-2xl md:rounded-[2.5rem] p-1 md:p-2 border-2 md:border-[3px] border-gray-600 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
-                                <div class="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 w-[35%] h-3 md:h-5 bg-black rounded-full z-30"></div>
-                                <div class="bg-black aspect-[9/19.5] rounded-[0.85rem] md:rounded-[2rem] overflow-hidden relative border-2 md:border-[3px] border-black">
-                                    <img id="portfolio-mobile-img" src="" alt="Mobile View" class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105">
+                                <div class="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 w-[35%] h-3 md:h-5 bg-black rounded-full z-30 pointer-events-none"></div>
+                                <div class="bg-black aspect-[9/19.5] rounded-[0.85rem] md:rounded-[2rem] overflow-hidden relative border-2 md:border-[3px] border-black group">
+                                    <a id="portfolio-mobile-link" href="#" target="_blank" class="block w-full h-full cursor-pointer">
+                                        <img id="portfolio-mobile-img" src="" alt="Mobile View" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -200,10 +204,10 @@
                 <div class="relative flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center flex-wrap">
                     <div class="absolute inset-0 bg-brand-blue opacity-10 blur-3xl rounded-full"></div>
                     <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-[#1e293b] relative z-10 hover:scale-105 transition-transform duration-500 flex-shrink-0">
-                        <img src="sven.jpg" alt="Sven" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700">
+                        <img src="sven.jpg" alt="Sven" class="w-full h-full object-cover object-[65%_25%] grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                     <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-[#1e293b] relative z-10 hover:scale-105 transition-transform duration-500 flex-shrink-0">
-                        <img src="kjell.jpg" alt="Kjell" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700">
+                        <img src="kjell.jpg" alt="Kjell" class="w-full h-full object-cover object-[35%_25%] grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                 </div>
             </div>
@@ -213,7 +217,7 @@
                     Snelheid Ontmoet Strategie
                 </p>
                 <p class="text-sm sm:text-base md:text-lg text-muted leading-relaxed" data-i18n="about-p2">
-                    De meeste websites zijn slechts digitale visitekaartjes. Wij bouwen krachtige groeimotoren. Binnen Fyxo combineren wij high-end technische engineering met diepgaande conversiepsychologie. Sven is de technische architect: hij zorgt ervoor dat uw website bliksemsnel laadt, perfect schaalt op elk apparaat en feilloos is geoptimaliseerd voor zoekmachines zoals Google. Kjell is de conversiestrateeg: hij richt zich volledig op overtuigingskracht en gebruikerservaring, om zo passieve bezoekers om te zetten in loyale klanten. Samen bouwen we niet zomaar een website; we creëren uw best presterende en meest effectieve online verkoper die 24/7 voor uw bedrijf werkt.
+                    Wij zijn Sven en Kjell, de gezichten achter Fyxo. Sven is de technische man: hij bouwt razendsnelle websites die perfect werken en hoog scoren in Google. Kjell is de conversie-expert: hij zorgt voor een ijzersterk design dat bezoekers omzet in betalende klanten. Samen maken we niet zomaar een digitaal visitekaartje, maar een website die echt voor jouw bedrijf werkt.
                 </p>
             </div>
         </div>
@@ -296,33 +300,7 @@
         </form>
         </div>
     </section>
-
-    <section id="privacy-section" class="hidden relative bg-[#0B111E] min-h-screen items-center justify-center pt-32 pb-20 px-6">
-        <div class="max-w-4xl mx-auto glass-card p-10 w-full relative z-10">
-            <button onclick="window.location.hash='#home'" class="text-brand-blue mb-6 font-bold hover:underline">&larr; Terug naar Home</button>
-            <h1 class="text-3xl sm:text-4xl font-bold mb-6 text-white" data-i18n="f-1">Privacy</h1>
-            <div class="text-muted space-y-4 leading-relaxed">
-                <p>Fyxo respecteert de privacy van alle bezoekers van onze website en draagt er zorg voor dat de persoonlijke informatie die u ons verschaft vertrouwelijk wordt behandeld.</p>
-                <p>Wij gebruiken uw gegevens uitsluitend om uw aanvragen via het contactformulier zo snel en gemakkelijk mogelijk te laten verlopen. Voor het overige zullen wij deze gegevens uitsluitend gebruiken met uw toestemming.</p>
-                <p>Fyxo zal uw persoonlijke gegevens niet aan derden verkopen en zal deze uitsluitend aan derden ter beschikking stellen die zijn betrokken bij het uitvoeren van uw opdracht.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="voorwaarden-section" class="hidden relative bg-[#0B111E] min-h-screen items-center justify-center pt-32 pb-20 px-6">
-        <div class="max-w-4xl mx-auto glass-card p-10 w-full relative z-10">
-            <button onclick="window.location.hash='#home'" class="text-brand-blue mb-6 font-bold hover:underline">&larr; Terug naar Home</button>
-            <h1 class="text-3xl sm:text-4xl font-bold mb-6 text-white" data-i18n="f-2">Voorwaarden</h1>
-            <div class="text-muted space-y-4 leading-relaxed">
-                <p>Deze algemene voorwaarden zijn van toepassing op elk aanbod van Fyxo en op elke tot stand gekomen overeenkomst op afstand tussen Fyxo en de opdrachtgever.</p>
-                <p>Alle offertes en aanbiedingen van Fyxo zijn vrijblijvend, tenzij in de offerte een termijn voor aanvaarding is gesteld.</p>
-                <p>Fyxo zal de overeenkomst naar beste inzicht en vermogen en overeenkomstig de eisen van goed vakmanschap uitvoeren.</p>
-                <p>Indien tijdens de uitvoering van de overeenkomst blijkt dat het voor een behoorlijke uitvoering daarvan noodzakelijk is om deze te wijzigen of aan te vullen, dan zullen partijen tijdig en in onderling overleg tot aanpassing van de overeenkomst overgaan.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="thank-you-section" class="hidden relative bg-[#0B111E] min-h-screen items-center justify-center">
+    <section id="thank-you-section" class="hidden relative bg-[#0B111E] min-h-screen flex items-center justify-center">
         <nav class="absolute top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-md border-b border-[#1e293b]">
             <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
                 <button onclick="returnToHome()" class="logo-container cursor-pointer" style="background: none; border: none; padding: 0;">
@@ -357,13 +335,14 @@
                 <span class="ml-2">&copy; 2026</span> <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
             </div>
             <div class="flex gap-8">
-                <a href="#privacy" class="hover:text-white transition-colors" data-i18n="f-1">Privacy</a>
-                <a href="#voorwaarden" class="hover:text-white transition-colors" data-i18n="f-2">Voorwaarden</a>
+                <a href="#" class="hover:text-white transition-colors" data-i18n="f-1">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors" data-i18n="f-2">Voorwaarden</a>
+                <a href="https://www.linkedin.com" class="hover:text-white transition-colors">LinkedIn</a>
             </div>
         </div>
     </footer>
     <script>
-        const translations={nl:{"nav-home":"Home","nav-work":"Werkwijze","nav-portfolio":"Portfolio","nav-prices":"Prijzen","nav-about":"Over ons","nav-contact":"Contact","hero-1":"Meer klanten via een","hero-2":"professionele website","hero-p":"Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker,beter voor Google.","hero-btn-1":"Start een Project","hero-btn-1-sub":"Professionele website vanaf €199","hero-btn-2":"Onze Werkwijze","steps-title":"Jouw weg naar succes in 4 stappen","step-1-t":"1. Kennismaking","step-1-p":"We starten met een vrijblijvend gesprek. Wat zijn uw wensen?Wie zijn uw klanten?We brengen alles in kaart en leggen de tarieven helder uit. Geen kleine lettertjes.","step-2-t":"2. Eerste ontwerp","step-2-p":"Op basis van ons gesprek gaan we aan de slag met het design van uw website. U ontvangt een eerste versie die u in alle rust kunt bekijken.","step-3-t":"3. Correctieronde","step-3-p":"Niet helemaal tevreden?Geen probleem. U krijgt ruimte voor aanpassingen binnen de afgesproken uren. Samen maken we het perfect.","step-4-t":"4. Oplevering","step-4-p":"Uw website gaat live!Wij zetten alles klaar op uw eigen hosting of regelen dit via ons.","port-1":"Ons","port-2":"Portfolio","port-visit":"Bezoek de website","price-title":"Transparante Prijzen","price-p":"Kwaliteit hoeft niet onbetaalbaar te zijn.","populair":"POPULAIR","p-plus":"Alles van Starter plus...","p-btn":"Kies Plan","contact-btn":"Neem Contact Op","p1-1":"Single Page Website","p1-2":"Volledig Responsive","p1-3":"Contactformulier","p1-4":"Hosting Setup","p2-1":"Tot 5 Pagina's","p2-2":"SEO Geoptimaliseerd","p2-3":"CMS Integratie","p2-4":"Premium Support","p3-1":"Webapplicaties","p3-2":"Webshops","p3-3":"API Integraties","p3-4":"Maatwerk Functies","p3-p":"Op aanvraag","about-title":"Wij zijn Fyxo.","about-p1":"Snelheid Ontmoet Strategie","about-p2":"De meeste websites zijn slechts digitale visitekaartjes. Wij bouwen krachtige groeimotoren. Binnen Fyxo combineren wij high-end technische engineering met diepgaande conversiepsychologie. Sven is de technische architect: hij zorgt ervoor dat uw website bliksemsnel laadt, perfect schaalt op elk apparaat en feilloos is geoptimaliseerd voor zoekmachines zoals Google. Kjell is de conversiestrateeg: hij richt zich volledig op overtuigingskracht en gebruikerservaring, om zo passieve bezoekers om te zetten in loyale klanten. Samen bouwen we niet zomaar een website; we creëren uw best presterende en meest effectieve online verkoper die 24/7 voor uw bedrijf werkt.","contact-title":"Laten we praten","contact-p":"Klaar voor een website die echt resultaat levert?","send-btn":"Verstuur Aanvraag","label-name":"Naam*","label-company":"Bedrijfsnaam","label-email":"E-mailadres*","label-package":"Welk pakket heeft je interesse?","label-msg":"Bericht*","opt-choose":"--Kies een optie--","opt-custom":"Custom(Op aanvraag)","opt-other":"Ik heb alleen een vraag","footer-copy":"Alle rechten voorbehouden.","f-1":"Privacy","f-2":"Voorwaarden","ty-title":"Bedankt!","ty-p1":"Uw bericht is succesvol verzonden.","ty-p2":"Wij hebben uw aanvraag ontvangen en zullen zo snel mogelijk contact met u opnemen. In de tussentijd kunt u meer informatie vinden op onze website.","ty-btn1":"Terug naar Home","ty-btn2":"Meer informatie","ty-contact":"Vragen? Neem direct contact op via"},en:{"nav-home":"Home","nav-work":"Method","nav-portfolio":"Portfolio","nav-prices":"Pricing","nav-about":"About","nav-contact":"Contact","hero-1":"More customers through a","hero-2":"professional website","hero-p":"We build high-performance websites that load in the blink of an eye. Better for the user,better for Google.","hero-btn-1":"Start a Project","hero-btn-1-sub":"Professional website from €199","hero-btn-2":"Our Method","steps-title":"Your path to success in 4 steps","step-1-t":"1. Introduction","step-1-p":"We start with a non-binding conversation. What are your wishes?Who are your customers?We map everything out clearly.","step-2-t":"2. First Design","step-2-p":"Based on our conversation,we start designing your website. You receive a first version to review at your convenience.","step-3-t":"3. Revision Round","step-3-p":"Not completely satisfied?No problem. You get room for adjustments within the agreed hours.","step-4-t":"4. Delivery","step-4-p":"Your website goes live!We set everything up on your own hosting or arrange this via our services.","port-1":"Our","port-2":"Portfolio","port-visit":"Visit the website","price-title":"Transparent Pricing","price-p":"Quality doesn't have to be unaffordable.","populair":"POPULAR","p-plus":"Everything in Starter plus...","p-btn":"Choose Plan","contact-btn":"Contact Us","p1-1":"Single Page Website","p1-2":"Fully Responsive","p1-3":"Contact Form","p1-4":"Hosting Setup","p2-1":"Up to 5 Pages","p2-2":"SEO Optimized","p2-3":"CMS Integration","p2-4":"Premium Support","p3-1":"Web Applications","p3-2":"Webshops","p3-3":"API Integrations","p3-4":"Custom Features","p3-p":"On request","about-title":"We are Fyxo.","about-p1":"Speed Meets Strategy","about-p2":"Most websites are just digital business cards. We build powerful growth engines. At Fyxo, we combine high-end technical engineering with in-depth conversion psychology. Sven is the technical architect: he ensures that your website loads at lightning speed, scales perfectly on any device, and is flawlessly optimized for search engines like Google. Kjell is the conversion strategist: he focuses entirely on persuasion and user experience, to turn passive visitors into loyal customers. Together, we don't just build a website; we create your best-performing and most effective online salesperson that works for your business 24/7.","contact-title":"Let's talk","contact-p":"Ready for a website that actually delivers results?","send-btn":"Send Request","label-name":"Name*","label-company":"Company Name","label-email":"Email Address*","label-package":"Which package are you interested in?","label-msg":"Message*","opt-choose":"--Choose an option--","opt-custom":"Custom(On request)","opt-other":"I just have a question","footer-copy":"All rights reserved.","f-1":"Privacy","f-2":"Terms","ty-title":"Thank You!","ty-p1":"Your message has been sent successfully.","ty-p2":"We have received your request and will contact you as soon as possible. In the meantime, you can find more information on our website.","ty-btn1":"Back to Home","ty-btn2":"More information","ty-contact":"Questions? Contact us directly via"}};
+        const translations={nl:{"nav-home":"Home","nav-work":"Werkwijze","nav-portfolio":"Portfolio","nav-prices":"Prijzen","nav-about":"Over ons","nav-contact":"Contact","hero-1":"Meer klanten via een","hero-2":"professionele website","hero-p":"Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker,beter voor Google.","hero-btn-1":"Start een Project","hero-btn-1-sub":"Professionele website vanaf €199","hero-btn-2":"Onze Werkwijze","steps-title":"Jouw weg naar succes in 4 stappen","step-1-t":"1. Kennismaking","step-1-p":"We starten met een vrijblijvend gesprek. Wat zijn uw wensen?Wie zijn uw klanten?We brengen alles in kaart en leggen de tarieven helder uit. Geen kleine lettertjes.","step-2-t":"2. Eerste ontwerp","step-2-p":"Op basis van ons gesprek gaan we aan de slag met het design van uw website. U ontvangt een eerste versie die u in alle rust kunt bekijken.","step-3-t":"3. Correctieronde","step-3-p":"Niet helemaal tevreden?Geen probleem. U krijgt ruimte voor aanpassingen binnen de afgesproken uren. Samen maken we het perfect.","step-4-t":"4. Oplevering","step-4-p":"Uw website gaat live!Wij zetten alles klaar op uw eigen hosting of regelen dit via ons.","port-1":"Ons","port-2":"Portfolio","port-visit":"Bezoek de website","price-title":"Transparante Prijzen","price-p":"Kwaliteit hoeft niet onbetaalbaar te zijn.","populair":"POPULAIR","p-plus":"Alles van Starter plus...","p-btn":"Kies Plan","contact-btn":"Neem Contact Op","p1-1":"Single Page Website","p1-2":"Volledig Responsive","p1-3":"Contactformulier","p1-4":"Hosting Setup","p2-1":"Tot 5 Pagina's","p2-2":"SEO Geoptimaliseerd","p2-3":"CMS Integratie","p2-4":"Premium Support","p3-1":"Webapplicaties","p3-2":"Webshops","p3-3":"API Integraties","p3-4":"Maatwerk Functies","p3-p":"Op aanvraag","about-title":"Wij zijn Fyxo.","about-p1":"Snelheid Ontmoet Strategie","about-p2":"Wij zijn Sven en Kjell, de gezichten achter Fyxo. Sven is de technische man: hij bouwt razendsnelle websites die perfect werken en hoog scoren in Google. Kjell is de conversie-expert: hij zorgt voor een ijzersterk design dat bezoekers omzet in betalende klanten. Samen maken we niet zomaar een digitaal visitekaartje, maar een website die echt voor jouw bedrijf werkt.","contact-title":"Laten we praten","contact-p":"Klaar voor een website die echt resultaat levert?","send-btn":"Verstuur Aanvraag","label-name":"Naam*","label-company":"Bedrijfsnaam","label-email":"E-mailadres*","label-package":"Welk pakket heeft je interesse?","label-msg":"Bericht*","opt-choose":"--Kies een optie--","opt-custom":"Custom(Op aanvraag)","opt-other":"Ik heb alleen een vraag","footer-copy":"Alle rechten voorbehouden.","f-1":"Privacy","f-2":"Voorwaarden","ty-title":"Bedankt!","ty-p1":"Uw bericht is succesvol verzonden.","ty-p2":"Wij hebben uw aanvraag ontvangen en zullen zo snel mogelijk contact met u opnemen. In de tussentijd kunt u meer informatie vinden op onze website.","ty-btn1":"Terug naar Home","ty-btn2":"Meer informatie","ty-contact":"Vragen? Neem direct contact op via"},en:{"nav-home":"Home","nav-work":"Method","nav-portfolio":"Portfolio","nav-prices":"Pricing","nav-about":"About","nav-contact":"Contact","hero-1":"More customers through a","hero-2":"professional website","hero-p":"We build high-performance websites that load in the blink of an eye. Better for the user,better for Google.","hero-btn-1":"Start a Project","hero-btn-1-sub":"Professional website from €199","hero-btn-2":"Our Method","steps-title":"Your path to success in 4 steps","step-1-t":"1. Introduction","step-1-p":"We start with a non-binding conversation. What are your wishes?Who are your customers?We map everything out clearly.","step-2-t":"2. First Design","step-2-p":"Based on our conversation,we start designing your website. You receive a first version to review at your convenience.","step-3-t":"3. Revision Round","step-3-p":"Not completely satisfied?No problem. You get room for adjustments within the agreed hours.","step-4-t":"4. Delivery","step-4-p":"Your website goes live!We set everything up on your own hosting or arrange this via our services.","port-1":"Our","port-2":"Portfolio","port-visit":"Visit the website","price-title":"Transparent Pricing","price-p":"Quality doesn't have to be unaffordable.","populair":"POPULAR","p-plus":"Everything in Starter plus...","p-btn":"Choose Plan","contact-btn":"Contact Us","p1-1":"Single Page Website","p1-2":"Fully Responsive","p1-3":"Contact Form","p1-4":"Hosting Setup","p2-1":"Up to 5 Pages","p2-2":"SEO Optimized","p2-3":"CMS Integration","p2-4":"Premium Support","p3-1":"Web Applications","p3-2":"Webshops","p3-3":"API Integrations","p3-4":"Custom Features","p3-p":"On request","about-title":"We are Fyxo.","about-p1":"Speed Meets Strategy","about-p2":"We are Sven and Kjell, the faces behind Fyxo. Sven is the technical guy: he builds lightning-fast websites that work perfectly and rank high in Google. Kjell is the conversion expert: he ensures a rock-solid design that turns visitors into paying customers. Together, we don't just create a digital business card, but a website that truly works for your business.","contact-title":"Let's talk","contact-p":"Ready for a website that actually delivers results?","send-btn":"Send Request","label-name":"Name*","label-company":"Company Name","label-email":"Email Address*","label-package":"Which package are you interested in?","label-msg":"Message*","opt-choose":"--Choose an option--","opt-custom":"Custom(On request)","opt-other":"I just have a question","footer-copy":"All rights reserved.","f-1":"Privacy","f-2":"Terms","ty-title":"Thank You!","ty-p1":"Your message has been sent successfully.","ty-p2":"We have received your request and will contact you as soon as possible. In the meantime, you can find more information on our website.","ty-btn1":"Back to Home","ty-btn2":"More information","ty-contact":"Questions? Contact us directly via"}};
         let currentLang='nl';
         const langToggle=document.getElementById('lang-toggle');
         const langText=document.getElementById('lang-text');
@@ -409,6 +388,8 @@
                 document.getElementById('portfolio-desktop-img').src = item.desktopImg;
                 document.getElementById('portfolio-mobile-img').src = item.mobileImg;
                 document.getElementById('portfolio-link').href = item.websiteUrl;
+                document.getElementById('portfolio-desktop-link').href = item.websiteUrl;
+                document.getElementById('portfolio-mobile-link').href = item.websiteUrl;
                 container.style.opacity = '1';
             }, 300);
         }
@@ -426,7 +407,9 @@
         function updateLanguage(){
             document.querySelectorAll('[data-i18n]').forEach(el=>{
                 const key=el.getAttribute('data-i18n');
-                el.innerText=translations[currentLang][key];
+                if (translations[currentLang][key]) {
+                    el.innerText=translations[currentLang][key];
+                }
             });
             document.getElementById('form-name').placeholder=currentLang==='nl'?"John Doe":"John Doe";
             document.getElementById('form-company').placeholder=currentLang==='nl'?"Fyxo B.V.":"Fyxo Inc.";
@@ -466,16 +449,16 @@
     <style>#ai-chat-container{position:fixed;bottom:30px;right:30px;width:380px;max-height:600px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:999;display:flex;flex-direction:column;transform:translateY(400px);transition:transform 0.3s ease;}#ai-chat-container.open{transform:translateY(0);}#ai-chat-header{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);color:white;padding:16px;border-radius:12px 12px 0 0;font-weight:bold;display:flex;justify-content:space-between;align-items:center;}#ai-chat-close{background:none;border:none;color:white;cursor:pointer;font-size:20px;}#ai-chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}.chat-message{padding:10px 12px;border-radius:8px;max-width:85%;word-wrap:break-word;font-size:14px;}.chat-message.user{align-self:flex-end;background:#0ea5e9;color:white;}.chat-message.ai{align-self:flex-start;background:#1e293b;color:#F8FAFC;}#ai-chat-input-area{padding:12px;border-top:1px solid var(--border-color);display:flex;gap:8px;}#ai-chat-input{flex:1;background:#0B111E;border:1px solid var(--border-color);color:var(--text-main);padding:8px 12px;border-radius:6px;outline:none;font-family:'Inter',sans-serif;}#ai-chat-input:focus{border-color:#38bdf8;}#ai-chat-send{background:#0ea5e9;border:none;color:white;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:bold;transition:background 0.3s;}#ai-chat-send:hover{background:#0284c7;}#ai-chat-btn{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:998;transition:all 0.3s ease;border:none;font-family:'Inter',sans-serif;}#ai-chat-btn:hover{transform:scale(1.1);}#ai-chat-btn.hidden{display:none;}</style>
     <script>(function(){const chatContainer=document.createElement('div');chatContainer.id='ai-chat-container';chatContainer.innerHTML=`<div id="ai-chat-header"><span>FYXA</span><button id="ai-chat-close">×</button></div><div id="ai-chat-messages"></div><div id="ai-chat-input-area"><input type="text" id="ai-chat-input" placeholder="Stel een vraag..."/><button id="ai-chat-send">Verzend</button></div>`;const chatBtn=document.createElement('button');chatBtn.id='ai-chat-btn';chatBtn.innerHTML=`<span style="font-size:28px;font-weight:900;color:white;line-height:1;">F</span>`;const aiResponses={'hallo':'Hallo!Welkom bij Fyxo. Hoe kan ik je helpen?','prijzen':'Wij bieden drie pakketten:Starter(€199),Business(€299),en Custom(op aanvraag). Wil je meer details?','starter':'Het Starter pakket(€199)bevat:Single Page Website,Volledig Responsive,Contactformulier,en Hosting Setup.','business':'Het Business pakket(€299)bevat alles van Starter plus:Tot 5 Pagina\'s,SEO Geoptimaliseerd,CMS Integratie,en Premium Support.','contact':'Je kunt ons bereiken via email(info@fyxo.online)of WhatsApp(06 44740265). Vul ook het contactformulier in!','werkwijze':'Onze werkwijze bestaat uit 4 stappen:1. Kennismaking,2. Eerste ontwerp,3. Correctieronde,4. Oplevering.','locatie':'We zijn gevestigd in Ouddorp,Zuid-Holland,Nederland.','dank':'Graag gedaan!Heb je nog meer vragen?','bedankt':'Graag gedaan!Heb je nog meer vragen?','ja':'Prima!Wat wil je graag weten?','nee':'Oké!Voel je vrij om ons te contacteren via het formulier of WhatsApp.','website':'Professionele website in 14 dagen of minder.','chatbot':'We kunnen ook kleine taken uitvoeren zoals het installeren van een chatbot of het maken van een webshop.','default':'Interessante vraag!Ik ben hier om je te helpen. Kun je meer details geven of een ander onderwerp kiezen?(bijv. prijzen,werkwijze,contact)'};function getAIResponse(userMessage){const message=userMessage.toLowerCase().trim();for(const[key,response]of Object.entries(aiResponses)){if(message.includes(key)){return response;}}return aiResponses['default'];}function addMessage(text,sender){const messagesDiv=document.getElementById('ai-chat-messages');const messageEl=document.createElement('div');messageEl.className=`chat-message ${sender}`;messageEl.textContent=text;messagesDiv.appendChild(messageEl);messagesDiv.scrollTop=messagesDiv.scrollHeight;}chatBtn.addEventListener('click',()=>{chatContainer.classList.toggle('open');if(chatContainer.classList.contains('open')){document.getElementById('ai-chat-input').focus();}});document.addEventListener('DOMContentLoaded',()=>{document.getElementById('ai-chat-close').addEventListener('click',()=>{chatContainer.classList.remove('open');});document.getElementById('ai-chat-send').addEventListener('click',()=>{const input=document.getElementById('ai-chat-input');const message=input.value.trim();if(message){addMessage(message,'user');input.value='';setTimeout(()=>{addMessage(getAIResponse(message),'ai');},500);}});document.getElementById('ai-chat-input').addEventListener('keypress',(e)=>{if(e.key==='Enter'){document.getElementById('ai-chat-send').click();}});});if(document.body){document.body.appendChild(chatContainer);document.body.appendChild(chatBtn);}else{document.addEventListener('DOMContentLoaded',()=>{document.body.appendChild(chatContainer);document.body.appendChild(chatBtn);});}})();</script>
     <script>
-function showPage(pageId, displayStyle = 'flex') {
+function showThankYouPage() {
     document.querySelectorAll('body > nav, body > section, body > footer, #ai-chat-btn').forEach(el => {
-        if (el.id !== pageId && el.tagName !== 'NAV') {
+        if (el.id !== 'thank-you-section') {
             el.style.display = 'none';
         }
     });
-    const section = document.getElementById(pageId);
-    if (section) {
-        section.classList.remove('hidden');
-        section.style.display = displayStyle;
+    const tySection = document.getElementById('thank-you-section');
+    if (tySection) {
+        tySection.classList.remove('hidden');
+        tySection.style.display = 'flex';
         if (typeof updateLanguage === 'function') {
             updateLanguage();
         }
@@ -485,15 +468,15 @@ function showPage(pageId, displayStyle = 'flex') {
 
 function returnToHome() {
     document.querySelectorAll('body > nav, body > section, body > footer, #ai-chat-btn').forEach(el => {
-        el.style.display = '';
-    });
-    ['thank-you-section', 'privacy-section', 'voorwaarden-section'].forEach(id => {
-        const sec = document.getElementById(id);
-        if(sec) {
-            sec.classList.add('hidden');
-            sec.style.display = 'none';
+        if (el.id !== 'thank-you-section') {
+            el.style.display = '';
         }
     });
+    const tySection = document.getElementById('thank-you-section');
+    if (tySection) {
+        tySection.classList.add('hidden');
+        tySection.style.display = 'none';
+    }
     window.scrollTo(0, 0);
     if (typeof updateLanguage === 'function') {
         updateLanguage();
@@ -502,22 +485,14 @@ function returnToHome() {
 
 window.addEventListener('load', function() {
     if (window.location.hash === '#thank-you-section') {
-        showPage('thank-you-section');
-    } else if (window.location.hash === '#privacy') {
-        showPage('privacy-section');
-    } else if (window.location.hash === '#voorwaarden') {
-        showPage('voorwaarden-section');
+        showThankYouPage();
     }
 });
 
 window.addEventListener('hashchange', function() {
     if (window.location.hash === '#thank-you-section') {
-        showPage('thank-you-section');
-    } else if (window.location.hash === '#privacy') {
-        showPage('privacy-section');
-    } else if (window.location.hash === '#voorwaarden') {
-        showPage('voorwaarden-section');
-    } else {
+        showThankYouPage();
+    } else if (window.location.hash === '#home' || window.location.hash === '') {
         returnToHome();
     }
 });
