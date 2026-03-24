@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fyxo | High-Performance Groeimotoren voor het MKB</title>
+    <title>Fyxo | High-Performance Web Architecture & Conversie</title>
     
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
@@ -22,19 +22,43 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-    <meta name="description" content="Fyxo bouwt high-performance, conversie-geoptimaliseerde webapplicaties die razendsnel laden en passieve bezoekers omzetten in loyale klanten.">
-    <meta property="og:title" content="Fyxo | High-Performance Groeimotoren">
+    <meta name="description" content="Fyxo ontwerpt en ontwikkelt de snelste websites van Nederland (100/100 Lighthouse). Wij converteren uw passieve bezoekers naar loyale B2B klanten.">
+    <meta property="og:title" content="Fyxo | High-End Performance Agency">
+    <meta property="og:description" content="Uw website is uw beste verkoper—mits hij niet te traag is. Wij bouwen de snelste websites van Nederland.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
     <meta property="og:url" content="https://fyxo.online">
     <meta property="og:type" content="website">
-
     <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/hWeEHrCuhewmgcpl.png">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Fyxo Web Architecture",
+      "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/hWeEHrCuhewmgcpl.png",
+      "@id": "https://fyxo.online",
+      "url": "https://fyxo.online",
+      "telephone": "+31644740265",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ouddorp",
+        "addressRegion": "Zuid-Holland",
+        "addressCountry": "NL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.8133,
+        "longitude": 3.9350
+      },
+      "priceRange": "€€€",
+      "description": "Fyxo is een High-End Performance Agency gespecialiseerd in bliksemsnelle, conversie-geoptimaliseerde webapplicaties en SEO strategieën voor het MKB."
+    }
+    </script>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
     <style>
         :root{--fyxo-blue:#0ea5e9;--fyxo-cyan:#38bdf8;--bg-dark:#0B111E;--bg-card:#111827;--border-color:#1e293b;--text-main:#F8FAFC;--text-muted:#94A3B8;}
-        
         html, body { overflow-x: hidden; width: 100%; max-width: 100vw; position: relative; }
         body{background-color:var(--bg-dark);color:var(--text-main);font-family:'Inter',sans-serif;}
         
@@ -77,8 +101,8 @@
         .gradient-border-wrap { position: relative; border-radius: 1.1rem; background: linear-gradient(135deg, rgba(56,189,248,0.8), rgba(14,165,233,0.2), rgba(56,189,248,0.8)); padding: 2px; }
         .gradient-border-inner { background: #0B111E; border-radius: 1rem; height: 100%; }
         
-        /* Lighthouse Circle Progress */
-        .lh-circle { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #22c55e; font-weight: 900; font-size: 1.1rem; color: #22c55e; box-shadow: 0 0 15px rgba(34,197,94,0.2), inset 0 0 10px rgba(34,197,94,0.2); }
+        /* Tracker Progress Rings */
+        .progress-ring__circle { transition: stroke-dashoffset 1s ease-out; transform: rotate(-90deg); transform-origin: 50% 50%; stroke-linecap: round; }
     </style>
 </head>
 <body class="relative">
@@ -114,18 +138,17 @@
             
             <div class="hidden md:flex items-center gap-10 font-medium">
                 <a href="#home" class="nav-link active-link" data-i18n="nav-home">Home</a>
-                <a href="#werkwijze" class="nav-link" data-i18n="nav-work">Werkwijze</a>
-                <a href="#portfolio" class="nav-link" data-i18n="nav-portfolio">Portfolio</a>
-                <a href="#prijzen" class="nav-link" data-i18n="nav-prices">Prijzen</a>
-                <a href="#over-ons" class="nav-link" data-i18n="nav-about">Over ons</a>
-                <a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a>
+                <a href="#kwaliteit" class="nav-link" data-i18n="nav-badge">Onze Standaard</a>
+                <a href="#portfolio" class="nav-link" data-i18n="nav-portfolio">Cases</a>
+                <a href="#prijzen" class="nav-link" data-i18n="nav-prices">Investering</a>
+                <a href="#over-ons" class="nav-link" data-i18n="nav-about">Missie</a>
             </div>
             
-            <div class="hidden md:block shrink-0">
-                <button id="lang-toggle" aria-label="Taal wijzigen" class="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white hover:bg-white/5 transition cursor-pointer bg-[#111827]/50">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <div class="hidden md:flex shrink-0 items-center gap-4">
+                <button id="lang-toggle" aria-label="Taal wijzigen" class="flex items-center gap-2 border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white hover:bg-white/5 transition cursor-pointer bg-[#111827]/50">
                     <span class="text-sm font-bold" id="lang-text">EN</span>
                 </button>
+                <a href="#contact" class="bg-brand-blue text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-sky-400 transition-colors shadow-[0_0_15px_rgba(56,189,248,0.4)]" data-i18n="nav-contact">Contact</a>
             </div>
 
             <div class="md:hidden flex items-center justify-end gap-2 shrink-0">
@@ -141,50 +164,69 @@
         <div id="mobile-menu" class="hidden md:hidden bg-[#0B111E]/95 backdrop-blur-xl border-b border-[#1e293b] absolute top-full left-0 w-full shadow-2xl">
             <div class="flex flex-col px-6 py-5 gap-5 font-medium">
                 <a href="#home" class="mobile-nav-link text-brand-blue" data-i18n="nav-home">Home</a>
-                <a href="#werkwijze" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-work">Werkwijze</a>
-                <a href="#portfolio" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-portfolio">Portfolio</a>
-                <a href="#prijzen" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-prices">Prijzen</a>
-                <a href="#over-ons" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-about">Over ons</a>
+                <a href="#kwaliteit" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-badge">Onze Standaard</a>
+                <a href="#portfolio" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-portfolio">Cases</a>
+                <a href="#prijzen" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-prices">Investering</a>
+                <a href="#over-ons" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-about">Missie</a>
                 <a href="#contact" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="relative pt-40 pb-20 hero-bg overflow-hidden flex items-center min-h-[90vh]">
+    <section id="home" class="relative pt-40 pb-20 hero-bg overflow-hidden flex flex-col justify-center min-h-[100vh]">
         <div class="lightning-overlay"></div>
-        <div class="max-w-5xl mx-auto text-center relative z-10 px-6 w-full animate-hero-fade">
+        <div class="max-w-5xl mx-auto text-center relative z-10 px-6 w-full animate-hero-fade flex flex-col items-center">
             
+            <div class="inline-block px-4 py-1.5 rounded-full border border-brand-blue/30 bg-brand-blue/10 text-brand-blue font-semibold text-sm mb-6 uppercase tracking-widest backdrop-blur-sm" data-i18n="hero-tag">
+                Web Architecture & Conversie
+            </div>
+
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tighter drop-shadow-2xl">
-                <span data-i18n="hero-1">Wij bouwen geen websites.</span> <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 filter drop-shadow-[0_0_20px_rgba(56,189,248,0.4)]" data-i18n="hero-2">Wij bouwen groeimotoren.</span>
+                <span data-i18n="hero-1">Uw website is uw beste verkoper</span><br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 filter drop-shadow-[0_0_20px_rgba(56,189,248,0.4)]" data-i18n="hero-2">— mits hij niet te traag is.</span>
             </h1>
             
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto drop-shadow-md leading-relaxed" data-i18n="hero-p">
-                Verander uw online visitekaartje in een 24/7 topverkoper. Laadt in < 0.8 seconden. Ontworpen voor maximale conversie in het MKB.
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto drop-shadow-md leading-relaxed font-light" data-i18n="hero-p">
+                Wij bouwen de snelste websites van Nederland die passieve bezoekers omzetten in loyale klanten. Geen templates. Pure performance.
             </p>
             
-            <div class="flex justify-center gap-6 mb-10">
-                <div class="flex flex-col items-center">
-                    <div class="lh-circle">100</div>
-                    <span class="text-xs text-gray-400 mt-2 font-semibold tracking-wider uppercase">Performance</span>
+            <div class="flex flex-wrap justify-center gap-6 sm:gap-10 mb-12">
+                <div class="flex flex-col items-center group">
+                    <div class="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-green-500/10 rounded-full border border-green-500/30 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+                        <svg class="absolute inset-0 w-full h-full text-green-500" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="8" class="progress-ring__circle" stroke-dasharray="283" stroke-dashoffset="0"></circle>
+                        </svg>
+                        <span class="text-xl sm:text-2xl font-black text-green-400">100</span>
+                    </div>
+                    <span class="text-xs text-gray-400 mt-3 font-semibold tracking-widest uppercase">Performance</span>
                 </div>
-                <div class="flex flex-col items-center">
-                    <div class="lh-circle">100</div>
-                    <span class="text-xs text-gray-400 mt-2 font-semibold tracking-wider uppercase">SEO</span>
+                <div class="flex flex-col items-center group">
+                    <div class="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-green-500/10 rounded-full border border-green-500/30 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+                        <svg class="absolute inset-0 w-full h-full text-green-500" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="8" class="progress-ring__circle" stroke-dasharray="283" stroke-dashoffset="0"></circle>
+                        </svg>
+                        <span class="text-xl sm:text-2xl font-black text-green-400">100</span>
+                    </div>
+                    <span class="text-xs text-gray-400 mt-3 font-semibold tracking-widest uppercase">Accessibility</span>
                 </div>
-                <div class="flex flex-col items-center">
-                    <div class="lh-circle">100</div>
-                    <span class="text-xs text-gray-400 mt-2 font-semibold tracking-wider uppercase">Best Practices</span>
+                <div class="flex flex-col items-center group">
+                    <div class="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-green-500/10 rounded-full border border-green-500/30 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+                        <svg class="absolute inset-0 w-full h-full text-green-500" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="8" class="progress-ring__circle" stroke-dasharray="283" stroke-dashoffset="0"></circle>
+                        </svg>
+                        <span class="text-xl sm:text-2xl font-black text-green-400">100</span>
+                    </div>
+                    <span class="text-xs text-gray-400 mt-3 font-semibold tracking-widest uppercase">SEO</span>
                 </div>
             </div>
             
             <div class="flex flex-col items-center gap-6">
                 <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 w-full sm:w-auto">
-                    <a href="#contact" class="btn-gradient text-white font-bold px-10 py-4 rounded-full flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg" data-i18n="hero-btn-1">
-                        Plan een Strategiegesprek
+                    <a href="#contact" class="btn-gradient text-white font-bold px-10 py-4 rounded-full flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg text-lg" data-i18n="hero-btn-1">
+                        Bespreek Uw Groei
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
-                    <button onclick="openModal('audit-modal')" class="bg-[#111827]/60 backdrop-blur-sm hover:bg-[#1e293b]/90 border border-white/10 px-10 py-4 rounded-full transition duration-300 text-gray-200 hover:text-white w-full sm:w-auto flex items-center justify-center gap-2" data-i18n="hero-btn-2">
+                    <button onclick="openModal('audit-modal')" class="bg-[#111827]/80 backdrop-blur-md hover:bg-[#1e293b] border border-white/20 px-10 py-4 rounded-full transition duration-300 text-gray-200 hover:text-white w-full sm:w-auto flex items-center justify-center gap-2 text-lg shadow-xl" data-i18n="hero-btn-2">
                         <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                         Gratis Video Audit
                     </button>
@@ -193,62 +235,55 @@
         </div>
     </section>
 
-    <section id="werkwijze" class="max-w-7xl mx-auto relative z-10">
-        <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center" data-aos="fade-up" data-i18n="steps-title">Jouw weg naar succes in <span class="text-brand-blue">4 stappen</span></h2>
-        <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-            <div class="glass-card p-8 md:p-10 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-14 h-14 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+    <section id="kwaliteit" class="max-w-7xl mx-auto relative z-10 py-24">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4 text-center" data-aos="fade-up" data-i18n="badge-title">Onze <span class="text-brand-blue">Drievoudige Garantie</span></h2>
+        <p class="text-muted text-center mb-16 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100" data-i18n="badge-p">Het Fyxo Performance Keurmerk betekent dat uw site op de hoogste industriestandaarden draait.</p>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-10 flex flex-col items-center text-center gap-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-full flex items-center justify-center text-white shadow-[0_0_30px_rgba(14,165,233,0.4)] mb-2">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-main mt-2" data-i18n="step-1-t">1. Kennismaking & Audit</h3>
-                <p class="text-muted leading-relaxed text-lg" data-i18n="step-1-p">We starten met een diepgaande analyse. Waar lekt uw huidige website conversie? Wat is uw exacte doelgroep? We maken een strategisch plan zonder kleine lettertjes.</p>
+                <h3 class="text-2xl font-bold text-main" data-i18n="badge-1-t">Extreme Snelheid</h3>
+                <p class="text-muted leading-relaxed" data-i18n="badge-1-p">100/100 Lighthouse Score. Wij bouwen met moderne frameworks (Next.js/Astro) die in een oogwenk laden. Omdat elke seconde wachten u geld kost.</p>
             </div>
-            <div class="glass-card p-8 md:p-10 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-14 h-14 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+            
+            <div class="glass-card p-10 flex flex-col items-center text-center gap-4 border-t-4 border-t-brand-blue" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-full flex items-center justify-center text-white shadow-[0_0_30px_rgba(14,165,233,0.4)] mb-2">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-main mt-2" data-i18n="step-2-t">2. UX/UI Ontwerp</h3>
-                <p class="text-muted leading-relaxed text-lg" data-i18n="step-2-p">Op basis van bewezen conversie-psychologie ontwerpen we de interface. U ontvangt een interactief design dat gebouwd is om bezoekers te overtuigen.</p>
+                <h3 class="text-2xl font-bold text-main" data-i18n="badge-2-t">Conversie Psychologie</h3>
+                <p class="text-muted leading-relaxed" data-i18n="badge-2-p">Frictieloos design gebaseerd op neuromarketing. Wij begeleiden het oog van de bezoeker en maken het ze onmogelijk om niet te klikken.</p>
             </div>
-            <div class="glass-card p-8 md:p-10 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-14 h-14 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+
+            <div class="glass-card p-10 flex flex-col items-center text-center gap-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-full flex items-center justify-center text-white shadow-[0_0_30px_rgba(14,165,233,0.4)] mb-2">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-main mt-2" data-i18n="step-3-t">3. High-Performance Build</h3>
-                <p class="text-muted leading-relaxed text-lg" data-i18n="step-3-p">Onze developers bouwen de site met moderne frameworks (Next.js/Tailwind). Resultaat: een bliksemsnelle code-base die Google domineert.</p>
-            </div>
-            <div class="glass-card p-8 md:p-10 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-14 h-14 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.5-1 1-4c2 0 3 .5 3 2.5a2 2 0 0 1 1 1.5z"></path><path d="M15 9V4s1 .5 4 1c0 2-.5 3-2.5 3a2 2 0 0 1-1.5 1z"></path></svg>
-                </div>
-                <h3 class="text-2xl font-bold text-main mt-2" data-i18n="step-4-t">4. Oplevering & Groei</h3>
-                <p class="text-muted leading-relaxed text-lg" data-i18n="step-4-p">Uw groeimotor gaat live! Wij zetten alles perfect klaar en monitoren de analytics om zeker te zijn van een stijging in aanvragen en conversies.</p>
+                <h3 class="text-2xl font-bold text-main" data-i18n="badge-3-t">AI-Ready Visibility</h3>
+                <p class="text-muted leading-relaxed" data-i18n="badge-3-p">Gevonden door AI. Met geavanceerde Schema.org implementaties wordt uw bedrijf de bron voor antwoorden in Google, Gemini en ChatGPT.</p>
             </div>
         </div>
     </section>
 
     <section id="portfolio" class="bg-[#0B111E]/50 border-t border-white/5 pt-24 overflow-hidden relative z-10">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center" data-aos="fade-up"><span data-i18n="port-1">Bewezen</span> <span class="text-brand-blue" data-i18n="port-2">Resultaten</span></h2>
+            <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center" data-aos="fade-up"><span data-i18n="port-1">Resultaat-gericht</span> <span class="text-brand-blue" data-i18n="port-2">Portfolio</span></h2>
             
-            <div class="relative max-w-5xl mx-auto glass-card p-8 md:p-12 overflow-visible" data-aos="fade-up" data-aos-delay="100">
-
-                <div id="portfolio-container" class="transition-opacity duration-500 flex flex-col items-center mt-6 cursor-grab active:cursor-grabbing touch-pan-y">
+            <div class="relative max-w-5xl mx-auto glass-card p-6 sm:p-10 md:p-16 overflow-visible" data-aos="fade-up" data-aos-delay="100">
+                <div id="portfolio-container" class="transition-opacity duration-500 flex flex-col items-center mt-2 cursor-grab active:cursor-grabbing touch-pan-y">
                     
-                    <div class="text-center md:text-left w-full mb-12 max-w-4xl mx-auto bg-white/5 p-6 rounded-xl border border-white/10 shadow-inner">
-                        <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
-                            <p id="portfolio-customer" class="font-bold text-white text-xl uppercase tracking-wider">Klant Naam</p>
-                            <svg class="w-6 h-6 text-[#22c55e]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <div class="text-left w-full mb-12 max-w-4xl mx-auto bg-[#0B111E]/80 p-8 rounded-2xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                        <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                            <p id="portfolio-customer" class="font-bold text-white text-2xl tracking-wide">Klant Naam</p>
+                            <span class="bg-green-500/20 text-green-400 text-xs font-bold px-2 py-1 rounded border border-green-500/30 uppercase tracking-wider">Fyxo Verified</span>
                         </div>
-                        <p id="portfolio-review" class="text-base md:text-lg text-gray-300 leading-relaxed">
-                            Loading case study data...
-                        </p>
+                        <div id="portfolio-review" class="text-base md:text-lg text-gray-300 leading-relaxed">
+                            </div>
                     </div>
 
                     <div class="flex flex-col md:flex-row justify-center items-end relative w-full mt-4">
-                        
                         <div class="relative w-full md:w-[65%] max-w-[700px] mx-auto md:mx-0 z-10">
-                            
                             <div class="absolute top-[-15%] left-[-2%] md:top-[-12%] md:left-[-5%] w-[40%] z-40 pointer-events-auto hover:z-50">
                                 <a id="portfolio-link" href="#" target="_blank" class="flex flex-col items-center group cursor-pointer decoration-transparent">
                                     <span class="text-brand-blue font-bold text-sm sm:text-xl transform -rotate-12 mb-1 group-hover:text-white transition-colors whitespace-nowrap" style="font-family: 'Comic Sans MS', cursive, sans-serif;" data-i18n="port-visit">Bekijk Live Case</span>
@@ -282,7 +317,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -300,80 +334,93 @@
 
     <section id="prijzen" class="bg-[#0B111E] border-y border-white/5 relative z-10">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-center" data-aos="fade-up" data-i18n="price-title">Investering in <span class="text-brand-blue">Groei</span></h2>
-            <p class="text-muted text-center mb-16 text-lg" data-aos="fade-up" data-aos-delay="100" data-i18n="price-p">Heldere tarieven. Focus op Return On Investment.</p>
-            <div class="grid md:grid-cols-3 gap-8 items-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-center" data-aos="fade-up" data-i18n="price-title">Eenmalige Investering. <span class="text-brand-blue">Blijvend Rendement.</span></h2>
+            <p class="text-muted text-center mb-16 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100" data-i18n="price-p">Onze pakketten zijn ontworpen als een Fixed One-Time Investment die zichzelf terugverdient door een bewezen toename in conversie.</p>
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
                 
-                <div class="glass-card p-10 h-full" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-bold mb-2">Digital Foundation</h3>
-                    <div class="text-4xl font-black mb-6">€199 <span class="text-sm font-normal text-muted">ex. btw</span></div>
-                    <ul class="text-muted space-y-4 mb-10">
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p1-1">High-Speed Landingpage</span></li>
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p1-2">Mobile-First Design</span></li>
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p1-3">Conversie Formulier</span></li>
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p1-4">Premium Hosting Setup</span></li>
+                <div class="glass-card p-10 flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-2">Performance Launch</h3>
+                    <p class="text-sm text-gray-400 mb-6 min-h-[40px]">Perfect voor lokale bedrijven die onmiddellijk snelheid & zichtbaarheid nodig hebben.</p>
+                    <div class="text-4xl font-black mb-6">€899 <span class="text-sm font-normal text-muted">ex. btw</span></div>
+                    <ul class="text-muted space-y-4 mb-10 flex-grow">
+                        <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p1-1">High-Speed Landingpage</span></li>
+                        <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p1-2">Mobile-First Conversie Design</span></li>
+                        <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p1-3">Slim Lead-Capture Formulier</span></li>
+                        <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p1-4">Premium Vercel Edge Hosting</span></li>
                     </ul>
-                    <a href="#contact" class="block text-center py-3 rounded-lg border border-[#1e293b] hover:bg-[#1e293b]/80 transition mt-auto" data-i18n="p-btn">Kies Foundation</a>
+                    <a href="#contact" class="block text-center py-4 rounded-xl border border-[#1e293b] hover:bg-[#1e293b]/80 hover:text-white transition mt-auto font-semibold" data-i18n="p-btn">Kies Launch</a>
                 </div>
                 
                 <div class="gradient-border-wrap scale-105 z-10" data-aos="fade-up" data-aos-delay="300">
                     <div class="gradient-border-inner p-10 relative overflow-hidden flex flex-col h-full">
                         <div class="absolute top-5 right-[-35px] bg-gradient-to-r from-fyxo-blue to-fyxo-cyan text-white text-xs font-bold py-1.5 px-10 rotate-45 shadow-lg shadow-blue-500/30" data-i18n="populair">POPULAIR</div>
-                        <h3 class="text-xl font-bold mb-2 text-brand-blue">Growth Engine</h3>
-                        <div class="text-4xl font-black mb-6">€299 <span class="text-sm font-normal text-muted">ex. btw</span></div>
+                        <h3 class="text-2xl font-bold mb-2 text-brand-blue">Market Leader</h3>
+                        <p class="text-sm text-gray-400 mb-6 min-h-[40px]">De volledige groeimotor. Focus op organische schaalbaarheid en dominantie in Google.</p>
+                        <div class="text-4xl font-black mb-6">€1.799 <span class="text-sm font-normal text-muted">ex. btw</span></div>
                         <ul class="text-muted space-y-4 mb-10 font-medium text-white/90 flex-grow">
-                            <li data-i18n="p-plus" class="mb-2 italic text-brand-blue">Alles van Foundation plus...</li>
-                            <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-1">Multi-page Structuur</span></li>
-                            <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-2">Diepgaande SEO Opties</span></li>
-                            <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-3">CMS Systeem Integratie</span></li>
-                            <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-4">Prio Support & Analytics</span></li>
+                            <li data-i18n="p-plus" class="mb-2 italic text-brand-blue border-b border-brand-blue/20 pb-2">Alles van Launch, plus:</li>
+                            <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p2-1">Multi-page Structuur (tot 8)</span></li>
+                            <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p2-2">Diepgaande SEO & Schema.org</span></li>
+                            <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p2-3">Headless CMS Integratie</span></li>
+                            <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p2-4">Advanced Analytics Tracking</span></li>
                         </ul>
-                        <a href="#contact" class="block text-center py-3 rounded-lg btn-gradient text-white font-bold mt-auto" data-i18n="p-btn-2">Kies Growth Engine</a>
+                        <a href="#contact" class="block text-center py-4 rounded-xl btn-gradient text-white font-bold mt-auto text-lg shadow-lg" data-i18n="p-btn-2">Kies Market Leader</a>
                     </div>
                 </div>
 
-                <div class="glass-card p-10 h-full" data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="text-xl font-bold mb-2">Digital Transformation</h3>
-                    <div class="text-4xl font-black mb-6 text-main" data-i18n="p3-p">Vanaf €2.500</div>
-                    <p class="text-xs text-brand-blue font-semibold mb-4 leading-relaxed">Voor bedrijven die hun processen willen automatiseren.</p>
+                <div class="glass-card p-10 flex flex-col h-full" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-2xl font-bold mb-2">Enterprise Custom</h3>
+                    <p class="text-sm text-brand-blue font-semibold mb-6 min-h-[40px]">Voor bedrijven die complexe processen willen automatiseren via het web.</p>
+                    <div class="text-4xl font-black mb-6 text-main" data-i18n="p3-p">Vanaf €4.500</div>
                     <ul class="text-muted space-y-4 mb-10 flex-grow">
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p3-1">Maatwerk Webapplicaties</span></li>
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p3-2">Schaalbare E-commerce</span></li>
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p3-3">Naadloze API-Koppelingen</span></li>
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p3-4">Geavanceerde Datastructuur</span></li>
+                        <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p3-1">Maatwerk Webapplicaties</span></li>
+                        <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p3-2">Schaalbare E-commerce Systemen</span></li>
+                        <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p3-3">Naadloze API-Koppelingen</span></li>
+                        <li><span class="text-brand-blue mr-2">✓</span> <span data-i18n="p3-4">Uitgebreide Datastructuur</span></li>
                     </ul>
-                    <a href="#contact" class="block text-center py-3 rounded-lg border border-[#1e293b] hover:bg-[#1e293b]/80 transition mt-auto" data-i18n="contact-btn">Neem Contact Op</a>
+                    <a href="#contact" class="block text-center py-4 rounded-xl border border-[#1e293b] hover:bg-[#1e293b]/80 hover:text-white transition mt-auto font-semibold" data-i18n="contact-btn">Plan Transformatie</a>
                 </div>
             </div>
         </div>
     </section>
     
     <section id="over-ons" class="max-w-7xl mx-auto py-20 md:py-32 px-6 relative z-10">
-        <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <div data-aos="fade-right">
-                <div class="relative flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center flex-wrap">
-                    <div class="absolute inset-0 bg-brand-blue opacity-15 blur-[80px] rounded-full"></div>
+                <div class="relative flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
+                    <div class="absolute inset-0 bg-brand-blue opacity-15 blur-[100px] rounded-full"></div>
                     
-                    <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full border border-white/10 relative z-10 flex-shrink-0 group overflow-hidden cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                        <div class="absolute inset-0 bg-[#0ea5e9]/20 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0 z-20 pointer-events-none"></div>
-                        <img src="sven.jpg" alt="Sven" loading="lazy" decoding="async" class="w-full h-full object-cover object-[90%_25%] transition-transform duration-500 group-hover:scale-110">
+                    <div class="relative group">
+                        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-[#0B111E] shadow-[0_0_40px_rgba(0,0,0,0.8)] overflow-hidden z-10 relative">
+                            <div class="absolute inset-0 bg-[#0ea5e9]/20 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0 z-20 pointer-events-none"></div>
+                            <img src="sven.jpg" alt="Sven - Lead Performance Architect" loading="lazy" decoding="async" class="w-full h-full object-cover object-[90%_25%] transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#111827] border border-white/10 px-4 py-1.5 rounded-full z-30 whitespace-nowrap text-center shadow-lg">
+                            <p class="text-white font-bold text-sm">Sven</p>
+                            <p class="text-brand-blue text-xs font-semibold uppercase tracking-wider">Performance Architect</p>
+                        </div>
                     </div>
 
-                    <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full border border-white/10 relative z-10 flex-shrink-0 group overflow-hidden cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                        <div class="absolute inset-0 bg-[#0ea5e9]/20 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0 z-20 pointer-events-none"></div>
-                        <img src="kjell.jpg" alt="Kjell" loading="lazy" decoding="async" class="w-full h-full object-cover object-[10%_25%] transition-transform duration-500 group-hover:scale-110">
+                    <div class="relative group sm:-ml-10 sm:mt-20">
+                        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-[#0B111E] shadow-[0_0_40px_rgba(0,0,0,0.8)] overflow-hidden z-20 relative">
+                            <div class="absolute inset-0 bg-[#0ea5e9]/20 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0 z-20 pointer-events-none"></div>
+                            <img src="kjell.jpg" alt="Kjell - Chief Conversion Strategist" loading="lazy" decoding="async" class="w-full h-full object-cover object-[10%_25%] transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#111827] border border-white/10 px-4 py-1.5 rounded-full z-30 whitespace-nowrap text-center shadow-lg">
+                            <p class="text-white font-bold text-sm">Kjell</p>
+                            <p class="text-brand-blue text-xs font-semibold uppercase tracking-wider">Conversion Strategist</p>
+                        </div>
                     </div>
 
                 </div>
             </div>
             <div data-aos="fade-left">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6" data-i18n="about-title">Wij zijn <span class="text-brand-blue">Fyxo.</span></h2>
-                <p class="text-base sm:text-lg text-brand-blue leading-relaxed mb-4 md:mb-6 font-semibold uppercase tracking-wider" data-i18n="about-p1">
-                    Snelheid Ontmoet Strategie
-                </p>
-                <p class="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed" data-i18n="about-p2">
-                    Wij zijn Sven en Kjell, de gezichten achter Fyxo. Sven is de technische architect: hij bouwt razendsnelle websites (Next.js & Tailwind) die perfect schalen en de Core Web Vitals van Google domineren. Kjell is de conversie-strateeg: hij focust zich volledig op neuromarketing en UX-design om passieve bezoekers om te zetten in actieve leads. Wij bouwen geen digitale visitekaartjes; we bouwen uw beste verkoper.
-                </p>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-6 leading-tight" data-i18n="about-title">Wij repareren het internet, <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">één snelle website per keer.</span></h2>
+                <div class="space-y-4 text-gray-300 text-lg leading-relaxed font-light" data-i18n="about-p2">
+                    <p>Wij hebben Fyxo opgericht uit frustratie. We zagen dat 90% van de bedrijfswebsites traag, onduidelijk en onvindbaar is. Bedrijven verliezen dagelijks omzet aan concurrenten, simpelweg omdat hun website niet presteert.</p>
+                    <p>Als dual-leadership team hebben wij de oplossing. <strong class="text-white font-semibold">Sven</strong> is de technische architect: hij stript alle onnodige code weg en bouwt platforms die Google's Core Web Vitals domineren. <strong class="text-white font-semibold">Kjell</strong> is de conversie-strateeg: hij ontwerpt frictieloze funnels gebaseerd op neuromarketing.</p>
+                    <p>Geen trage templates. Geen vage praatjes. Wij bouwen exclusieve high-performance platforms voor bedrijven die hun digitale groei serieus nemen.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -385,7 +432,7 @@
                 <p class="text-gray-400 mb-8 leading-relaxed">Om laadtijden onder de 1 seconde te garanderen, vermijden wij logge templates. Wij gebruiken uitsluitend enterprise-grade technologieën.</p>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                     <div class="glass-card p-4 flex flex-col items-center justify-center gap-2 hover:border-[#38bdf8]">
-                        <span class="font-bold text-gray-200">Next.js</span>
+                        <span class="font-bold text-gray-200">Next.js / Astro</span>
                     </div>
                     <div class="glass-card p-4 flex flex-col items-center justify-center gap-2 hover:border-[#38bdf8]">
                         <span class="font-bold text-gray-200">Tailwind CSS</span>
@@ -406,15 +453,15 @@
             </div>
             
             <div data-aos="fade-left">
-                <h2 class="text-3xl font-bold mb-6 text-white">Veelgestelde <span class="text-brand-blue">Vragen</span></h2>
+                <h2 class="text-3xl font-bold mb-6 text-white">AI-Ready <span class="text-brand-blue">Infrastructuur</span></h2>
                 <div class="space-y-4">
                     <div class="glass-card p-6">
-                        <h4 class="font-bold text-white mb-2 text-lg">Hoe verbetert een snelle website mijn Google ranking?</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">Google gebruikt 'Core Web Vitals' als rankingfactor. Een laadtijd onder de 2.5s (LCP) wordt beloond met een hogere positie in zoekresultaten en verlaagt de kosten van uw advertentiecampagnes.</p>
+                        <h4 class="font-bold text-white mb-2 text-lg">Hoe verbetert Zero-JS de conversie?</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Door JavaScript te minimaliseren (Partial Hydration) garanderen we directe interactiviteit. Gebruikers hoeven niet te wachten, wat het bounce-percentage minimaliseert en de conversie direct verhoogt.</p>
                     </div>
                     <div class="glass-card p-6">
-                        <h4 class="font-bold text-white mb-2 text-lg">Wat is het verschil tussen een standaard template en Fyxo?</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">Standaard templates (zoals verouderde WordPress thema's) bevatten onnodige code ('bloat') wat vertraagt. Wij bouwen schone, op maat gemaakte code (headless), puur geoptimaliseerd voor snelheid en maximale conversie.</p>
+                        <h4 class="font-bold text-white mb-2 text-lg">Waarom bouwen jullie AI-Ready?</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Zoekmachines evolueren naar AI-modellen (zoals Gemini en ChatGPT). Door perfect gestructureerde Schema.org JSON-LD data in onze sites te bouwen, zorgen we dat deze AI's uw bedrijf als de primaire autoriteit in uw sector citeren.</p>
                     </div>
                 </div>
             </div>
@@ -424,8 +471,8 @@
     <section id="contact" class="max-w-6xl mx-auto py-20 md:py-32 border-t border-white/5 px-6 relative z-10">
         <div class="grid lg:grid-cols-2 gap-16 items-start">
             <div data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="contact-title">Laten we <span class="text-brand-blue">praten</span></h2>
-                <p class="text-gray-300 mb-10 text-lg" data-i18n="contact-p">Klaar voor een groeimotor die écht ROI oplevert?</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="contact-title">Start de <span class="text-brand-blue">Transformatie</span></h2>
+                <p class="text-gray-300 mb-10 text-lg" data-i18n="contact-p">Klaar voor een groeimotor die écht Return On Investment oplevert?</p>
                 <div class="space-y-8 text-left">
                     <div class="flex items-start gap-4 group cursor-default">
                         <div class="w-12 h-12 bg-[#0ea5e9]/10 rounded-xl flex items-center justify-center text-brand-blue shrink-0 group-hover:bg-[#0ea5e9]/20 transition-colors border border-white/5">
@@ -458,7 +505,7 @@
             </div>
             
             <form action="https://formsubmit.co/sven@fyxo.online" method="POST" class="space-y-5 text-left glass-card p-8 md:p-10 shadow-[0_20px_40px_rgba(0,0,0,0.5)]" data-aos="fade-up" data-aos-delay="200">
-                <input type="hidden" name="_subject" value="Nieuwe aanvraag via Fyxo.online">
+                <input type="hidden" name="_subject" value="Nieuwe strategische aanvraag via Fyxo.online">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_next" value="https://fyxo.online#thank-you-section">
                 
@@ -482,10 +529,10 @@
                         <div class="relative">
                             <select name="package" id="form-package" class="bg-[#0B111E]/80 border border-white/10 rounded-xl p-4 outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] transition w-full text-gray-300 appearance-none cursor-pointer">
                                 <option value="none" disabled selected data-i18n="opt-choose">-- Kies een optie --</option>
-                                <option value="starter">Digital Foundation (€199)</option>
-                                <option value="business">Growth Engine (€299)</option>
-                                <option value="custom" data-i18n="opt-custom">Digital Transformation (Vanaf €2.500)</option>
-                                <option value="other" data-i18n="opt-other">Ik heb alleen een vraag</option>
+                                <option value="starter">Digital Foundation</option>
+                                <option value="business">Growth Engine</option>
+                                <option value="custom" data-i18n="opt-custom">Digital Transformation</option>
+                                <option value="other" data-i18n="opt-other">Ik wil een strategiegesprek</option>
                             </select>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-muted">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -494,14 +541,14 @@
                     </div>
                 </div>
                 <div>
-                    <label for="form-msg" class="block text-sm font-semibold text-gray-300 mb-2" data-i18n="label-msg">Bericht *</label>
-                    <textarea name="message" id="form-msg" placeholder="Vertel ons over je doelen..." rows="4" required class="bg-[#0B111E]/80 border border-white/10 rounded-xl p-4 outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] transition w-full text-[#F8FAFC]"></textarea>
+                    <label for="form-msg" class="block text-sm font-semibold text-brand-blue mb-2" data-i18n="label-msg">Wat is uw belangrijkste groei-doelstelling? *</label>
+                    <textarea name="message" id="form-msg" placeholder="Bijv: We willen de conversie op onze landingspagina verhogen met 30%..." rows="4" required class="bg-[#0B111E]/80 border border-white/10 rounded-xl p-4 outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] transition w-full text-[#F8FAFC]"></textarea>
                 </div>
                 <div class="pt-2">
-                    <button class="btn-gradient text-white font-bold w-full py-4 rounded-xl transition-all shadow-lg" data-i18n="send-btn">Aanvraag Versturen</button>
+                    <button class="btn-gradient text-white font-bold text-lg w-full py-4 rounded-xl transition-all shadow-lg" data-i18n="send-btn">Aanvraag Versturen</button>
                     <p class="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-1.5" data-i18n="trust-form">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                        Je gegevens zijn veilig in NL. Wij reageren binnen 24 uur.
+                        <svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        Uw bedrijfsgegevens worden met discretie behandeld. U spreekt direct met Sven of Kjell.
                     </p>
                 </div>
             </form>
@@ -544,7 +591,7 @@
                     </svg>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-black mb-4 md:mb-6 leading-tight text-white">Bedankt!</h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-10" data-i18n="ty-p1">Uw bericht is succesvol verzonden. Wij nemen snel contact met u op.</p>
+                <p class="text-lg md:text-xl text-gray-300 mb-10" data-i18n="ty-p1">Uw strategische aanvraag is in goede orde ontvangen. Sven of Kjell neemt spoedig contact met u op.</p>
                 
                 <div class="flex justify-center">
                     <button onclick="returnToHome()" class="btn-gradient text-white font-bold px-10 py-4 rounded-full transition-all shadow-lg" style="border: none; cursor: pointer;">Terug naar Home</button>
@@ -560,7 +607,7 @@
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <h2 class="text-3xl font-bold mb-4 text-white">Gratis <span class="text-brand-blue">Video Audit</span></h2>
-            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Vul uw website in. Sven of Kjell analyseert persoonlijk uw laadsnelheid en conversielekken in een gratis 2-minuten video, geleverd in uw inbox.</p>
+            <p class="text-gray-400 mb-6 text-sm leading-relaxed">Vul uw huidige website in. Sven of Kjell analyseert persoonlijk uw laadsnelheid en conversielekken in een gratis 2-minuten video, rechtstreeks in uw inbox.</p>
             <form action="https://formsubmit.co/sven@fyxo.online" method="POST" class="space-y-4">
                 <input type="hidden" name="_subject" value="Aanvraag Gratis Video Audit Fyxo">
                 <input type="hidden" name="_next" value="https://fyxo.online#thank-you-section">
@@ -569,10 +616,10 @@
                     <input type="url" name="website" placeholder="https://uwwebsite.nl" required class="bg-[#0B111E]/80 border border-white/10 rounded-xl p-4 outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] transition w-full text-white">
                 </div>
                 <div>
-                    <label class="block text-sm font-semibold text-gray-300 mb-2">E-mailadres</label>
+                    <label class="block text-sm font-semibold text-gray-300 mb-2">Uw E-mailadres</label>
                     <input type="email" name="email" placeholder="info@bedrijf.nl" required class="bg-[#0B111E]/80 border border-white/10 rounded-xl p-4 outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] transition w-full text-white">
                 </div>
-                <button type="submit" class="btn-gradient text-white font-bold w-full py-4 rounded-xl transition-all shadow-lg mt-2">Vraag Audit Aan</button>
+                <button type="submit" class="btn-gradient text-white font-bold w-full py-4 rounded-xl transition-all shadow-lg mt-2">Stuur Mij De Audit</button>
             </form>
         </div>
     </div>
@@ -661,20 +708,29 @@
             nl:{
                 "nav-home":"Home",
                 "nav-work":"Werkwijze",
-                "nav-portfolio":"Portfolio",
-                "nav-prices":"Prijzen",
-                "nav-about":"Over ons",
+                "nav-portfolio":"Cases",
+                "nav-prices":"Investering",
+                "nav-about":"Missie",
                 "nav-contact":"Contact",
-                "hero-1":"Wij bouwen geen websites.",
-                "hero-2":"Wij bouwen groeimotoren.",
-                "hero-p":"Verander uw online visitekaartje in een 24/7 topverkoper. Laadt in < 0.8 seconden. Ontworpen voor maximale conversie in het MKB.",
+                "nav-badge":"Onze Standaard",
+                "hero-1":"Uw website is uw beste verkoper",
+                "hero-2":"— mits hij niet te traag is.",
+                "hero-p":"Wij bouwen de snelste websites van Nederland die passieve bezoekers omzetten in loyale klanten. Geen templates. Pure performance.",
                 "hero-btn-1":"Plan Strategiegesprek",
-                "hero-btn-1-sub":"Digital Foundation vanaf €199",
                 "hero-btn-2":"Gratis Video Audit",
                 "hero-feat-1":"Binnen 14 dagen online",
                 "hero-feat-2":"100% Tevredenheidsgarantie",
                 "hero-feat-3":"SEO Geoptimaliseerd",
-                "steps-title":"Jouw weg naar succes in 4 stappen",
+                "hero-tag":"Web Architecture & Conversie",
+                "badge-title":"Onze <span class='text-brand-blue'>Drievoudige Garantie</span>",
+                "badge-p":"Het Fyxo Performance Keurmerk betekent dat uw site op de hoogste industriestandaarden draait.",
+                "badge-1-t":"Extreme Snelheid",
+                "badge-1-p":"100/100 Lighthouse Score. Wij bouwen met moderne frameworks (Next.js/Astro) die in een oogwenk laden. Omdat elke seconde wachten u geld kost.",
+                "badge-2-t":"Conversie Psychologie",
+                "badge-2-p":"Frictieloos design gebaseerd op neuromarketing. Wij begeleiden het oog van de bezoeker en maken het ze onmogelijk om niet te klikken.",
+                "badge-3-t":"AI-Ready Visibility",
+                "badge-3-p":"Gevonden door AI. Met geavanceerde Schema.org implementaties wordt uw bedrijf de bron voor antwoorden in Google, Gemini en ChatGPT.",
+                "steps-title":"Jouw weg naar succes in <span class='text-brand-blue'>4 stappen</span>",
                 "step-1-t":"1. Kennismaking & Audit",
                 "step-1-p":"We starten met een diepgaande analyse. Waar lekt uw huidige website conversie? Wat is uw exacte doelgroep? We maken een strategisch plan zonder kleine lettertjes.",
                 "step-2-t":"2. UX/UI Ontwerp",
@@ -683,49 +739,49 @@
                 "step-3-p":"Onze developers bouwen de site met moderne frameworks (Next.js/Tailwind). Resultaat: een bliksemsnelle code-base die Google domineert.",
                 "step-4-t":"4. Oplevering & Groei",
                 "step-4-p":"Uw groeimotor gaat live! Wij zetten alles perfect klaar en monitoren de analytics om zeker te zijn van een stijging in aanvragen en conversies.",
-                "port-1":"Bewezen",
-                "port-2":"Resultaten",
+                "port-1":"Resultaat-gericht",
+                "port-2":"Portfolio",
                 "port-visit":"Bekijk Live Case",
-                "price-title":"Investering in Groei",
-                "price-p":"Heldere tarieven. Focus op Return On Investment.",
+                "price-title":"Eenmalige Investering. <span class='text-brand-blue'>Blijvend Rendement.</span>",
+                "price-p":"Onze pakketten zijn ontworpen als een Fixed One-Time Investment die zichzelf terugverdient door een bewezen toename in conversie.",
                 "populair":"POPULAIR",
-                "p-plus":"Alles van Foundation plus...",
-                "p-btn":"Kies Foundation",
-                "p-btn-2":"Kies Growth Engine",
-                "contact-btn":"Neem Contact Op",
+                "p-plus":"Alles van Launch plus...",
+                "p-btn":"Kies Launch",
+                "p-btn-2":"Kies Market Leader",
+                "contact-btn":"Plan Transformatie",
                 "p1-1":"High-Speed Landingpage",
-                "p1-2":"Mobile-First Design",
-                "p1-3":"Conversie Formulier",
-                "p1-4":"Premium Hosting Setup",
-                "p2-1":"Multi-page Structuur",
-                "p2-2":"Diepgaande SEO Opties",
-                "p2-3":"CMS Systeem Integratie",
-                "p2-4":"Prio Support & Analytics",
+                "p1-2":"Mobile-First Conversie Design",
+                "p1-3":"Slim Lead-Capture Formulier",
+                "p1-4":"Premium Vercel Edge Hosting",
+                "p2-1":"Multi-page Structuur (tot 8)",
+                "p2-2":"Diepgaande SEO & Schema.org",
+                "p2-3":"Headless CMS Integratie",
+                "p2-4":"Advanced Analytics Tracking",
                 "p3-1":"Maatwerk Webapplicaties",
-                "p3-2":"Schaalbare E-commerce",
+                "p3-2":"Schaalbare E-commerce Systemen",
                 "p3-3":"Naadloze API-Koppelingen",
-                "p3-4":"Geavanceerde Datastructuur",
-                "p3-p":"Vanaf €2.500",
-                "about-title":"Wij zijn Fyxo.",
+                "p3-4":"Uitgebreide Datastructuur",
+                "p3-p":"Vanaf €4.500",
+                "about-title":"Wij repareren het internet, <span class='text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500'>één snelle website per keer.</span>",
                 "about-p1":"Snelheid Ontmoet Strategie",
-                "about-p2":"Wij zijn Sven en Kjell, de gezichten achter Fyxo. Sven is de technische architect: hij bouwt razendsnelle websites (Next.js & Tailwind) die perfect schalen en de Core Web Vitals van Google domineren. Kjell is de conversie-strateeg: hij focust zich volledig op neuromarketing en UX-design om passieve bezoekers om te zetten in actieve leads. Wij bouwen geen digitale visitekaartjes; we bouwen uw beste verkoper.",
-                "contact-title":"Laten we praten",
-                "contact-p":"Klaar voor een groeimotor die écht ROI oplevert?",
+                "about-p2":"<p class='mb-4'>Wij hebben Fyxo opgericht uit frustratie. We zagen dat 90% van de bedrijfswebsites traag, onduidelijk en onvindbaar is. Bedrijven verliezen dagelijks omzet aan concurrenten, simpelweg omdat hun website niet presteert.</p><p class='mb-4'>Als dual-leadership team hebben wij de oplossing. <strong class='text-white font-semibold'>Sven</strong> is de technische architect: hij stript alle onnodige code weg en bouwt platforms die Google's Core Web Vitals domineren. <strong class='text-white font-semibold'>Kjell</strong> is de conversie-strateeg: hij ontwerpt frictieloze funnels gebaseerd op neuromarketing.</p><p>Geen trage templates. Geen vage praatjes. Wij bouwen exclusieve high-performance platforms voor bedrijven die hun digitale groei serieus nemen.</p>",
+                "contact-title":"Start de <span class='text-brand-blue'>Transformatie</span>",
+                "contact-p":"Klaar voor een groeimotor die écht Return On Investment oplevert?",
                 "send-btn":"Aanvraag Versturen",
-                "trust-form":"Je gegevens zijn veilig in NL. Wij reageren binnen 24 uur.",
+                "trust-form":"Uw bedrijfsgegevens worden met discretie behandeld. U spreekt direct met Sven of Kjell.",
                 "label-name":"Naam *",
                 "label-company":"Bedrijfsnaam",
                 "label-email":"E-mailadres *",
                 "label-package":"Waar kunnen we mee helpen?",
-                "label-msg":"Bericht *",
+                "label-msg":"Wat is uw belangrijkste groei-doelstelling? *",
                 "opt-choose":"-- Kies een optie --",
-                "opt-custom":"Digital Transformation (Vanaf €2.500)",
-                "opt-other":"Ik heb alleen een vraag",
+                "opt-custom":"Digital Transformation",
+                "opt-other":"Ik wil een strategiegesprek",
                 "footer-copy":"Alle rechten voorbehouden.",
                 "f-1":"Privacy",
                 "f-2":"Voorwaarden",
                 "ty-title":"Bedankt!",
-                "ty-p1":"Uw bericht is succesvol verzonden. Wij nemen snel contact met u op.",
+                "ty-p1":"Uw strategische aanvraag is in goede orde ontvangen. Sven of Kjell neemt spoedig contact met u op.",
                 "ty-btn1":"Terug naar Home",
                 "ty-btn2":"Meer informatie",
                 "ty-contact":"Vragen? Neem direct contact op via"
@@ -733,20 +789,29 @@
             en:{
                 "nav-home":"Home",
                 "nav-work":"Method",
-                "nav-portfolio":"Results",
-                "nav-prices":"Pricing",
-                "nav-about":"About",
+                "nav-portfolio":"Cases",
+                "nav-prices":"Investment",
+                "nav-about":"Mission",
                 "nav-contact":"Contact",
-                "hero-1":"We don't build websites.",
-                "hero-2":"We build growth engines.",
-                "hero-p":"Turn your online business card into a 24/7 top salesperson. Loads in < 0.8 seconds. Designed for maximum conversion.",
-                "hero-btn-1":"Plan a Strategy Call",
-                "hero-btn-1-sub":"Digital Foundation from €199",
+                "nav-badge":"Our Standard",
+                "hero-1":"Your website is your best salesperson",
+                "hero-2":"— provided it's not too slow.",
+                "hero-p":"We build the fastest websites in the Netherlands that turn passive visitors into loyal customers. No templates. Pure performance.",
+                "hero-btn-1":"Plan Strategy Call",
                 "hero-btn-2":"Free Video Audit",
                 "hero-feat-1":"Online within 14 days",
                 "hero-feat-2":"100% Satisfaction Guarantee",
                 "hero-feat-3":"SEO Optimized",
-                "steps-title":"Your path to success in 4 steps",
+                "hero-tag":"Web Architecture & Conversion",
+                "badge-title":"Our <span class='text-brand-blue'>Triple Guarantee</span>",
+                "badge-p":"The Fyxo Performance Seal means your site runs on the highest industry standards.",
+                "badge-1-t":"Extreme Speed",
+                "badge-1-p":"100/100 Lighthouse Score. We build with modern frameworks (Next.js/Astro) that load in a blink. Because every second waiting costs you money.",
+                "badge-2-t":"Conversion Psychology",
+                "badge-2-p":"Frictionless design based on neuromarketing. We guide the visitor's eye and make it impossible for them not to click.",
+                "badge-3-t":"AI-Ready Visibility",
+                "badge-3-p":"Found by AI. With advanced Schema.org implementations, your company becomes the source for answers in Google, Gemini, and ChatGPT.",
+                "steps-title":"Your path to success in <span class='text-brand-blue'>4 steps</span>",
                 "step-1-t":"1. Introduction & Audit",
                 "step-1-p":"We start with an in-depth analysis. Where is your current site leaking conversions? We map everything out clearly.",
                 "step-2-t":"2. UX/UI Design",
@@ -755,55 +820,55 @@
                 "step-3-p":"Our developers build the site using modern frameworks (Next.js/Tailwind). Result: a lightning-fast code-base.",
                 "step-4-t":"4. Delivery & Growth",
                 "step-4-p":"Your growth engine goes live! We set everything up and monitor analytics to ensure a rise in conversions.",
-                "port-1":"Proven",
-                "port-2":"Results",
+                "port-1":"Results-driven",
+                "port-2":"Portfolio",
                 "port-visit":"View Live Case",
-                "price-title":"Invest in Growth",
-                "price-p":"Clear pricing. Focus on Return On Investment.",
+                "price-title":"Fixed Investment. <span class='text-brand-blue'>Lasting ROI.</span>",
+                "price-p":"Our packages are designed as a Fixed One-Time Investment that pays for itself through proven conversion increases.",
                 "populair":"POPULAR",
-                "p-plus":"Everything in Foundation plus...",
-                "p-btn":"Choose Foundation",
-                "p-btn-2":"Choose Growth Engine",
-                "contact-btn":"Contact Us",
+                "p-plus":"Everything in Launch plus...",
+                "p-btn":"Choose Launch",
+                "p-btn-2":"Choose Market Leader",
+                "contact-btn":"Plan Transformation",
                 "p1-1":"High-Speed Landing Page",
-                "p1-2":"Mobile-First Design",
-                "p1-3":"Conversion Form",
-                "p1-4":"Premium Hosting Setup",
-                "p2-1":"Multi-page Structure",
-                "p2-2":"In-depth SEO Options",
-                "p2-3":"CMS Integration",
-                "p2-4":"Prio Support & Analytics",
+                "p1-2":"Mobile-First Conversion Design",
+                "p1-3":"Smart Lead-Capture Form",
+                "p1-4":"Premium Vercel Edge Hosting",
+                "p2-1":"Multi-page Structure (up to 8)",
+                "p2-2":"In-depth SEO & Schema.org",
+                "p2-3":"Headless CMS Integration",
+                "p2-4":"Advanced Analytics Tracking",
                 "p3-1":"Custom Web Applications",
-                "p3-2":"Scalable E-commerce",
+                "p3-2":"Scalable E-commerce Systems",
                 "p3-3":"Seamless API Integrations",
                 "p3-4":"Advanced Data Structure",
-                "p3-p":"From €2,500",
-                "about-title":"We are Fyxo.",
+                "p3-p":"From €4,500",
+                "about-title":"We fix the internet, <span class='text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500'>one fast website at a time.</span>",
                 "about-p1":"Speed Meets Strategy",
-                "about-p2":"We are Sven and Kjell. Sven is the technical architect: he builds lightning-fast websites (Next.js & Tailwind) that rank high in Google. Kjell is the conversion strategist: he focuses on neuromarketing and UX design to turn passive visitors into leads. We don't build digital business cards; we build your best salesperson.",
-                "contact-title":"Let's talk",
+                "about-p2":"<p class='mb-4'>We founded Fyxo out of frustration. We saw that 90% of business websites are slow, unclear, and hard to find. Companies lose revenue to competitors daily, simply because their website underperforms.</p><p class='mb-4'>As a dual-leadership team, we have the solution. <strong class='text-white font-semibold'>Sven</strong> is the technical architect: he strips away bloat and builds platforms that dominate Google's Core Web Vitals. <strong class='text-white font-semibold'>Kjell</strong> is the conversion strategist: he designs frictionless funnels based on neuromarketing.</p><p>No slow templates. No vague promises. We build exclusive high-performance platforms for companies that take their digital growth seriously.</p>",
+                "contact-title":"Start the <span class='text-brand-blue'>Transformation</span>",
                 "contact-p":"Ready for a growth engine that actually delivers ROI?",
                 "send-btn":"Send Request",
-                "trust-form":"Your data is safe. We respond within 24 hours.",
+                "trust-form":"Your data is treated with discretion. You will speak directly with Sven or Kjell.",
                 "label-name":"Name *",
                 "label-company":"Company Name",
                 "label-email":"Email Address *",
                 "label-package":"How can we help?",
-                "label-msg":"Message *",
+                "label-msg":"What is your primary growth objective? *",
                 "opt-choose":"-- Choose an option --",
-                "opt-custom":"Digital Transformation (From €2,500)",
-                "opt-other":"I just have a question",
+                "opt-custom":"Digital Transformation",
+                "opt-other":"I want a strategy call",
                 "footer-copy":"All rights reserved.",
                 "f-1":"Privacy",
                 "f-2":"Terms",
                 "ty-title":"Thank You!",
-                "ty-p1":"Your message has been sent successfully. We will contact you soon.",
+                "ty-p1":"Your strategic request has been received. Sven or Kjell will contact you shortly.",
                 "ty-btn1":"Back to Home",
                 "ty-btn2":"More information",
                 "ty-contact":"Questions? Contact us directly via"
             }
         };
-        
+
         let currentLang='nl';
         const langToggle=document.getElementById('lang-toggle');
         const langToggleMobile=document.getElementById('lang-toggle-mobile');
@@ -865,16 +930,16 @@
         // Problem-Solution-Result Portfolio Data
         const portfolioItems = [
             {
-                reviewNL: "<strong class='text-brand-blue'>Probleem:</strong> Verouderde site met trage laadtijd (LCP 4.5s) en gemiste conversies.<br/><br/><strong class='text-brand-blue'>Oplossing:</strong> Volledige headless herbouw. Focus op conversie-psychologie en sub-seconde laadtijden.<br/><br/><strong class='text-brand-blue'>Resultaat:</strong> Laadtijd verlaagd met 80%. Mobiele lead-conversie gestegen met 214%.",
-                reviewEN: "<strong class='text-brand-blue'>Problem:</strong> Outdated site with slow load times (LCP 4.5s) and missed conversions.<br/><br/><strong class='text-brand-blue'>Solution:</strong> Full headless rebuild. Focus on conversion psychology and sub-second load times.<br/><br/><strong class='text-brand-blue'>Result:</strong> Load time reduced by 80%. Mobile lead conversion increased by 214%.",
+                reviewNL: "<div class='text-left space-y-4'><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>De Uitdaging</strong>Verouderde site met trage laadtijd (LCP 4.5s) en hoog bounce-percentage op de proefles-pagina.</p><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>De Fyxo Oplossing</strong>Volledige headless herbouw. Focus op neuromarketing in het design en sub-seconde laadtijden via Next.js.</p><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>Het Resultaat</strong>Laadtijd verlaagd met 80%. Mobiele lead-conversie gestegen met 214% in de eerste maand.</p></div>",
+                reviewEN: "<div class='text-left space-y-4'><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>The Challenge</strong>Outdated site with slow load times (LCP 4.5s) and a high bounce rate on the trial page.</p><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>The Fyxo Solution</strong>Full headless rebuild. Focus on neuromarketing in design and sub-second load times via Next.js.</p><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>The Result</strong>Load time reduced by 80%. Mobile lead conversion increased by 214% in the first month.</p></div>",
                 customer: "JC Middelharnis",
                 desktopImg: "https://api.microlink.io/?url=https://jc-middelharnis.vercel.app/&screenshot=true&meta=false&embed=screenshot.url",
                 mobileImg: "https://api.microlink.io/?url=https://jc-middelharnis.vercel.app/&screenshot=true&meta=false&viewport.width=375&viewport.height=812&viewport.isMobile=true&embed=screenshot.url",
                 websiteUrl: "https://jc-middelharnis.vercel.app/"
             },
             {
-                reviewNL: "<strong class='text-brand-blue'>Probleem:</strong> Geen digitale autoriteit. Bezoekers haakten af door een onduidelijke navigatie structuur.<br/><br/><strong class='text-brand-blue'>Oplossing:</strong> Een strak UX/UI design traject met heldere call-to-actions en SEO optimalisatie.<br/><br/><strong class='text-brand-blue'>Resultaat:</strong> Bounce rate gedaald met 45%. 3x meer wekelijkse offerte-aanvragen.",
-                reviewEN: "<strong class='text-brand-blue'>Problem:</strong> No digital authority. Visitors bounced due to unclear navigation structure.<br/><br/><strong class='text-brand-blue'>Solution:</strong> A clean UX/UI design process with clear call-to-actions and SEO optimization.<br/><br/><strong class='text-brand-blue'>Result:</strong> Bounce rate decreased by 45%. 3x more weekly quote requests.",
+                reviewNL: "<div class='text-left space-y-4'><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>De Uitdaging</strong>Geen digitale autoriteit en onvindbaar in de regio. Bezoekers haakten af door onduidelijke navigatie.</p><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>De Fyxo Oplossing</strong>Een strak 'Market Leader' traject met heldere call-to-actions, lokale SEO en Schema.org implementatie.</p><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>Het Resultaat</strong>Bounce rate gedaald met 45%. Binnen 3 weken een verdrievoudiging (3x) van wekelijkse offerte-aanvragen.</p></div>",
+                reviewEN: "<div class='text-left space-y-4'><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>The Challenge</strong>No digital authority and invisible in the region. Visitors bounced due to unclear navigation.</p><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>The Fyxo Solution</strong>A clean 'Market Leader' implementation with clear call-to-actions, local SEO, and Schema.org data.</p><p><strong class='text-brand-blue block mb-1 uppercase text-xs tracking-widest'>The Result</strong>Bounce rate dropped by 45%. Within 3 weeks, weekly quote requests tripled (3x).</p></div>",
                 customer: "Stralend Schoon",
                 desktopImg: "https://api.microlink.io/?url=https://stralend-schoon-exemple.vercel.app/&screenshot=true&meta=false&embed=screenshot.url",
                 mobileImg: "https://api.microlink.io/?url=https://stralend-schoon-exemple.vercel.app/&screenshot=true&meta=false&viewport.width=375&viewport.height=812&viewport.isMobile=true&embed=screenshot.url",
@@ -936,7 +1001,7 @@
             document.getElementById('form-name').placeholder=currentLang==='nl'?"John Doe":"John Doe";
             document.getElementById('form-company').placeholder=currentLang==='nl'?"Fyxo B.V.":"Fyxo Inc.";
             document.getElementById('form-email').placeholder=currentLang==='nl'?"info@voorbeeld.nl":"info@example.com";
-            document.getElementById('form-msg').placeholder=currentLang==='nl'?"Vertel ons over je doelen...":"Tell us about your goals...";
+            document.getElementById('form-msg').placeholder=currentLang==='nl'?"Bijv: We willen de conversie verhogen met 30%...":"E.g. We want to increase conversion by 30%...";
             
             langText.innerText=currentLang==='nl'?'EN':'NL';
             if(langTextMobile) langTextMobile.innerText=currentLang==='nl'?'EN':'NL';
@@ -979,6 +1044,7 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             updatePortfolio();
+            updateLanguage(); // Ensure initial load parses HTML tags correctly
         });
 
         // Pages Hash Navigation logic
