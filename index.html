@@ -18,15 +18,56 @@
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');:root{--fyxo-blue:#0ea5e9;--fyxo-cyan:#38bdf8;--bg-dark:#0B111E;--bg-card:#111827;--border-color:#1e293b;--text-main:#F8FAFC;--text-muted:#94A3B8;}body{background-color:var(--bg-dark);color:var(--text-main);font-family:'Inter',sans-serif;scroll-behavior:smooth;overflow-x:hidden;}.hero-bg{background-image:linear-gradient(to bottom,rgba(11,17,30,0.85) 0%,rgba(11,17,30,0.98) 80%,var(--bg-dark) 100%),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;background-attachment:fixed;}.lightning-overlay{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden;background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/TvOQiBXKCExmZAMN.jpg');background-size:cover;background-position:center;mix-blend-mode:screen;opacity:0.6;animation:lightning-flicker 12s infinite ease-in-out;}@keyframes lightning-flicker{0%,100%{opacity:0.4;}45%{opacity:0.4;}47%{opacity:0.7;}48%{opacity:0.3;}50%{opacity:0.8;}52%{opacity:0.4;}54%{opacity:0.6;}56%{opacity:0.4;}}.nav-link{transition:color 0.3s;font-size:0.95rem;color:var(--text-muted);}.nav-link:hover{color:var(--text-main);}.active-link{color:var(--fyxo-cyan) !important;}.glass-card{background:rgba(17,24,39,0.6);border:1px solid var(--border-color);backdrop-filter:blur(12px);border-radius:1rem;transition:all 0.3s ease;}.glass-card:hover{border-color:rgba(56,189,248,0.4);background:rgba(17,24,39,0.9);transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(14,165,233,0.1);}section{padding:80px 20px;}.text-brand-blue{color:var(--fyxo-cyan);}.bg-brand-blue{background-color:var(--fyxo-blue);}.border-brand-blue{border-color:var(--fyxo-blue);}.logo-container{cursor:pointer;display:inline-flex;align-items:center;}.logo-svg{transition:filter 0.3s ease,transform 0.3s ease;}.logo-container:hover .logo-svg{filter:drop-shadow(0 0 10px rgba(248,250,252,0.5));transform:scale(1.02);}select option{background-color:var(--bg-card);color:var(--text-main);}.text-muted{color:var(--text-muted);}</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+        :root{--fyxo-blue:#0ea5e9;--fyxo-cyan:#38bdf8;--bg-dark:#0B111E;--bg-card:#111827;--border-color:#1e293b;--text-main:#F8FAFC;--text-muted:#94A3B8;}
+        body{background-color:var(--bg-dark);color:var(--text-main);font-family:'Inter',sans-serif;scroll-behavior:smooth;overflow-x:hidden;}
+        .hero-bg{background-image:linear-gradient(to bottom,rgba(11,17,30,0.85) 0%,rgba(11,17,30,0.98) 80%,var(--bg-dark) 100%),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;background-attachment:fixed;}
+        .lightning-overlay{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden;background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/TvOQiBXKCExmZAMN.jpg');background-size:cover;background-position:center;mix-blend-mode:screen;opacity:0.6;animation:lightning-flicker 12s infinite ease-in-out;}
+        @keyframes lightning-flicker{0%,100%{opacity:0.4;}45%{opacity:0.4;}47%{opacity:0.7;}48%{opacity:0.3;}50%{opacity:0.8;}52%{opacity:0.4;}54%{opacity:0.6;}56%{opacity:0.4;}}
+        .nav-link{transition:color 0.3s;font-size:0.95rem;color:var(--text-muted);}
+        .nav-link:hover{color:var(--text-main);}
+        .active-link{color:var(--fyxo-cyan) !important;}
+        .glass-card{background:rgba(17,24,39,0.6);border:1px solid var(--border-color);backdrop-filter:blur(12px);border-radius:1rem;transition:all 0.3s ease;}
+        .glass-card:hover{border-color:rgba(56,189,248,0.4);background:rgba(17,24,39,0.9);transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(14,165,233,0.1);}
+        section{padding:80px 20px;}
+        .text-brand-blue{color:var(--fyxo-cyan);}
+        .bg-brand-blue{background-color:var(--fyxo-blue);}
+        .border-brand-blue{border-color:var(--fyxo-blue);}
+        .logo-container{cursor:pointer;display:inline-flex;align-items:center;}
+        .logo-svg{transition:filter 0.3s ease,transform 0.3s ease;}
+        .logo-container:hover .logo-svg{filter:drop-shadow(0 0 10px rgba(248,250,252,0.5));transform:scale(1.02);}
+        select option{background-color:var(--bg-card);color:var(--text-main);}
+        .text-muted{color:var(--text-muted);}
+        
+        /* AI Chat Box CSS */
+        #ai-chat-container{position:fixed;bottom:30px;right:30px;width:380px;max-height:600px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:9999;display:flex;flex-direction:column;transform:translateY(150%);transition:transform 0.3s ease;}
+        #ai-chat-container.open{transform:translateY(0);}
+        #ai-chat-header{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);color:white;padding:16px;border-radius:12px 12px 0 0;font-weight:bold;display:flex;justify-content:space-between;align-items:center;}
+        #ai-chat-close{background:none;border:none;color:white;cursor:pointer;font-size:20px;}
+        #ai-chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}
+        .chat-message{padding:10px 12px;border-radius:8px;max-width:85%;word-wrap:break-word;font-size:14px;}
+        .chat-message.user{align-self:flex-end;background:#0ea5e9;color:white;}
+        .chat-message.ai{align-self:flex-start;background:#1e293b;color:#F8FAFC;}
+        .typing-indicator{font-style:italic;color:#94A3B8;opacity:0.8;}
+        #ai-chat-input-area{padding:12px;border-top:1px solid var(--border-color);display:flex;gap:8px;}
+        #ai-chat-input{flex:1;background:#0B111E;border:1px solid var(--border-color);color:var(--text-main);padding:8px 12px;border-radius:6px;outline:none;font-family:'Inter',sans-serif;}
+        #ai-chat-input:focus{border-color:#38bdf8;}
+        #ai-chat-send{background:#0ea5e9;border:none;color:white;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:bold;transition:background 0.3s;}
+        #ai-chat-send:hover{background:#0284c7;}
+        #ai-chat-btn{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:9998;transition:all 0.3s ease;border:none;font-family:'Inter',sans-serif;}
+        #ai-chat-btn:hover{transform:scale(1.1);}
+        #ai-chat-btn.hidden{display:none;}
+    </style>
 </head>
 <body>
-    <nav class="fixed top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-md border-b border-[#1e293b]">
+    <nav class="fixed top-0 w-full z-50 bg-[#0B111E]/90 backdrop-blur-md border-b border-[#1e293b]">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#home" class="logo-container">
                 <span class="logo-svg" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.6rem; color: #F8FAFC; letter-spacing: -0.04em; line-height: 1;">FYXO</span>
             </a>
-            <div class="hidden md:flex gap-10 font-medium">
+            
+            <div class="hidden md:flex items-center gap-10 font-medium">
                 <a href="#home" class="nav-link active-link" data-i18n="nav-home">Home</a>
                 <a href="#werkwijze" class="nav-link" data-i18n="nav-work">Werkwijze</a>
                 <a href="#portfolio" class="nav-link" data-i18n="nav-portfolio">Portfolio</a>
@@ -34,10 +75,33 @@
                 <a href="#over-ons" class="nav-link" data-i18n="nav-about">Over ons</a>
                 <a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a>
             </div>
-            <button id="lang-toggle" aria-label="Taal wijzigen" class="flex items-center gap-3 border border-[#1e293b] rounded-full px-4 py-1.5 text-muted hover:text-white transition cursor-pointer bg-[#111827]/50">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                <span class="text-sm font-bold" id="lang-text">EN</span>
-            </button>
+            
+            <div class="hidden md:block">
+                <button id="lang-toggle" aria-label="Taal wijzigen" class="flex items-center gap-3 border border-[#1e293b] rounded-full px-4 py-1.5 text-muted hover:text-white transition cursor-pointer bg-[#111827]/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span class="text-sm font-bold" id="lang-text">EN</span>
+                </button>
+            </div>
+
+            <div class="md:hidden flex items-center gap-4">
+                <button id="lang-toggle-mobile" aria-label="Taal wijzigen" class="flex items-center justify-center border border-[#1e293b] rounded-full w-10 h-10 text-muted hover:text-white transition cursor-pointer bg-[#111827]/50">
+                    <span class="text-xs font-bold" id="lang-text-mobile">EN</span>
+                </button>
+                <button id="mobile-menu-btn" aria-label="Menu" class="text-muted hover:text-white focus:outline-none p-1">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0B111E] border-b border-[#1e293b] absolute w-full shadow-2xl">
+            <div class="flex flex-col px-6 py-5 gap-5 font-medium">
+                <a href="#home" class="mobile-nav-link text-brand-blue" data-i18n="nav-home">Home</a>
+                <a href="#werkwijze" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-work">Werkwijze</a>
+                <a href="#portfolio" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-portfolio">Portfolio</a>
+                <a href="#prijzen" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-prices">Prijzen</a>
+                <a href="#over-ons" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-about">Over ons</a>
+                <a href="#contact" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-contact">Contact</a>
+            </div>
         </div>
     </nav>
 
@@ -323,11 +387,68 @@
         </form>
         </div>
     </section>
+    <section id="thank-you-section" class="hidden relative bg-[#0B111E] min-h-screen flex items-center justify-center">
+        <nav class="absolute top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-md border-b border-[#1e293b]">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                <button onclick="returnToHome()" class="logo-container cursor-pointer" style="background: none; border: none; padding: 0;">
+                    <span class="logo-svg" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.6rem; color: #F8FAFC; letter-spacing: -0.04em; line-height: 1;">FYXO</span>
+                </button>
+            </div>
+        </nav>
+        <div class="relative pt-32 pb-20 hero-bg overflow-hidden w-full flex items-center justify-center">
+            <div class="lightning-overlay"></div>
+            <div class="max-w-2xl mx-auto text-center relative z-10 px-6">
+                <div class="mb-8">
+                    <svg class="w-16 h-16 sm:w-24 sm:h-24 mx-auto text-brand-blue" style="animation: bounce 1s ease-in-out infinite;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-black mb-4 md:mb-6 leading-tight text-white">Bedankt!</h1>
+                <p class="text-base sm:text-lg md:text-xl text-muted mb-8" data-i18n="ty-p1">Uw bericht is succesvol verzonden.</p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="returnToHome()" class="bg-brand-blue hover:bg-[#0284c7] text-white font-bold px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg" style="border: none; cursor: pointer;">Terug naar Home</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="ai-chat-container">
+        <div id="ai-chat-header">
+            <span>FYXO Assistant</span>
+            <button id="ai-chat-close" aria-label="Sluiten">×</button>
+        </div>
+        <div id="ai-chat-messages"></div>
+        <div id="ai-chat-input-area">
+            <input type="text" id="ai-chat-input" placeholder="Stel een vraag..."/>
+            <button id="ai-chat-send" aria-label="Verstuur bericht">Verzend</button>
+        </div>
+    </div>
+    <button id="ai-chat-btn" aria-label="Open Chat">
+        <span style="font-size:28px;font-weight:900;color:white;line-height:1;">F</span>
+    </button>
+
+    <style>@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}</style>
+    <footer class="py-12 border-t border-[#1e293b] px-6 bg-[#0B111E]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-muted text-sm">
+            <div class="mb-4 md:mb-0 flex items-center gap-2">
+                <a href="#home" class="logo-container">
+                    <span class="logo-svg" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1rem; color: #F8FAFC; letter-spacing: -0.04em; line-height: 1;">FYXO</span>
+                </a>
+                <span class="ml-2">&copy; 2026</span> <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
+            </div>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white transition-colors" data-i18n="f-1">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors" data-i18n="f-2">Voorwaarden</a>
+                <a href="https://www.linkedin.com" class="hover:text-white transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            once: true, // Only animate once
+            once: true,
             duration: 800,
             offset: 100,
         });
@@ -337,7 +458,24 @@
         const translations={nl:{"nav-home":"Home","nav-work":"Werkwijze","nav-portfolio":"Portfolio","nav-prices":"Prijzen","nav-about":"Over ons","nav-contact":"Contact","hero-1":"Meer klanten via een","hero-2":"professionele website","hero-p":"Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker,beter voor Google.","hero-btn-1":"Start een Project","hero-btn-1-sub":"Professionele website vanaf €199","hero-btn-2":"Onze Werkwijze","steps-title":"Jouw weg naar succes in 4 stappen","step-1-t":"1. Kennismaking","step-1-p":"We starten met een vrijblijvend gesprek. Wat zijn uw wensen?Wie zijn uw klanten?We brengen alles in kaart en leggen de tarieven helder uit. Geen kleine lettertjes.","step-2-t":"2. Eerste ontwerp","step-2-p":"Op basis van ons gesprek gaan we aan de slag met het design van uw website. U ontvangt een eerste versie die u in alle rust kunt bekijken.","step-3-t":"3. Correctieronde","step-3-p":"Niet helemaal tevreden?Geen probleem. U krijgt ruimte voor aanpassingen binnen de afgesproken uren. Samen maken we het perfect.","step-4-t":"4. Oplevering","step-4-p":"Uw website gaat live!Wij zetten alles klaar op uw eigen hosting of regelen dit via ons.","port-1":"Ons","port-2":"Portfolio","port-visit":"Bezoek de website","price-title":"Transparante Prijzen","price-p":"Kwaliteit hoeft niet onbetaalbaar te zijn.","populair":"POPULAIR","p-plus":"Alles van Starter plus...","p-btn":"Kies Plan","contact-btn":"Neem Contact Op","p1-1":"Single Page Website","p1-2":"Volledig Responsive","p1-3":"Contactformulier","p1-4":"Hosting Setup","p2-1":"Tot 5 Pagina's","p2-2":"SEO Geoptimaliseerd","p2-3":"CMS Integratie","p2-4":"Premium Support","p3-1":"Webapplicaties","p3-2":"Webshops","p3-3":"API Integraties","p3-4":"Maatwerk Functies","p3-p":"Op aanvraag","about-title":"Wij zijn Fyxo.","about-p1":"Snelheid Ontmoet Strategie","about-p2":"Wij zijn Sven en Kjell, de gezichten achter Fyxo. Sven is de technische man: hij bouwt razendsnelle websites die perfect werken en hoog scoren in Google. Kjell is de conversie-expert: hij zorgt voor een ijzersterk design dat bezoekers omzet in betalende klanten. Samen maken we niet zomaar een digitaal visitekaartje, maar een website die echt voor jouw bedrijf werkt.","contact-title":"Laten we praten","contact-p":"Klaar voor een website die echt resultaat levert?","send-btn":"Verstuur Aanvraag","label-name":"Naam*","label-company":"Bedrijfsnaam","label-email":"E-mailadres*","label-package":"Welk pakket heeft je interesse?","label-msg":"Bericht*","opt-choose":"--Kies een optie--","opt-custom":"Custom(Op aanvraag)","opt-other":"Ik heb alleen een vraag","footer-copy":"Alle rechten voorbehouden.","f-1":"Privacy","f-2":"Voorwaarden","ty-title":"Bedankt!","ty-p1":"Uw bericht is succesvol verzonden.","ty-p2":"Wij hebben uw aanvraag ontvangen en zullen zo snel mogelijk contact met u opnemen. In de tussentijd kunt u meer informatie vinden op onze website.","ty-btn1":"Terug naar Home","ty-btn2":"Meer informatie","ty-contact":"Vragen? Neem direct contact op via"},en:{"nav-home":"Home","nav-work":"Method","nav-portfolio":"Portfolio","nav-prices":"Pricing","nav-about":"About","nav-contact":"Contact","hero-1":"More customers through a","hero-2":"professional website","hero-p":"We build high-performance websites that load in the blink of an eye. Better for the user,better for Google.","hero-btn-1":"Start a Project","hero-btn-1-sub":"Professional website from €199","hero-btn-2":"Our Method","steps-title":"Your path to success in 4 steps","step-1-t":"1. Introduction","step-1-p":"We start with a non-binding conversation. What are your wishes?Who are your customers?We map everything out clearly.","step-2-t":"2. First Design","step-2-p":"Based on our conversation,we start designing your website. You receive a first version to review at your convenience.","step-3-t":"3. Revision Round","step-3-p":"Not completely satisfied?No problem. You get room for adjustments within the agreed hours.","step-4-t":"4. Delivery","step-4-p":"Your website goes live!We set everything up on your own hosting or arrange this via our services.","port-1":"Our","port-2":"Portfolio","port-visit":"Visit the website","price-title":"Transparent Pricing","price-p":"Quality doesn't have to be unaffordable.","populair":"POPULAR","p-plus":"Everything in Starter plus...","p-btn":"Choose Plan","contact-btn":"Contact Us","p1-1":"Single Page Website","p1-2":"Fully Responsive","p1-3":"Contact Form","p1-4":"Hosting Setup","p2-1":"Up to 5 Pages","p2-2":"SEO Optimized","p2-3":"CMS Integration","p2-4":"Premium Support","p3-1":"Web Applications","p3-2":"Webshops","p3-3":"API Integrations","p3-4":"Custom Features","p3-p":"On request","about-title":"We are Fyxo.","about-p1":"Speed Meets Strategy","about-p2":"We are Sven and Kjell, the faces behind Fyxo. Sven is the technical guy: he builds lightning-fast websites that work perfectly and rank high in Google. Kjell is the conversion expert: he ensures a rock-solid design that turns visitors into paying customers. Together, we don't just create a digital business card, but a website that truly works for your business.","contact-title":"Let's talk","contact-p":"Ready for a website that actually delivers results?","send-btn":"Send Request","label-name":"Name*","label-company":"Company Name","label-email":"Email Address*","label-package":"Which package are you interested in?","label-msg":"Message*","opt-choose":"--Choose an option--","opt-custom":"Custom(On request)","opt-other":"I just have a question","footer-copy":"All rights reserved.","f-1":"Privacy","f-2":"Terms","ty-title":"Thank You!","ty-p1":"Your message has been sent successfully.","ty-p2":"We have received your request and will contact you as soon as possible. In the meantime, you can find more information on our website.","ty-btn1":"Back to Home","ty-btn2":"More information","ty-contact":"Questions? Contact us directly via"}};
         let currentLang='nl';
         const langToggle=document.getElementById('lang-toggle');
+        const langToggleMobile=document.getElementById('lang-toggle-mobile');
         const langText=document.getElementById('lang-text');
+        const langTextMobile=document.getElementById('lang-text-mobile');
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
 
         // Portfolio Data with dynamic screenshots via Microlink API
         const portfolioItems = [
@@ -414,15 +552,20 @@
             document.getElementById('form-company').placeholder=currentLang==='nl'?"Fyxo B.V.":"Fyxo Inc.";
             document.getElementById('form-email').placeholder=currentLang==='nl'?"info@voorbeeld.nl":"info@example.com";
             document.getElementById('form-msg').placeholder=currentLang==='nl'?"Vertel ons over je project...":"Tell us about your project...";
+            
             langText.innerText=currentLang==='nl'?'EN':'NL';
+            if(langTextMobile) langTextMobile.innerText=currentLang==='nl'?'EN':'NL';
             
             updatePortfolio();
         }
         
-        langToggle.addEventListener('click',()=>{
+        function handleLangToggle() {
             currentLang=currentLang==='nl'?'en':'nl';
             updateLanguage();
-        });
+        }
+
+        langToggle.addEventListener('click', handleLangToggle);
+        langToggleMobile.addEventListener('click', handleLangToggle);
         
         window.addEventListener('scroll',()=>{
             let current='';
@@ -431,10 +574,20 @@
                     current=section.getAttribute('id');
                 }
             });
-            document.querySelectorAll('.nav-link').forEach(link=>{
-                link.classList.remove('active-link');
+            document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link=>{
+                link.classList.remove('active-link', 'text-brand-blue');
                 if(link.getAttribute('href').includes(current)){
-                    link.classList.add('active-link');
+                    if (link.classList.contains('nav-link')) {
+                        link.classList.add('active-link');
+                    } else {
+                        link.classList.add('text-brand-blue');
+                        link.classList.remove('text-muted');
+                    }
+                } else {
+                    if (link.classList.contains('mobile-nav-link')) {
+                        link.classList.remove('text-brand-blue');
+                        link.classList.add('text-muted');
+                    }
                 }
             });
         });
@@ -442,21 +595,58 @@
         window.addEventListener('DOMContentLoaded', () => {
             updatePortfolio();
         });
-    </script>
-    
-    <style>#ai-chat-container{position:fixed;bottom:30px;right:30px;width:380px;max-height:600px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:999;display:flex;flex-direction:column;transform:translateY(400px);transition:transform 0.3s ease;}#ai-chat-container.open{transform:translateY(0);}#ai-chat-header{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);color:white;padding:16px;border-radius:12px 12px 0 0;font-weight:bold;display:flex;justify-content:space-between;align-items:center;}#ai-chat-close{background:none;border:none;color:white;cursor:pointer;font-size:20px;}#ai-chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}.chat-message{padding:10px 12px;border-radius:8px;max-width:85%;word-wrap:break-word;font-size:14px;}.chat-message.user{align-self:flex-end;background:#0ea5e9;color:white;}.chat-message.ai{align-self:flex-start;background:#1e293b;color:#F8FAFC;}.typing-indicator{font-style:italic;color:#94A3B8;opacity:0.8;}#ai-chat-input-area{padding:12px;border-top:1px solid var(--border-color);display:flex;gap:8px;}#ai-chat-input{flex:1;background:#0B111E;border:1px solid var(--border-color);color:var(--text-main);padding:8px 12px;border-radius:6px;outline:none;font-family:'Inter',sans-serif;}#ai-chat-input:focus{border-color:#38bdf8;}#ai-chat-send{background:#0ea5e9;border:none;color:white;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:bold;transition:background 0.3s;}#ai-chat-send:hover{background:#0284c7;}#ai-chat-btn{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:998;transition:all 0.3s ease;border:none;font-family:'Inter',sans-serif;}#ai-chat-btn:hover{transform:scale(1.1);}#ai-chat-btn.hidden{display:none;}</style>
-    
-    <script>(function(){
-        const chatContainer=document.createElement('div');
-        chatContainer.id='ai-chat-container';
-        chatContainer.innerHTML=`<div id="ai-chat-header"><span>FYXO Assistant</span><button id="ai-chat-close" aria-label="Sluiten">×</button></div><div id="ai-chat-messages"></div><div id="ai-chat-input-area"><input type="text" id="ai-chat-input" placeholder="Stel een vraag..."/><button id="ai-chat-send" aria-label="Verstuur bericht">Verzend</button></div>`;
-        const chatBtn=document.createElement('button');
-        chatBtn.id='ai-chat-btn';
-        chatBtn.ariaLabel = "Open Chat";
-        chatBtn.innerHTML=`<span style="font-size:28px;font-weight:900;color:white;line-height:1;">F</span>`;
 
-        // Refactored async function ready for OpenAI backend integration
-        // Real function to connect to your Vercel backend
+        // Pages Hash Navigation logic
+        function showThankYouPage() {
+            document.querySelectorAll('body > nav, body > section, body > footer, #ai-chat-btn').forEach(el => {
+                if (el.id !== 'thank-you-section' && el.id !== 'ai-chat-container') {
+                    el.style.display = 'none';
+                }
+            });
+            const tySection = document.getElementById('thank-you-section');
+            if (tySection) {
+                tySection.classList.remove('hidden');
+                tySection.style.display = 'flex';
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function returnToHome() {
+            document.querySelectorAll('body > nav, body > section, body > footer, #ai-chat-btn').forEach(el => {
+                if (el.id !== 'thank-you-section' && el.id !== 'ai-chat-container') {
+                    el.style.display = '';
+                }
+            });
+            const tySection = document.getElementById('thank-you-section');
+            if (tySection) {
+                tySection.classList.add('hidden');
+                tySection.style.display = 'none';
+            }
+            window.scrollTo(0, 0);
+        }
+
+        window.addEventListener('load', function() {
+            if (window.location.hash === '#thank-you-section') {
+                showThankYouPage();
+            }
+        });
+
+        window.addEventListener('hashchange', function() {
+            if (window.location.hash === '#thank-you-section') {
+                showThankYouPage();
+            } else if (window.location.hash === '#home' || window.location.hash === '') {
+                returnToHome();
+            }
+        });
+
+        // AI Chat Box Logic
+        const chatContainer = document.getElementById('ai-chat-container');
+        const chatBtn = document.getElementById('ai-chat-btn');
+        const chatClose = document.getElementById('ai-chat-close');
+        const chatSend = document.getElementById('ai-chat-send');
+        const chatInput = document.getElementById('ai-chat-input');
+        const messagesDiv = document.getElementById('ai-chat-messages');
+
         async function getAIResponse(userMessage){
             try {
                 const response = await fetch('/api/chat', {
@@ -466,7 +656,17 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    // Fallback response inside the browser if your serverless endpoint isn't up yet
+                    return new Promise(resolve => {
+                        setTimeout(() => {
+                            const lowerMessage = userMessage.toLowerCase().trim();
+                            if(lowerMessage.includes('prijs') || lowerMessage.includes('kosten')) {
+                                resolve("Onze websites beginnen vanaf €199 (Starter). We hebben ook een Business pakket voor €299 en custom oplossingen. Wat zoek je precies?");
+                            } else {
+                                resolve("Bedankt voor je bericht. We konden even geen verbinding maken met de server. Vul ons contactformulier in of stuur een WhatsApp!");
+                            }
+                        }, 1000);
+                    });
                 }
 
                 const data = await response.json();
@@ -477,93 +677,46 @@
                 return "Er is helaas een fout opgetreden bij het laden van mijn brein. Neem aub contact op via het formulier of WhatsApp.";
             }
         }
-                // TODO: Replace this simulated delay with your actual backend API call.
-                // Example implementation:
-                /*
-                const response = await fetch('/api/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: userMessage })
-                });
-                const data = await response.json();
-                return data.reply;
-                */
-                
-                return new Promise(resolve => {
-                    setTimeout(() => {
-                        const lowerMessage = userMessage.toLowerCase().trim();
-                        if(lowerMessage.includes('prijs') || lowerMessage.includes('kosten')) {
-                            resolve("Onze websites beginnen vanaf €199 (Starter). We hebben ook een Business pakket voor €299 en custom oplossingen. Wat zoek je precies?");
-                        } else {
-                            resolve("Bedankt voor je bericht. Zodra we onze AI-backend aansluiten, help ik je hier direct verder als technische sales assistant. Je kunt in de tussentijd het contactformulier invullen!");
-                        }
-                    }, 1200); // 1.2 second simulated delay
-                });
-            } catch (error) {
-                console.error("AI Fetch Error:", error);
-                return "Er is helaas een fout opgetreden bij het laden van mijn brein. Neem aub contact op via het formulier.";
-            }
-        }
 
-        function addMessage(text,sender){
-            const messagesDiv=document.getElementById('ai-chat-messages');
-            const messageEl=document.createElement('div');
-            messageEl.className=`chat-message ${sender}`;
-            messageEl.textContent=text;
+        function addChatMessage(text, sender) {
+            const messageEl = document.createElement('div');
+            messageEl.className = `chat-message ${sender}`;
+            messageEl.textContent = text;
             messagesDiv.appendChild(messageEl);
-            messagesDiv.scrollTop=messagesDiv.scrollHeight;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
             return messageEl;
         }
 
-        chatBtn.addEventListener('click',()=>{
+        chatBtn.addEventListener('click', () => {
             chatContainer.classList.toggle('open');
-            if(chatContainer.classList.contains('open')){
-                document.getElementById('ai-chat-input').focus();
+            if (chatContainer.classList.contains('open')) {
+                chatInput.focus();
             }
         });
 
-        document.addEventListener('DOMContentLoaded',()=>{
-            document.getElementById('ai-chat-close').addEventListener('click',()=>{
-                chatContainer.classList.remove('open');
-            });
-            
-            document.getElementById('ai-chat-send').addEventListener('click', async ()=>{
-                const input=document.getElementById('ai-chat-input');
-                const message=input.value.trim();
-                
-                if(message){
-                    addMessage(message,'user');
-                    input.value='';
-                    
-                    // Show typing indicator
-                    const typingIndicator = addMessage('Fyxo is aan het typen...', 'ai typing-indicator');
-                    
-                    // Fetch real response
-                    const reply = await getAIResponse(message);
-                    
-                    // Remove typing and show response
-                    typingIndicator.remove();
-                    addMessage(reply,'ai');
-                }
-            });
-
-            document.getElementById('ai-chat-input').addEventListener('keypress',(e)=>{
-                if(e.key==='Enter'){
-                    document.getElementById('ai-chat-send').click();
-                }
-            });
+        chatClose.addEventListener('click', () => {
+            chatContainer.classList.remove('open');
         });
-        
-        if(document.body){
-            document.body.appendChild(chatContainer);
-            document.body.appendChild(chatBtn);
-        }else{
-            document.addEventListener('DOMContentLoaded',()=>{
-                document.body.appendChild(chatContainer);
-                document.body.appendChild(chatBtn);
-            });
-        }
-    })();
+
+        chatSend.addEventListener('click', async () => {
+            const message = chatInput.value.trim();
+            if (message) {
+                addChatMessage(message, 'user');
+                chatInput.value = '';
+                
+                const typingIndicator = addChatMessage('Fyxo is aan het typen...', 'ai typing-indicator');
+                const reply = await getAIResponse(message);
+                
+                typingIndicator.remove();
+                addChatMessage(reply, 'ai');
+            }
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                chatSend.click();
+            }
+        });
     </script>
 </body>
 </html>
