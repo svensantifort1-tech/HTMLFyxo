@@ -22,33 +22,69 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
         :root{--fyxo-blue:#0ea5e9;--fyxo-cyan:#38bdf8;--bg-dark:#0B111E;--bg-card:#111827;--border-color:#1e293b;--text-main:#F8FAFC;--text-muted:#94A3B8;}
         body{background-color:var(--bg-dark);color:var(--text-main);font-family:'Inter',sans-serif;scroll-behavior:smooth;overflow-x:hidden;}
+        
+        /* Modern Ambient Background Elements */
+        .ambient-glow-1 { position: absolute; top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(11,17,30,0) 70%); z-index: -1; pointer-events: none; }
+        .ambient-glow-2 { position: absolute; bottom: 10%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, rgba(11,17,30,0) 70%); z-index: -1; pointer-events: none; }
+        
         .hero-bg{background-image:linear-gradient(to bottom,rgba(11,17,30,0.85) 0%,rgba(11,17,30,0.98) 80%,var(--bg-dark) 100%),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;background-attachment:fixed;}
         .lightning-overlay{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden;background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/TvOQiBXKCExmZAMN.jpg');background-size:cover;background-position:center;mix-blend-mode:screen;opacity:0.6;animation:lightning-flicker 12s infinite ease-in-out;}
         @keyframes lightning-flicker{0%,100%{opacity:0.4;}45%{opacity:0.4;}47%{opacity:0.7;}48%{opacity:0.3;}50%{opacity:0.8;}52%{opacity:0.4;}54%{opacity:0.6;}56%{opacity:0.4;}}
+        
         .nav-link{transition:color 0.3s;font-size:0.95rem;color:var(--text-muted);}
         .nav-link:hover{color:var(--text-main);}
         .active-link{color:var(--fyxo-cyan) !important;}
-        .glass-card{background:rgba(17,24,39,0.6);border:1px solid var(--border-color);backdrop-filter:blur(12px);border-radius:1rem;transition:all 0.3s ease;}
-        .glass-card:hover{border-color:rgba(56,189,248,0.4);background:rgba(17,24,39,0.9);transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(14,165,233,0.1);}
-        section{padding:80px 20px;}
+        
+        .glass-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.05);backdrop-filter:blur(16px);border-radius:1rem;transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);}
+        .glass-card:hover{border-color:rgba(56,189,248,0.3);background:rgba(17,24,39,0.9);transform:translateY(-4px);box-shadow:0 20px 40px -10px rgba(14,165,233,0.15);}
+        
+        section{padding:100px 20px;}
         .text-brand-blue{color:var(--fyxo-cyan);}
         .bg-brand-blue{background-color:var(--fyxo-blue);}
         .border-brand-blue{border-color:var(--fyxo-blue);}
-        .logo-container{cursor:pointer;display:inline-flex;align-items:center;}
-        .logo-svg{transition:filter 0.3s ease,transform 0.3s ease;}
-        .logo-container:hover .logo-svg{filter:drop-shadow(0 0 10px rgba(248,250,252,0.5));transform:scale(1.02);}
+        
+        .logo-container{cursor:pointer;display:inline-flex;align-items:center;transition:transform 0.3s ease;}
+        .logo-container:hover{transform:scale(1.03);}
+        
         select option{background-color:var(--bg-card);color:var(--text-main);}
         .text-muted{color:var(--text-muted);}
+        
+        /* Gradient Button Animation */
+        .btn-gradient { background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%); transition: all 0.3s ease; background-size: 200% auto; }
+        .btn-gradient:hover { background-position: right center; box-shadow: 0 10px 30px -10px rgba(56,189,248,0.7); transform: translateY(-2px) scale(1.02); }
+        
+        /* Animated Gradient Border for Pricing */
+        .gradient-border-wrap { position: relative; border-radius: 1.1rem; background: linear-gradient(135deg, rgba(56,189,248,0.8), rgba(14,165,233,0.2), rgba(56,189,248,0.8)); padding: 2px; }
+        .gradient-border-inner { background: #0B111E; border-radius: 1rem; height: 100%; }
     </style>
 </head>
-<body>
-    <nav class="fixed top-0 w-full z-50 bg-[#0B111E]/90 backdrop-blur-md border-b border-[#1e293b]">
+<body class="relative">
+    
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <nav class="fixed top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-xl border-b border-white/5 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-            <a href="#home" class="logo-container relative group shrink-0">
-                <span class="logo-svg relative z-10" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.8rem; color: #ffffff; letter-spacing: -0.02em; line-height: 1;">FYXO.</span>
-                <svg class="absolute top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[140%] z-20 pointer-events-none group-hover:scale-105 transition-transform duration-300" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="filter: blur(2px); opacity: 0.9;" />
-                    <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <a href="#home" class="logo-container shrink-0" aria-label="Fyxo Home">
+                <svg viewBox="0 0 350 100" class="h-8 md:h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="lightning-glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1"/>
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2"/>
+                            <feMerge>
+                                <feMergeNode in="blur2"/>
+                                <feMergeNode in="blur1"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <mask id="text-cut">
+                            <rect width="100%" height="100%" fill="white"/>
+                            <polyline points="-10,51 120,45 110,55 180,45 170,55 360,45" fill="none" stroke="black" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter"/>
+                        </mask>
+                    </defs>
+                    <text x="175" y="78" font-family="'Inter', sans-serif" font-weight="900" font-size="82" fill="#ffffff" text-anchor="middle" letter-spacing="-0.02em" mask="url(#text-cut)">FYXO.</text>
+                    <polyline points="-10,51 120,45 110,55 180,45 170,55 360,45" fill="none" stroke="#38bdf8" stroke-width="4" filter="url(#lightning-glow)"/>
+                    <polyline points="-10,51 120,45 110,55 180,45 170,55 360,45" fill="none" stroke="#ffffff" stroke-width="1.5"/>
                 </svg>
             </a>
             
@@ -62,14 +98,14 @@
             </div>
             
             <div class="hidden md:block">
-                <button id="lang-toggle" aria-label="Taal wijzigen" class="flex items-center gap-3 border border-[#1e293b] rounded-full px-4 py-1.5 text-muted hover:text-white transition cursor-pointer bg-[#111827]/50">
+                <button id="lang-toggle" aria-label="Taal wijzigen" class="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white hover:bg-white/5 transition cursor-pointer bg-[#111827]/50">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                     <span class="text-sm font-bold" id="lang-text">EN</span>
                 </button>
             </div>
 
             <div class="md:hidden flex items-center gap-3 sm:gap-4">
-                <button id="lang-toggle-mobile" aria-label="Taal wijzigen" class="flex items-center justify-center shrink-0 border border-[#1e293b] rounded-full w-9 h-9 sm:w-10 sm:h-10 text-muted hover:text-white transition cursor-pointer bg-[#111827]/50">
+                <button id="lang-toggle-mobile" aria-label="Taal wijzigen" class="flex items-center justify-center shrink-0 border border-white/10 rounded-full w-9 h-9 sm:w-10 sm:h-10 text-muted hover:text-white transition cursor-pointer bg-[#111827]/50">
                     <span class="text-xs font-bold" id="lang-text-mobile">EN</span>
                 </button>
                 <button id="mobile-menu-btn" aria-label="Menu" class="text-muted hover:text-white focus:outline-none p-1 shrink-0">
@@ -78,7 +114,7 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0B111E] border-b border-[#1e293b] absolute w-full shadow-2xl">
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0B111E]/95 backdrop-blur-xl border-b border-[#1e293b] absolute w-full shadow-2xl">
             <div class="flex flex-col px-6 py-5 gap-5 font-medium">
                 <a href="#home" class="mobile-nav-link text-brand-blue" data-i18n="nav-home">Home</a>
                 <a href="#werkwijze" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-work">Werkwijze</a>
@@ -90,77 +126,94 @@
         </div>
     </nav>
 
-    <section id="home" class="relative pt-40 pb-20 hero-bg overflow-hidden">
+    <section id="home" class="relative pt-40 pb-20 hero-bg overflow-hidden flex items-center min-h-[90vh]">
         <div class="lightning-overlay"></div>
-        <div class="max-w-5xl mx-auto text-center relative z-10 px-6 mt-10 mb-20" data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="text-4xl md:text-7xl font-black mb-8 leading-tight tracking-tighter drop-shadow-xl" style="-webkit-text-stroke: 1px rgba(255,255,255,0.15);">
-                <span data-i18n="hero-1">Meer klanten via een</span> <span class="text-brand-blue" data-i18n="hero-2" style="text-shadow: 0 0 30px rgba(56, 189, 248, 0.4);">professionele website</span>
+        <div class="max-w-5xl mx-auto text-center relative z-10 px-6 w-full" data-aos="fade-up" data-aos-duration="1000">
+            
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tighter drop-shadow-2xl">
+                <span data-i18n="hero-1">Meer klanten via een</span> <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 filter drop-shadow-[0_0_20px_rgba(56,189,248,0.4)]" data-i18n="hero-2">professionele website</span>
             </h1>
-            <p class="text-xl text-muted mb-10 max-w-2xl mx-auto drop-shadow-md" data-i18n="hero-p">
+            
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto drop-shadow-md leading-relaxed" data-i18n="hero-p">
                 Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker, beter voor Google.
             </p>
-            <div class="flex flex-col items-center gap-4">
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#contact" class="bg-brand-blue hover:bg-[#0284c7] text-white font-bold px-10 py-4 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(14,165,233,0.3)]" data-i18n="hero-btn-1">Start een Project</a>
-                    <a href="#werkwijze" class="bg-[#111827]/60 backdrop-blur-sm hover:bg-[#1e293b]/80 border border-[#1e293b] px-10 py-4 rounded-full transition" data-i18n="hero-btn-2">Onze Werkwijze</a>
+            
+            <div class="flex flex-col items-center gap-6">
+                <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 w-full sm:w-auto">
+                    <a href="#contact" class="btn-gradient text-white font-bold px-10 py-4 rounded-full flex items-center justify-center gap-2 w-full sm:w-auto" data-i18n="hero-btn-1">
+                        Start een Project
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                    <a href="#werkwijze" class="bg-[#111827]/60 backdrop-blur-sm hover:bg-[#1e293b]/90 border border-white/10 px-10 py-4 rounded-full transition duration-300 text-gray-200 hover:text-white w-full sm:w-auto" data-i18n="hero-btn-2">
+                        Onze Werkwijze
+                    </a>
                 </div>
-                <p class="text-sm text-muted mt-2" data-i18n="hero-btn-1-sub">Professionele website vanaf €199</p>
+                
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 text-sm text-gray-400 font-medium">
+                    <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> <span data-i18n="hero-feat-1">Binnen 14 dagen online</span></span>
+                    <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> <span data-i18n="hero-feat-2">100% Tevredenheidsgarantie</span></span>
+                    <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> <span data-i18n="hero-feat-3">SEO Geoptimaliseerd</span></span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="werkwijze" class="max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center" data-aos="fade-up" data-i18n="steps-title">Jouw weg naar succes in <span class="text-brand-blue">4 stappen</span></h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass-card p-8 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-12 h-12 bg-[#0ea5e9]/10 rounded-xl flex items-center justify-center text-brand-blue border border-[#0ea5e9]/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+    <section id="werkwijze" class="max-w-7xl mx-auto relative z-10">
+        <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center" data-aos="fade-up" data-i18n="steps-title">Jouw weg naar succes in <span class="text-brand-blue">4 stappen</span></h2>
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+            <div class="glass-card p-8 md:p-10 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-main" data-i18n="step-1-t">1. Kennismaking</h3>
-                <p class="text-muted leading-relaxed" data-i18n="step-1-p">We starten met een vrijblijvend gesprek. Wat zijn uw wensen? Wie zijn uw klanten? We brengen alles in kaart en leggen de tarieven helder uit. Geen kleine lettertjes.</p>
+                <h3 class="text-2xl font-bold text-main mt-2" data-i18n="step-1-t">1. Kennismaking</h3>
+                <p class="text-muted leading-relaxed text-lg" data-i18n="step-1-p">We starten met een vrijblijvend gesprek. Wat zijn uw wensen? Wie zijn uw klanten? We brengen alles in kaart en leggen de tarieven helder uit. Geen kleine lettertjes.</p>
             </div>
-            <div class="glass-card p-8 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-12 h-12 bg-[#0ea5e9]/10 rounded-xl flex items-center justify-center text-brand-blue border border-[#0ea5e9]/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+            <div class="glass-card p-8 md:p-10 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-main" data-i18n="step-2-t">2. Eerste ontwerp</h3>
-                <p class="text-muted leading-relaxed" data-i18n="step-2-p">Op basis van ons gesprek gaan we aan de slag met het design van uw website. U ontvangt een eerste versie die u in alle rust kunt bekijken.</p>
+                <h3 class="text-2xl font-bold text-main mt-2" data-i18n="step-2-t">2. Eerste ontwerp</h3>
+                <p class="text-muted leading-relaxed text-lg" data-i18n="step-2-p">Op basis van ons gesprek gaan we aan de slag met het design van uw website. U ontvangt een eerste versie die u in alle rust kunt bekijken.</p>
             </div>
-            <div class="glass-card p-8 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-12 h-12 bg-[#0ea5e9]/10 rounded-xl flex items-center justify-center text-brand-blue border border-[#0ea5e9]/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            <div class="glass-card p-8 md:p-10 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-main" data-i18n="step-3-t">3. Correctieronde</h3>
-                <p class="text-muted leading-relaxed" data-i18n="step-3-p">Niet helemaal tevreden? Geen probleem. U krijgt ruimte voor aanpassingen binnen de afgesproken uren. Samen maken we het perfect.</p>
+                <h3 class="text-2xl font-bold text-main mt-2" data-i18n="step-3-t">3. Correctieronde</h3>
+                <p class="text-muted leading-relaxed text-lg" data-i18n="step-3-p">Niet helemaal tevreden? Geen probleem. U krijgt ruimte voor aanpassingen binnen de afgesproken uren. Samen maken we het perfect.</p>
             </div>
-            <div class="glass-card p-8 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-12 h-12 bg-[#0ea5e9]/10 rounded-xl flex items-center justify-center text-brand-blue border border-[#0ea5e9]/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.5-1 1-4c2 0 3 .5 3 2.5a2 2 0 0 1 1 1.5z"></path><path d="M15 9V4s1 .5 4 1c0 2-.5 3-2.5 3a2 2 0 0 1-1.5 1z"></path></svg>
+            <div class="glass-card p-8 md:p-10 flex flex-col gap-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-14 h-14 bg-gradient-to-br from-fyxo-blue to-fyxo-cyan rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.5-1 1-4c2 0 3 .5 3 2.5a2 2 0 0 1 1 1.5z"></path><path d="M15 9V4s1 .5 4 1c0 2-.5 3-2.5 3a2 2 0 0 1-1.5 1z"></path></svg>
                 </div>
-                <h3 class="text-2xl font-bold text-main" data-i18n="step-4-t">4. Oplevering</h3>
-                <p class="text-muted leading-relaxed" data-i18n="step-4-p">Uw website gaat live! Wij zetten alles klaar op uw eigen hosting of regelen dit via ons. U hoeft zich nergens zorgen over te maken.</p>
+                <h3 class="text-2xl font-bold text-main mt-2" data-i18n="step-4-t">4. Oplevering</h3>
+                <p class="text-muted leading-relaxed text-lg" data-i18n="step-4-p">Uw website gaat live! Wij zetten alles klaar op uw eigen hosting of regelen dit via ons. U hoeft zich nergens zorgen over te maken.</p>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="bg-[#0B111E] border-t border-[#1e293b] pt-24 overflow-hidden">
+    <section id="portfolio" class="bg-[#0B111E]/50 border-t border-white/5 pt-24 overflow-hidden relative z-10">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center" data-aos="fade-up"><span data-i18n="port-1">Ons</span> <span class="text-brand-blue" data-i18n="port-2">Portfolio</span></h2>
+            <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center" data-aos="fade-up"><span data-i18n="port-1">Ons</span> <span class="text-brand-blue" data-i18n="port-2">Portfolio</span></h2>
             
             <div class="relative max-w-5xl mx-auto glass-card p-8 md:p-12 overflow-visible" data-aos="fade-up" data-aos-delay="100">
 
                 <div id="portfolio-container" class="transition-opacity duration-500 flex flex-col items-center mt-6 cursor-grab active:cursor-grabbing touch-pan-y">
                     
                     <div class="text-center mb-12 max-w-2xl mx-auto h-32 flex flex-col justify-center">
-                        <p id="portfolio-review" class="text-lg md:text-xl italic text-muted mb-4">"Dit is een placeholder review van een klant."</p>
-                        <div class="flex justify-center text-yellow-400 mb-2 space-x-1">
+                        <p id="portfolio-review" class="text-lg md:text-xl italic text-gray-200 mb-4">"Dit is een placeholder review van een klant."</p>
+                        <div class="flex justify-center text-yellow-400 mb-2 space-x-1 drop-shadow-md">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" /></svg>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" /></svg>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" /></svg>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" /></svg>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" /></svg>
                         </div>
-                        <p id="portfolio-customer" class="font-bold text-main">- Klant Naam</p>
+                        <div class="flex items-center justify-center gap-2">
+                            <p id="portfolio-customer" class="font-bold text-main text-lg">- Klant Naam</p>
+                            <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        </div>
                     </div>
 
                     <div class="flex flex-col md:flex-row justify-center items-end relative w-full mt-4">
@@ -177,7 +230,7 @@
                                 </a>
                             </div>
 
-                            <div class="bg-[#2d3748] rounded-t-2xl p-2 md:p-3 border-t-2 border-x-2 border-gray-600 shadow-2xl relative">
+                            <div class="bg-[#2d3748] rounded-t-2xl p-2 md:p-3 border-t-2 border-x-2 border-white/10 shadow-2xl relative">
                                 <div class="absolute top-1 md:top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-gray-900 border border-gray-700"></div>
                                 <div class="bg-black aspect-[16/10] rounded-sm overflow-hidden relative border border-gray-900 group">
                                     <a id="portfolio-desktop-link" href="#" target="_blank" class="block w-full h-full cursor-pointer">
@@ -191,7 +244,7 @@
                         </div>
 
                         <div class="relative w-1/3 md:w-[22%] max-w-[200px] min-w-[120px] mx-auto md:mx-0 mt-8 md:mt-0 md:-ml-16 z-20 md:mb-[-15px]">
-                            <div class="bg-[#1a202c] rounded-2xl md:rounded-[2.5rem] p-1 md:p-1.5 border-2 border-gray-600 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
+                            <div class="bg-[#1a202c] rounded-2xl md:rounded-[2.5rem] p-1 md:p-1.5 border-2 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
                                 <div class="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 w-[35%] h-3 md:h-5 bg-black rounded-full z-30 pointer-events-none"></div>
                                 <div class="bg-black aspect-[9/19.5] rounded-[0.85rem] md:rounded-[2rem] overflow-hidden relative border-2 border-black group">
                                     <a id="portfolio-mobile-link" href="#" target="_blank" class="block w-full h-full cursor-pointer">
@@ -205,10 +258,10 @@
                 </div>
 
                 <div class="flex justify-center gap-8 mt-16 relative z-30">
-                    <button onclick="prevPortfolio()" aria-label="Vorige project" class="p-4 rounded-full bg-[#111827] border border-[#1e293b] text-white hover:text-brand-blue hover:border-brand-blue transition-all group shadow-lg">
+                    <button onclick="prevPortfolio()" aria-label="Vorige project" class="p-4 rounded-full bg-[#111827] border border-[#1e293b] text-white hover:bg-[#1e293b] transition-all group shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                     </button>
-                    <button onclick="nextPortfolio()" aria-label="Volgende project" class="p-4 rounded-full bg-[#111827] border border-[#1e293b] text-white hover:text-brand-blue hover:border-brand-blue transition-all group shadow-lg">
+                    <button onclick="nextPortfolio()" aria-label="Volgende project" class="p-4 rounded-full bg-[#111827] border border-[#1e293b] text-white hover:bg-[#1e293b] transition-all group shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </button>
                 </div>
@@ -216,160 +269,168 @@
         </div>
     </section>
 
-    <section id="prijzen" class="bg-[#0B111E] border-y border-[#1e293b]">
+    <section id="prijzen" class="bg-[#0B111E] border-y border-white/5 relative z-10">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold mb-4 text-center" data-aos="fade-up" data-i18n="price-title">Transparante <span class="text-brand-blue">Prijzen</span></h2>
-            <p class="text-muted text-center mb-16" data-aos="fade-up" data-aos-delay="100" data-i18n="price-p">Kwaliteit hoeft niet onbetaalbaar te zijn.</p>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-10" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-center" data-aos="fade-up" data-i18n="price-title">Transparante <span class="text-brand-blue">Prijzen</span></h2>
+            <p class="text-muted text-center mb-16 text-lg" data-aos="fade-up" data-aos-delay="100" data-i18n="price-p">Kwaliteit hoeft niet onbetaalbaar te zijn.</p>
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="glass-card p-10 h-full" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="text-xl font-bold mb-2">Starter</h3>
                     <div class="text-4xl font-black mb-6">€199 <span class="text-sm font-normal text-muted">ex. btw</span></div>
-                    <ul class="text-muted space-y-4 mb-8">
+                    <ul class="text-muted space-y-4 mb-10">
                         <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p1-1">Single Page Website</span></li>
                         <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p1-2">Volledig Responsive</span></li>
                         <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p1-3">Contactformulier</span></li>
                         <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p1-4">Hosting Setup</span></li>
                     </ul>
-                    <a href="#contact" class="block text-center py-3 rounded-lg border border-[#1e293b] hover:bg-[#1e293b]/50 transition" data-i18n="p-btn">Kies Starter</a>
+                    <a href="#contact" class="block text-center py-3 rounded-lg border border-[#1e293b] hover:bg-[#1e293b]/80 transition mt-auto" data-i18n="p-btn">Kies Starter</a>
                 </div>
-                <div class="glass-card p-10 border-[#0ea5e9] bg-[#0ea5e9]/5 relative overflow-hidden" style="border-width: 1px; box-shadow: 0 0 20px rgba(14,165,233,0.05);" data-aos="fade-up" data-aos-delay="300">
-                    <div class="absolute top-4 right-[-35px] bg-[#0ea5e9] text-xs font-bold py-1 px-10 rotate-45" data-i18n="populair">POPULAIR</div>
-                    <h3 class="text-xl font-bold mb-2 text-brand-blue">Business</h3>
-                    <div class="text-4xl font-black mb-6">€299 <span class="text-sm font-normal text-muted">ex. btw</span></div>
-                    <ul class="text-muted space-y-4 mb-8 font-semibold text-[#F8FAFC]">
-                        <li data-i18n="p-plus">Alles van Starter plus...</li>
-                    </ul>
-                    <ul class="text-muted space-y-4 mb-8">
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-1">Tot 5 Pagina's</span></li>
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-2">SEO Geoptimaliseerd</span></li>
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-3">CMS Integratie</span></li>
-                        <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-4">Premium Support</span></li>
-                    </ul>
-                    <a href="#contact" class="block text-center py-3 rounded-lg bg-brand-blue font-bold hover:bg-[#0284c7] transition text-white shadow-lg shadow-blue-500/20" data-i18n="p-btn">Kies Business</a>
+                
+                <div class="gradient-border-wrap scale-105 z-10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gradient-border-inner p-10 relative overflow-hidden flex flex-col h-full">
+                        <div class="absolute top-5 right-[-35px] bg-gradient-to-r from-fyxo-blue to-fyxo-cyan text-white text-xs font-bold py-1.5 px-10 rotate-45 shadow-lg shadow-blue-500/30" data-i18n="populair">POPULAIR</div>
+                        <h3 class="text-xl font-bold mb-2 text-brand-blue">Business</h3>
+                        <div class="text-4xl font-black mb-6">€299 <span class="text-sm font-normal text-muted">ex. btw</span></div>
+                        <ul class="text-muted space-y-4 mb-10 font-medium text-white/90 flex-grow">
+                            <li data-i18n="p-plus" class="mb-2 italic text-brand-blue">Alles van Starter plus...</li>
+                            <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-1">Tot 5 Pagina's</span></li>
+                            <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-2">SEO Geoptimaliseerd</span></li>
+                            <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-3">CMS Integratie</span></li>
+                            <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p2-4">Premium Support</span></li>
+                        </ul>
+                        <a href="#contact" class="block text-center py-3 rounded-lg btn-gradient text-white font-bold mt-auto" data-i18n="p-btn">Kies Business</a>
+                    </div>
                 </div>
-                <div class="glass-card p-10" data-aos="fade-up" data-aos-delay="400">
+
+                <div class="glass-card p-10 h-full" data-aos="fade-up" data-aos-delay="400">
                     <h3 class="text-xl font-bold mb-2">Custom</h3>
                     <div class="text-4xl font-black mb-6 text-main" data-i18n="p3-p">Op aanvraag</div>
-                    <ul class="text-muted space-y-4 mb-8">
+                    <ul class="text-muted space-y-4 mb-10 flex-grow">
                         <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p3-1">Webapplicaties</span></li>
                         <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p3-2">Webshops</span></li>
                         <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p3-3">API Integraties</span></li>
                         <li><span class="text-brand-blue mr-2">⚡</span> <span data-i18n="p3-4">Maatwerk Functies</span></li>
                     </ul>
-                    <a href="#contact" class="block text-center py-3 rounded-lg border border-[#1e293b] hover:bg-[#1e293b]/50 transition" data-i18n="contact-btn">Neem Contact Op</a>
+                    <a href="#contact" class="block text-center py-3 rounded-lg border border-[#1e293b] hover:bg-[#1e293b]/80 transition mt-auto" data-i18n="contact-btn">Neem Contact Op</a>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="over-ons" class="max-w-7xl mx-auto py-20 md:py-32 px-6">
+    <section id="over-ons" class="max-w-7xl mx-auto py-20 md:py-32 px-6 relative z-10">
         <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div data-aos="fade-right">
                 <div class="relative flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center flex-wrap">
-                    <div class="absolute inset-0 bg-brand-blue opacity-10 blur-3xl rounded-full"></div>
+                    <div class="absolute inset-0 bg-brand-blue opacity-15 blur-[80px] rounded-full"></div>
                     
-                    <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full border-2 border-[#1e293b] relative z-10 flex-shrink-0 group overflow-hidden cursor-pointer shadow-lg">
+                    <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full border border-white/10 relative z-10 flex-shrink-0 group overflow-hidden cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                         <div class="absolute inset-0 bg-[#0ea5e9]/20 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0 z-20 pointer-events-none"></div>
-                        <img src="sven.jpg" alt="Sven" loading="lazy" class="w-full h-full object-cover object-[90%_25%] transition-transform duration-300 group-hover:scale-105">
+                        <img src="sven.jpg" alt="Sven" loading="lazy" class="w-full h-full object-cover object-[90%_25%] transition-transform duration-500 group-hover:scale-110">
                     </div>
 
-                    <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full border-2 border-[#1e293b] relative z-10 flex-shrink-0 group overflow-hidden cursor-pointer shadow-lg">
+                    <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full border border-white/10 relative z-10 flex-shrink-0 group overflow-hidden cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                         <div class="absolute inset-0 bg-[#0ea5e9]/20 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0 z-20 pointer-events-none"></div>
-                        <img src="kjell.jpg" alt="Kjell" loading="lazy" class="w-full h-full object-cover object-[10%_25%] transition-transform duration-300 group-hover:scale-105">
+                        <img src="kjell.jpg" alt="Kjell" loading="lazy" class="w-full h-full object-cover object-[10%_25%] transition-transform duration-500 group-hover:scale-110">
                     </div>
 
                 </div>
             </div>
             <div data-aos="fade-left">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4 md:mb-6" data-i18n="about-title">Wij zijn <span class="text-brand-blue">Fyxo.</span></h2>
-                <p class="text-base sm:text-lg text-muted leading-relaxed mb-4 md:mb-6 font-semibold" data-i18n="about-p1">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6" data-i18n="about-title">Wij zijn <span class="text-brand-blue">Fyxo.</span></h2>
+                <p class="text-base sm:text-lg text-brand-blue leading-relaxed mb-4 md:mb-6 font-semibold uppercase tracking-wider" data-i18n="about-p1">
                     Snelheid Ontmoet Strategie
                 </p>
-                <p class="text-sm sm:text-base md:text-lg text-muted leading-relaxed" data-i18n="about-p2">
+                <p class="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed" data-i18n="about-p2">
                     Wij zijn Sven en Kjell, de gezichten achter Fyxo. Sven is de technische man: hij bouwt razendsnelle websites die perfect werken en hoog scoren in Google. Kjell is de conversie-expert: hij zorgt voor een ijzersterk design dat bezoekers omzet in betalende klanten. Samen maken we niet zomaar een digitaal visitekaartje, maar een website die echt voor jouw bedrijf werkt.
                 </p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="max-w-6xl mx-auto py-20 md:py-32 border-t border-[#1e293b] px-6">
+    <section id="contact" class="max-w-6xl mx-auto py-20 md:py-32 border-t border-white/5 px-6 relative z-10">
         <div class="grid lg:grid-cols-2 gap-16 items-start">
             <div data-aos="fade-up">
-                <h2 class="text-4xl font-bold mb-4" data-i18n="contact-title">Laten we <span class="text-brand-blue">praten</span></h2>
-                <p class="text-muted mb-8 text-lg" data-i18n="contact-p">Klaar voor een website die echt resultaat levert?</p>
-                <div class="space-y-6 text-left">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="contact-title">Laten we <span class="text-brand-blue">praten</span></h2>
+                <p class="text-gray-300 mb-10 text-lg" data-i18n="contact-p">Klaar voor een website die echt resultaat levert?</p>
+                <div class="space-y-8 text-left">
+                    <div class="flex items-start gap-4 group cursor-default">
+                        <div class="w-12 h-12 bg-[#0ea5e9]/10 rounded-xl flex items-center justify-center text-brand-blue shrink-0 group-hover:bg-[#0ea5e9]/20 transition-colors border border-white/5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-white">Locatie</h4>
-                            <p class="text-muted">Ouddorp, Zuid-Holland, Nederland</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">E-mail</h4>
-                            <a href="mailto:info@fyxo.online" class="text-muted hover:text-brand-blue transition">info@fyxo.online</a>
+                        <div class="mt-1">
+                            <h4 class="font-bold text-white text-lg">Locatie</h4>
+                            <p class="text-gray-400">Ouddorp, Zuid-Holland, Nederland</p>
                         </div>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center text-green-500 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.973L0 16l4.204-1.102a7.932 7.932 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                    <div class="flex items-start gap-4 group cursor-default">
+                        <div class="w-12 h-12 bg-[#0ea5e9]/10 rounded-xl flex items-center justify-center text-brand-blue shrink-0 group-hover:bg-[#0ea5e9]/20 transition-colors border border-white/5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-white">WhatsApp</h4>
-                            <a href="https://wa.me/31644740265" target="_blank" class="text-muted hover:text-green-500 transition">06 44740265</a>
+                        <div class="mt-1">
+                            <h4 class="font-bold text-white text-lg">E-mail</h4>
+                            <a href="mailto:info@fyxo.online" class="text-gray-400 hover:text-brand-blue transition">info@fyxo.online</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 group cursor-default">
+                        <div class="w-12 h-12 bg-[#22c55e]/10 rounded-xl flex items-center justify-center text-[#22c55e] shrink-0 group-hover:bg-[#22c55e]/20 transition-colors border border-white/5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.973L0 16l4.204-1.102a7.932 7.932 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                        </div>
+                        <div class="mt-1">
+                            <h4 class="font-bold text-white text-lg">WhatsApp</h4>
+                            <a href="https://wa.me/31644740265" target="_blank" class="text-gray-400 hover:text-[#22c55e] transition">06 44740265</a>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <form action="https://formsubmit.co/sven@fyxo.online" method="POST" class="space-y-4 text-left glass-card p-8" data-aos="fade-up" data-aos-delay="200">
-            <input type="hidden" name="_subject" value="Nieuwe aanvraag via Fyxo.online">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://fyxo.online#thank-you-section">
-            
-            <div class="grid md:grid-cols-2 gap-4">
-                <div>
-                    <label for="form-name" class="block text-sm text-muted mb-1 ml-1" data-i18n="label-name">Naam *</label>
-                    <input type="text" name="name" id="form-name" placeholder="John Doe" required class="bg-[#0B111E] border border-[#1e293b] rounded-lg p-4 outline-none focus:border-[#38bdf8] transition w-full text-[#F8FAFC]">
+            <form action="https://formsubmit.co/sven@fyxo.online" method="POST" class="space-y-5 text-left glass-card p-8 md:p-10 shadow-[0_20px_40px_rgba(0,0,0,0.5)]" data-aos="fade-up" data-aos-delay="200">
+                <input type="hidden" name="_subject" value="Nieuwe aanvraag via Fyxo.online">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://fyxo.online#thank-you-section">
+                
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="form-name" class="block text-sm font-semibold text-gray-300 mb-2" data-i18n="label-name">Naam *</label>
+                        <input type="text" name="name" id="form-name" placeholder="John Doe" required class="bg-[#0B111E]/80 border border-white/10 rounded-xl p-4 outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] transition w-full text-[#F8FAFC]">
+                    </div>
+                    <div>
+                        <label for="form-company" class="block text-sm font-semibold text-gray-300 mb-2" data-i18n="label-company">Bedrijfsnaam</label>
+                        <input type="text" name="company" id="form-company" placeholder="Fyxo B.V." class="bg-[#0B111E]/80 border border-white/10 rounded-xl p-4 outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] transition w-full text-[#F8FAFC]">
+                    </div>
                 </div>
-                <div>
-                    <label for="form-company" class="block text-sm text-muted mb-1 ml-1" data-i18n="label-company">Bedrijfsnaam</label>
-                    <input type="text" name="company" id="form-company" placeholder="Fyxo B.V." class="bg-[#0B111E] border border-[#1e293b] rounded-lg p-4 outline-none focus:border-[#38bdf8] transition w-full text-[#F8FAFC]">
-                </div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div>
-                    <label for="form-email" class="block text-sm text-muted mb-1 ml-1" data-i18n="label-email">E-mailadres *</label>
-                    <input type="email" name="email" id="form-email" placeholder="info@voorbeeld.nl" required class="bg-[#0B111E] border border-[#1e293b] rounded-lg p-4 outline-none focus:border-[#38bdf8] transition w-full text-[#F8FAFC]">
-                </div>
-                <div>
-                    <label for="form-package" class="block text-sm text-muted mb-1 ml-1" data-i18n="label-package">Welk pakket heeft je interesse?</label>
-                    <div class="relative">
-                        <select name="package" id="form-package" class="bg-[#0B111E] border border-[#1e293b] rounded-lg p-4 outline-none focus:border-[#38bdf8] transition w-full text-muted appearance-none cursor-pointer">
-                            <option value="none" disabled selected data-i18n="opt-choose">-- Kies een optie --</option>
-                            <option value="starter">Starter (€199)</option>
-                            <option value="business">Business (€299)</option>
-                            <option value="custom" data-i18n="opt-custom">Custom (Op aanvraag)</option>
-                            <option value="other" data-i18n="opt-other">Ik heb alleen een vraag</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-muted">
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="form-email" class="block text-sm font-semibold text-gray-300 mb-2" data-i18n="label-email">E-mailadres *</label>
+                        <input type="email" name="email" id="form-email" placeholder="info@voorbeeld.nl" required class="bg-[#0B111E]/80 border border-white/10 rounded-xl p-4 outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] transition w-full text-[#F8FAFC]">
+                    </div>
+                    <div>
+                        <label for="form-package" class="block text-sm font-semibold text-gray-300 mb-2" data-i18n="label-package">Welk pakket heeft je interesse?</label>
+                        <div class="relative">
+                            <select name="package" id="form-package" class="bg-[#0B111E]/80 border border-white/10 rounded-xl p-4 outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] transition w-full text-gray-300 appearance-none cursor-pointer">
+                                <option value="none" disabled selected data-i18n="opt-choose">-- Kies een optie --</option>
+                                <option value="starter">Starter (€199)</option>
+                                <option value="business">Business (€299)</option>
+                                <option value="custom" data-i18n="opt-custom">Custom (Op aanvraag)</option>
+                                <option value="other" data-i18n="opt-other">Ik heb alleen een vraag</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-muted">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <label for="form-msg" class="block text-sm text-muted mb-1 ml-1" data-i18n="label-msg">Bericht *</label>
-                <textarea name="message" id="form-msg" placeholder="Vertel ons over je project..." rows="5" required class="bg-[#0B111E] border border-[#1e293b] rounded-lg p-4 outline-none focus:border-[#38bdf8] transition w-full text-[#F8FAFC]"></textarea>
-            </div>
-            <button class="bg-brand-blue hover:bg-[#0284c7] text-white font-bold w-full py-4 rounded-lg transition-all mt-4 shadow-lg shadow-blue-500/20" data-i18n="send-btn">Verstuur Aanvraag</button>
-        </form>
+                <div>
+                    <label for="form-msg" class="block text-sm font-semibold text-gray-300 mb-2" data-i18n="label-msg">Bericht *</label>
+                    <textarea name="message" id="form-msg" placeholder="Vertel ons over je project..." rows="4" required class="bg-[#0B111E]/80 border border-white/10 rounded-xl p-4 outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] transition w-full text-[#F8FAFC]"></textarea>
+                </div>
+                <div class="pt-2">
+                    <button class="btn-gradient text-white font-bold w-full py-4 rounded-xl transition-all shadow-lg" data-i18n="send-btn">Verstuur Aanvraag</button>
+                    <p class="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-1.5" data-i18n="trust-form">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        Je gegevens zijn veilig. Wij reageren binnen 24 uur.
+                    </p>
+                </div>
+            </form>
         </div>
     </section>
 
@@ -377,15 +438,30 @@
         <nav class="absolute top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-md border-b border-[#1e293b]">
             <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
                 <button onclick="returnToHome()" class="logo-container cursor-pointer relative group shrink-0" style="background: none; border: none; padding: 0;">
-                    <span class="logo-svg relative z-10" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.8rem; color: #ffffff; letter-spacing: -0.02em; line-height: 1;">FYXO.</span>
-                    <svg class="absolute top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[140%] z-20 pointer-events-none group-hover:scale-105 transition-transform duration-300" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="filter: blur(2px); opacity: 0.9;" />
-                        <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <svg viewBox="0 0 350 100" class="h-8 md:h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="lightning-glow-ty" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1"/>
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2"/>
+                                <feMerge>
+                                    <feMergeNode in="blur2"/>
+                                    <feMergeNode in="blur1"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                            <mask id="text-cut-ty">
+                                <rect width="100%" height="100%" fill="white"/>
+                                <polyline points="-10,51 120,45 110,55 180,45 170,55 360,45" fill="none" stroke="black" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter"/>
+                            </mask>
+                        </defs>
+                        <text x="175" y="78" font-family="'Inter', sans-serif" font-weight="900" font-size="82" fill="#ffffff" text-anchor="middle" letter-spacing="-0.02em" mask="url(#text-cut-ty)">FYXO.</text>
+                        <polyline points="-10,51 120,45 110,55 180,45 170,55 360,45" fill="none" stroke="#38bdf8" stroke-width="4" filter="url(#lightning-glow-ty)"/>
+                        <polyline points="-10,51 120,45 110,55 180,45 170,55 360,45" fill="none" stroke="#ffffff" stroke-width="1.5"/>
                     </svg>
                 </button>
             </div>
         </nav>
-        <div class="relative pt-32 pb-20 hero-bg overflow-hidden w-full flex items-center justify-center">
+        <div class="relative pt-32 pb-20 hero-bg overflow-hidden w-full flex items-center justify-center min-h-[100vh]">
             <div class="lightning-overlay"></div>
             <div class="max-w-2xl mx-auto text-center relative z-10 px-6">
                 <div class="mb-8">
@@ -393,11 +469,11 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
-                <h1 class="text-3xl sm:text-5xl md:text-6xl font-black mb-4 md:mb-6 leading-tight text-white">Bedankt!</h1>
-                <p class="text-base sm:text-lg md:text-xl text-muted mb-8" data-i18n="ty-p1">Uw bericht is succesvol verzonden.</p>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black mb-4 md:mb-6 leading-tight text-white">Bedankt!</h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-10" data-i18n="ty-p1">Uw bericht is succesvol verzonden. Wij nemen snel contact met u op.</p>
                 
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button onclick="returnToHome()" class="bg-brand-blue hover:bg-[#0284c7] text-white font-bold px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg" style="border: none; cursor: pointer;">Terug naar Home</button>
+                <div class="flex justify-center">
+                    <button onclick="returnToHome()" class="btn-gradient text-white font-bold px-10 py-4 rounded-full transition-all shadow-lg" style="border: none; cursor: pointer;">Terug naar Home</button>
                 </div>
             </div>
         </div>
@@ -405,14 +481,29 @@
 
     <style>@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}</style>
     
-    <footer class="py-12 border-t border-[#1e293b] px-6 bg-[#0B111E]">
+    <footer class="py-12 border-t border-white/5 px-6 bg-[#0B111E] relative z-10">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-muted text-sm">
-            <div class="mb-4 md:mb-0 flex items-center gap-2">
+            <div class="mb-6 md:mb-0 flex items-center gap-2">
                 <a href="#home" class="logo-container relative group shrink-0">
-                    <span class="logo-svg relative z-10" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1rem; color: #ffffff; letter-spacing: -0.02em; line-height: 1;">FYXO.</span>
-                    <svg class="absolute top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[140%] z-20 pointer-events-none group-hover:scale-105 transition-transform duration-300" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="filter: blur(2px); opacity: 0.9;" />
-                        <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <svg viewBox="0 0 350 100" class="h-6 md:h-8 w-auto" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="lightning-glow-footer" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1"/>
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2"/>
+                                <feMerge>
+                                    <feMergeNode in="blur2"/>
+                                    <feMergeNode in="blur1"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                            <mask id="text-cut-footer">
+                                <rect width="100%" height="100%" fill="white"/>
+                                <polyline points="-10,51 120,45 110,55 180,45 170,55 360,45" fill="none" stroke="black" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter"/>
+                            </mask>
+                        </defs>
+                        <text x="175" y="78" font-family="'Inter', sans-serif" font-weight="900" font-size="82" fill="#ffffff" text-anchor="middle" letter-spacing="-0.02em" mask="url(#text-cut-footer)">FYXO.</text>
+                        <polyline points="-10,51 120,45 110,55 180,45 170,55 360,45" fill="none" stroke="#38bdf8" stroke-width="4" filter="url(#lightning-glow-footer)"/>
+                        <polyline points="-10,51 120,45 110,55 180,45 170,55 360,45" fill="none" stroke="#ffffff" stroke-width="1.5"/>
                     </svg>
                 </a>
                 <span class="ml-2">&copy; 2026</span> <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
@@ -431,11 +522,12 @@
             once: true,
             duration: 800,
             offset: 100,
+            easing: 'ease-out-cubic',
         });
     </script>
 
     <script>
-        const translations={nl:{"nav-home":"Home","nav-work":"Werkwijze","nav-portfolio":"Portfolio","nav-prices":"Prijzen","nav-about":"Over ons","nav-contact":"Contact","hero-1":"Meer klanten via een","hero-2":"professionele website","hero-p":"Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker,beter voor Google.","hero-btn-1":"Start een Project","hero-btn-1-sub":"Professionele website vanaf €199","hero-btn-2":"Onze Werkwijze","steps-title":"Jouw weg naar succes in 4 stappen","step-1-t":"1. Kennismaking","step-1-p":"We starten met een vrijblijvend gesprek. Wat zijn uw wensen?Wie zijn uw klanten?We brengen alles in kaart en leggen de tarieven helder uit. Geen kleine lettertjes.","step-2-t":"2. Eerste ontwerp","step-2-p":"Op basis van ons gesprek gaan we aan de slag met het design van uw website. U ontvangt een eerste versie die u in alle rust kunt bekijken.","step-3-t":"3. Correctieronde","step-3-p":"Niet helemaal tevreden?Geen probleem. U krijgt ruimte voor aanpassingen binnen de afgesproken uren. Samen maken we het perfect.","step-4-t":"4. Oplevering","step-4-p":"Uw website gaat live!Wij zetten alles klaar op uw eigen hosting of regelen dit via ons.","port-1":"Ons","port-2":"Portfolio","port-visit":"Bezoek de website","price-title":"Transparante Prijzen","price-p":"Kwaliteit hoeft niet onbetaalbaar te zijn.","populair":"POPULAIR","p-plus":"Alles van Starter plus...","p-btn":"Kies Plan","contact-btn":"Neem Contact Op","p1-1":"Single Page Website","p1-2":"Volledig Responsive","p1-3":"Contactformulier","p1-4":"Hosting Setup","p2-1":"Tot 5 Pagina's","p2-2":"SEO Geoptimaliseerd","p2-3":"CMS Integratie","p2-4":"Premium Support","p3-1":"Webapplicaties","p3-2":"Webshops","p3-3":"API Integraties","p3-4":"Maatwerk Functies","p3-p":"Op aanvraag","about-title":"Wij zijn Fyxo.","about-p1":"Snelheid Ontmoet Strategie","about-p2":"Wij zijn Sven en Kjell, de gezichten achter Fyxo. Sven is de technische man: hij bouwt razendsnelle websites die perfect werken en hoog scoren in Google. Kjell is de conversie-expert: hij zorgt voor een ijzersterk design dat bezoekers omzet in betalende klanten. Samen maken we niet zomaar een digitaal visitekaartje, maar een website die echt voor jouw bedrijf werkt.","contact-title":"Laten we praten","contact-p":"Klaar voor een website die echt resultaat levert?","send-btn":"Verstuur Aanvraag","label-name":"Naam*","label-company":"Bedrijfsnaam","label-email":"E-mailadres*","label-package":"Welk pakket heeft je interesse?","label-msg":"Bericht*","opt-choose":"--Kies een optie--","opt-custom":"Custom(Op aanvraag)","opt-other":"Ik heb alleen een vraag","footer-copy":"Alle rechten voorbehouden.","f-1":"Privacy","f-2":"Voorwaarden","ty-title":"Bedankt!","ty-p1":"Uw bericht is succesvol verzonden.","ty-p2":"Wij hebben uw aanvraag ontvangen en zullen zo snel mogelijk contact met u opnemen. In de tussentijd kunt u meer informatie vinden op onze website.","ty-btn1":"Terug naar Home","ty-btn2":"Meer informatie","ty-contact":"Vragen? Neem direct contact op via"},en:{"nav-home":"Home","nav-work":"Method","nav-portfolio":"Portfolio","nav-prices":"Pricing","nav-about":"About","nav-contact":"Contact","hero-1":"More customers through a","hero-2":"professional website","hero-p":"We build high-performance websites that load in the blink of an eye. Better for the user,better for Google.","hero-btn-1":"Start a Project","hero-btn-1-sub":"Professional website from €199","hero-btn-2":"Our Method","steps-title":"Your path to success in 4 steps","step-1-t":"1. Introduction","step-1-p":"We start with a non-binding conversation. What are your wishes?Who are your customers?We map everything out clearly.","step-2-t":"2. First Design","step-2-p":"Based on our conversation,we start designing your website. You receive a first version to review at your convenience.","step-3-t":"3. Revision Round","step-3-p":"Not completely satisfied?No problem. You get room for adjustments within the agreed hours.","step-4-t":"4. Delivery","step-4-p":"Your website goes live!We set everything up on your own hosting or arrange this via our services.","port-1":"Our","port-2":"Portfolio","port-visit":"Visit the website","price-title":"Transparent Pricing","price-p":"Quality doesn't have to be unaffordable.","populair":"POPULAR","p-plus":"Everything in Starter plus...","p-btn":"Choose Plan","contact-btn":"Contact Us","p1-1":"Single Page Website","p1-2":"Fully Responsive","p1-3":"Contact Form","p1-4":"Hosting Setup","p2-1":"Up to 5 Pages","p2-2":"SEO Optimized","p2-3":"CMS Integration","p2-4":"Premium Support","p3-1":"Web Applications","p3-2":"Webshops","p3-3":"API Integrations","p3-4":"Custom Features","p3-p":"On request","about-title":"We are Fyxo.","about-p1":"Speed Meets Strategy","about-p2":"We are Sven and Kjell, the faces behind Fyxo. Sven is the technical guy: he builds lightning-fast websites that work perfectly and rank high in Google. Kjell is the conversion expert: he ensures a rock-solid design that turns visitors into paying customers. Together, we don't just create a digital business card, but a website that truly works for your business.","contact-title":"Let's talk","contact-p":"Ready for a website that actually delivers results?","send-btn":"Send Request","label-name":"Name*","label-company":"Company Name","label-email":"Email Address*","label-package":"Which package are you interested in?","label-msg":"Message*","opt-choose":"--Choose an option--","opt-custom":"Custom(On request)","opt-other":"I just have a question","footer-copy":"All rights reserved.","f-1":"Privacy","f-2":"Terms","ty-title":"Thank You!","ty-p1":"Your message has been sent successfully.","ty-p2":"We have received your request and will contact you as soon as possible. In the meantime, you can find more information on our website.","ty-btn1":"Back to Home","ty-btn2":"More information","ty-contact":"Questions? Contact us directly via"}};
+        const translations={nl:{"nav-home":"Home","nav-work":"Werkwijze","nav-portfolio":"Portfolio","nav-prices":"Prijzen","nav-about":"Over ons","nav-contact":"Contact","hero-1":"Meer klanten via een","hero-2":"professionele website","hero-p":"Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker, beter voor Google.","hero-btn-1":"Start een Project","hero-btn-1-sub":"Professionele website vanaf €199","hero-btn-2":"Onze Werkwijze","hero-feat-1":"Binnen 14 dagen online","hero-feat-2":"100% Tevredenheidsgarantie","hero-feat-3":"SEO Geoptimaliseerd","steps-title":"Jouw weg naar succes in 4 stappen","step-1-t":"1. Kennismaking","step-1-p":"We starten met een vrijblijvend gesprek. Wat zijn uw wensen? Wie zijn uw klanten? We brengen alles in kaart en leggen de tarieven helder uit. Geen kleine lettertjes.","step-2-t":"2. Eerste ontwerp","step-2-p":"Op basis van ons gesprek gaan we aan de slag met het design van uw website. U ontvangt een eerste versie die u in alle rust kunt bekijken.","step-3-t":"3. Correctieronde","step-3-p":"Niet helemaal tevreden? Geen probleem. U krijgt ruimte voor aanpassingen binnen de afgesproken uren. Samen maken we het perfect.","step-4-t":"4. Oplevering","step-4-p":"Uw website gaat live! Wij zetten alles klaar op uw eigen hosting of regelen dit via ons. U hoeft zich nergens zorgen over te maken.","port-1":"Ons","port-2":"Portfolio","port-visit":"Bezoek de website","price-title":"Transparante Prijzen","price-p":"Kwaliteit hoeft niet onbetaalbaar te zijn.","populair":"POPULAIR","p-plus":"Alles van Starter plus...","p-btn":"Kies Plan","contact-btn":"Neem Contact Op","p1-1":"Single Page Website","p1-2":"Volledig Responsive","p1-3":"Contactformulier","p1-4":"Hosting Setup","p2-1":"Tot 5 Pagina's","p2-2":"SEO Geoptimaliseerd","p2-3":"CMS Integratie","p2-4":"Premium Support","p3-1":"Webapplicaties","p3-2":"Webshops","p3-3":"API Integraties","p3-4":"Maatwerk Functies","p3-p":"Op aanvraag","about-title":"Wij zijn Fyxo.","about-p1":"Snelheid Ontmoet Strategie","about-p2":"Wij zijn Sven en Kjell, de gezichten achter Fyxo. Sven is de technische man: hij bouwt razendsnelle websites die perfect werken en hoog scoren in Google. Kjell is de conversie-expert: hij zorgt voor een ijzersterk design dat bezoekers omzet in betalende klanten. Samen maken we niet zomaar een digitaal visitekaartje, maar een website die echt voor jouw bedrijf werkt.","contact-title":"Laten we praten","contact-p":"Klaar voor een website die echt resultaat levert?","send-btn":"Verstuur Aanvraag","trust-form":"Je gegevens zijn veilig. Wij reageren binnen 24 uur.","label-name":"Naam *","label-company":"Bedrijfsnaam","label-email":"E-mailadres *","label-package":"Welk pakket heeft je interesse?","label-msg":"Bericht *","opt-choose":"-- Kies een optie --","opt-custom":"Custom (Op aanvraag)","opt-other":"Ik heb alleen een vraag","footer-copy":"Alle rechten voorbehouden.","f-1":"Privacy","f-2":"Voorwaarden","ty-title":"Bedankt!","ty-p1":"Uw bericht is succesvol verzonden. Wij nemen snel contact met u op.","ty-btn1":"Terug naar Home","ty-btn2":"Meer informatie","ty-contact":"Vragen? Neem direct contact op via"},en:{"nav-home":"Home","nav-work":"Method","nav-portfolio":"Portfolio","nav-prices":"Pricing","nav-about":"About","nav-contact":"Contact","hero-1":"More customers through a","hero-2":"professional website","hero-p":"We build high-performance websites that load in the blink of an eye. Better for the user, better for Google.","hero-btn-1":"Start a Project","hero-btn-1-sub":"Professional website from €199","hero-btn-2":"Our Method","hero-feat-1":"Online within 14 days","hero-feat-2":"100% Satisfaction Guarantee","hero-feat-3":"SEO Optimized","steps-title":"Your path to success in 4 steps","step-1-t":"1. Introduction","step-1-p":"We start with a non-binding conversation. What are your wishes? Who are your customers? We map everything out clearly.","step-2-t":"2. First Design","step-2-p":"Based on our conversation, we start designing your website. You receive a first version to review at your convenience.","step-3-t":"3. Revision Round","step-3-p":"Not completely satisfied? No problem. You get room for adjustments within the agreed hours.","step-4-t":"4. Delivery","step-4-p":"Your website goes live! We set everything up on your own hosting or arrange this via our services.","port-1":"Our","port-2":"Portfolio","port-visit":"Visit the website","price-title":"Transparent Pricing","price-p":"Quality doesn't have to be unaffordable.","populair":"POPULAR","p-plus":"Everything in Starter plus...","p-btn":"Choose Plan","contact-btn":"Contact Us","p1-1":"Single Page Website","p1-2":"Fully Responsive","p1-3":"Contact Form","p1-4":"Hosting Setup","p2-1":"Up to 5 Pages","p2-2":"SEO Optimized","p2-3":"CMS Integration","p2-4":"Premium Support","p3-1":"Web Applications","p3-2":"Webshops","p3-3":"API Integrations","p3-4":"Custom Features","p3-p":"On request","about-title":"We are Fyxo.","about-p1":"Speed Meets Strategy","about-p2":"We are Sven and Kjell, the faces behind Fyxo. Sven is the technical guy: he builds lightning-fast websites that work perfectly and rank high in Google. Kjell is the conversion expert: he ensures a rock-solid design that turns visitors into paying customers. Together, we don't just create a digital business card, but a website that truly works for your business.","contact-title":"Let's talk","contact-p":"Ready for a website that actually delivers results?","send-btn":"Send Request","trust-form":"Your data is safe. We respond within 24 hours.","label-name":"Name *","label-company":"Company Name","label-email":"Email Address *","label-package":"Which package are you interested in?","label-msg":"Message *","opt-choose":"-- Choose an option --","opt-custom":"Custom (On request)","opt-other":"I just have a question","footer-copy":"All rights reserved.","f-1":"Privacy","f-2":"Terms","ty-title":"Thank You!","ty-p1":"Your message has been sent successfully. We will contact you soon.","ty-btn1":"Back to Home","ty-btn2":"More information","ty-contact":"Questions? Contact us directly via"}};
         let currentLang='nl';
         const langToggle=document.getElementById('lang-toggle');
         const langToggleMobile=document.getElementById('lang-toggle-mobile');
