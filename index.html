@@ -515,11 +515,42 @@
         </div>
     </section>
 
+    <div id="privacy-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-[#0B111E]/80 backdrop-blur-sm" onclick="closeModal('privacy-modal')"></div>
+        <div class="glass-card relative z-10 w-full max-w-3xl max-h-[85vh] overflow-y-auto p-8 md:p-12 mx-4 transform scale-95 transition-transform duration-300 shadow-2xl">
+            <button onclick="closeModal('privacy-modal')" class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white" data-i18n="f-1">Privacy</h2>
+            <div class="text-gray-300 space-y-4 leading-relaxed">
+                <p>Fyxo respecteert de privacy van alle bezoekers van onze website en draagt er zorg voor dat de persoonlijke informatie die u ons verschaft vertrouwelijk wordt behandeld.</p>
+                <p>Wij gebruiken uw gegevens uitsluitend om uw aanvragen via het contactformulier zo snel en gemakkelijk mogelijk te laten verlopen. Voor het overige zullen wij deze gegevens uitsluitend gebruiken met uw toestemming.</p>
+                <p>Fyxo zal uw persoonlijke gegevens niet aan derden verkopen en zal deze uitsluitend aan derden ter beschikking stellen die zijn betrokken bij het uitvoeren van uw opdracht.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="voorwaarden-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-[#0B111E]/80 backdrop-blur-sm" onclick="closeModal('voorwaarden-modal')"></div>
+        <div class="glass-card relative z-10 w-full max-w-3xl max-h-[85vh] overflow-y-auto p-8 md:p-12 mx-4 transform scale-95 transition-transform duration-300 shadow-2xl">
+            <button onclick="closeModal('voorwaarden-modal')" class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white" data-i18n="f-2">Voorwaarden</h2>
+            <div class="text-gray-300 space-y-4 leading-relaxed">
+                <p>Deze algemene voorwaarden zijn van toepassing op elk aanbod van Fyxo en op elke tot stand gekomen overeenkomst op afstand tussen Fyxo en de opdrachtgever.</p>
+                <p>Alle offertes en aanbiedingen van Fyxo zijn vrijblijvend, tenzij in de offerte een termijn voor aanvaarding is gesteld.</p>
+                <p>Fyxo zal de overeenkomst naar beste inzicht en vermogen en overeenkomstig de eisen van goed vakmanschap uitvoeren.</p>
+                <p>Indien tijdens de uitvoering van de overeenkomst blijkt dat het voor een behoorlijke uitvoering daarvan noodzakelijk is om deze te wijzigen of aan te vullen, dan zullen partijen tijdig en in onderling overleg tot aanpassing van de overeenkomst overgaan.</p>
+            </div>
+        </div>
+    </div>
+
     <style>@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}</style>
     
     <footer class="py-12 border-t border-white/5 px-6 bg-[#0B111E] relative z-10">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-muted text-sm">
-            <div class="mb-6 md:mb-0 flex items-center gap-2">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-muted text-sm gap-8 md:gap-0">
+            <div class="flex items-center gap-2">
                 <a href="#home" class="logo-container relative group shrink-0 w-20 sm:w-24">
                     <svg viewBox="0 0 350 100" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -544,24 +575,24 @@
                 </a>
                 <span class="ml-2">&copy; 2026</span> <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
             </div>
-            <div class="flex gap-8">
-                <a href="#" class="hover:text-white transition-colors" data-i18n="f-1">Privacy</a>
-                <a href="#" class="hover:text-white transition-colors" data-i18n="f-2">Voorwaarden</a>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" onclick="openModal('privacy-modal'); return false;" class="bg-white/5 hover:bg-white/10 border border-white/5 px-5 py-2.5 rounded-xl transition-colors text-gray-300 hover:text-white" data-i18n="f-1">Privacy</a>
+                <a href="#" onclick="openModal('voorwaarden-modal'); return false;" class="bg-white/5 hover:bg-white/10 border border-white/5 px-5 py-2.5 rounded-xl transition-colors text-gray-300 hover:text-white" data-i18n="f-2">Voorwaarden</a>
             </div>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
         window.addEventListener('DOMContentLoaded', () => {
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    once: true,
-                    duration: 800,
-                    offset: 100,
-                    easing: 'ease-out-cubic',
-                });
-            }
+            const aosScript = document.createElement('script');
+            aosScript.src = "https://unpkg.com/aos@2.3.1/dist/aos.js";
+            aosScript.onload = () => {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({ once: true, duration: 800, offset: 100, easing: 'ease-out-cubic' });
+                }
+            };
+            document.body.appendChild(aosScript);
         });
     </script>
 
@@ -572,6 +603,29 @@
         const langToggleMobile=document.getElementById('lang-toggle-mobile');
         const langText=document.getElementById('lang-text');
         const langTextMobile=document.getElementById('lang-text-mobile');
+
+        // Modal Logic
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.glass-card').classList.remove('scale-95');
+                modal.querySelector('.glass-card').classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('opacity-0');
+            modal.querySelector('.glass-card').classList.remove('scale-100');
+            modal.querySelector('.glass-card').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
 
         // Mobile Menu Logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
