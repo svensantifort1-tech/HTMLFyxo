@@ -6,13 +6,21 @@
     <title>Fyxo | Meer klanten via een professionele website</title>
     
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="preconnect" href="https://files.manuscdn.com" crossorigin>
+
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60&fm=webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=70&fm=webp" media="(min-width: 769px)" fetchpriority="high">
+    <link rel="preload" as="image" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/TvOQiBXKCExmZAMN.jpg" fetchpriority="high">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp" media="(max-width: 768px)" fetchpriority="high">
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&fm=webp" media="(min-width: 769px)" fetchpriority="high">
 
     <meta name="description" content="Fyxo bouwt high-performance, conversie-geoptimaliseerde websites die razendsnel laden en passieve bezoekers omzetten in loyale klanten. Start vandaag.">
     <meta property="og:title" content="Fyxo | Meer klanten via een professionele website">
@@ -22,8 +30,6 @@
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/hWeEHrCuhewmgcpl.png">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
@@ -39,24 +45,24 @@
         .ambient-glow-1 { position: absolute; top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(11,17,30,0) 70%); z-index: -1; pointer-events: none; }
         .ambient-glow-2 { position: absolute; bottom: 10%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, rgba(11,17,30,0) 70%); z-index: -1; pointer-events: none; }
         
-        /* Optimized Hero Background - Loads appropriate image size based on screen */
+        /* Optimized Hero Background - Matches the preload URLs perfectly */
         .hero-bg {
             background-color: var(--bg-dark);
-            background-image: linear-gradient(to bottom, rgba(11,17,30,0.85) 0%, rgba(11,17,30,0.98) 80%, var(--bg-dark) 100%), url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp');
+            background-image: linear-gradient(to bottom, rgba(11,17,30,0.85) 0%, rgba(11,17,30,0.98) 80%, var(--bg-dark) 100%), url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60&fm=webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
         @media (min-width: 769px) {
             .hero-bg {
-                background-image: linear-gradient(to bottom, rgba(11,17,30,0.85) 0%, rgba(11,17,30,0.98) 80%, var(--bg-dark) 100%), url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&fm=webp');
+                background-image: linear-gradient(to bottom, rgba(11,17,30,0.85) 0%, rgba(11,17,30,0.98) 80%, var(--bg-dark) 100%), url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=70&fm=webp');
             }
         }
 
         .lightning-overlay{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden;background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/TvOQiBXKCExmZAMN.jpg');background-size:cover;background-position:center;mix-blend-mode:screen;opacity:0.6;animation:lightning-flicker 12s infinite ease-in-out;}
         @keyframes lightning-flicker{0%,100%{opacity:0.4;}45%{opacity:0.4;}47%{opacity:0.7;}48%{opacity:0.3;}50%{opacity:0.8;}52%{opacity:0.4;}54%{opacity:0.6;}56%{opacity:0.4;}}
         
-        /* Pure CSS Native Hero Animation to bypass JS rendering blocks (Massive FCP/LCP fix) */
+        /* Pure CSS Native Hero Animation */
         @keyframes heroFadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .animate-hero-fade { animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
@@ -264,7 +270,7 @@
                                 <div class="absolute top-1 md:top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-gray-900 border border-gray-700"></div>
                                 <div class="bg-black aspect-[16/10] rounded-sm overflow-hidden relative border border-gray-900 group">
                                     <a id="portfolio-desktop-link" href="#" target="_blank" class="block w-full h-full cursor-pointer">
-                                        <img id="portfolio-desktop-img" src="" alt="Desktop View" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+                                        <img id="portfolio-desktop-img" src="" alt="Desktop View" loading="lazy" decoding="async" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
                                     </a>
                                 </div>
                             </div>
@@ -278,7 +284,7 @@
                                 <div class="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 w-[35%] h-3 md:h-5 bg-black rounded-full z-30 pointer-events-none"></div>
                                 <div class="bg-black aspect-[9/19.5] rounded-[0.85rem] md:rounded-[2rem] overflow-hidden relative border-2 border-black group">
                                     <a id="portfolio-mobile-link" href="#" target="_blank" class="block w-full h-full cursor-pointer">
-                                        <img id="portfolio-mobile-img" src="" alt="Mobile View" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+                                        <img id="portfolio-mobile-img" src="" alt="Mobile View" loading="lazy" decoding="async" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
                                     </a>
                                 </div>
                             </div>
@@ -355,12 +361,12 @@
                     
                     <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full border border-white/10 relative z-10 flex-shrink-0 group overflow-hidden cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                         <div class="absolute inset-0 bg-[#0ea5e9]/20 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0 z-20 pointer-events-none"></div>
-                        <img src="sven.jpg" alt="Sven" loading="lazy" class="w-full h-full object-cover object-[90%_25%] transition-transform duration-500 group-hover:scale-110">
+                        <img src="sven.jpg" alt="Sven" loading="lazy" decoding="async" class="w-full h-full object-cover object-[90%_25%] transition-transform duration-500 group-hover:scale-110">
                     </div>
 
                     <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full border border-white/10 relative z-10 flex-shrink-0 group overflow-hidden cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                         <div class="absolute inset-0 bg-[#0ea5e9]/20 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0 z-20 pointer-events-none"></div>
-                        <img src="kjell.jpg" alt="Kjell" loading="lazy" class="w-full h-full object-cover object-[10%_25%] transition-transform duration-500 group-hover:scale-110">
+                        <img src="kjell.jpg" alt="Kjell" loading="lazy" decoding="async" class="w-full h-full object-cover object-[10%_25%] transition-transform duration-500 group-hover:scale-110">
                     </div>
 
                 </div>
@@ -579,6 +585,20 @@
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth Scroll Logic
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
 
