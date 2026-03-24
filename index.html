@@ -39,34 +39,16 @@
         .logo-container:hover .logo-svg{filter:drop-shadow(0 0 10px rgba(248,250,252,0.5));transform:scale(1.02);}
         select option{background-color:var(--bg-card);color:var(--text-main);}
         .text-muted{color:var(--text-muted);}
-        
-        /* AI Chat Box CSS */
-        #ai-chat-container{position:fixed;bottom:30px;right:30px;width:380px;max-height:600px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:9999;display:flex;flex-direction:column;transform:translateY(150%);transition:transform 0.3s ease;}
-        #ai-chat-container.open{transform:translateY(0);}
-        #ai-chat-header{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);color:white;padding:16px;border-radius:12px 12px 0 0;font-weight:bold;display:flex;justify-content:space-between;align-items:center;}
-        #ai-chat-close{background:none;border:none;color:white;cursor:pointer;font-size:20px;}
-        #ai-chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}
-        .chat-message{padding:10px 12px;border-radius:8px;max-width:85%;word-wrap:break-word;font-size:14px;}
-        .chat-message.user{align-self:flex-end;background:#0ea5e9;color:white;}
-        .chat-message.ai{align-self:flex-start;background:#1e293b;color:#F8FAFC;}
-        .typing-indicator{font-style:italic;color:#94A3B8;opacity:0.8;}
-        #ai-chat-input-area{padding:12px;border-top:1px solid var(--border-color);display:flex;gap:8px;}
-        #ai-chat-input{flex:1;background:#0B111E;border:1px solid var(--border-color);color:var(--text-main);padding:8px 12px;border-radius:6px;outline:none;font-family:'Inter',sans-serif;}
-        #ai-chat-input:focus{border-color:#38bdf8;}
-        #ai-chat-send{background:#0ea5e9;border:none;color:white;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:bold;transition:background 0.3s;}
-        #ai-chat-send:hover{background:#0284c7;}
-        #ai-chat-btn{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:9998;transition:all 0.3s ease;border:none;font-family:'Inter',sans-serif;}
-        #ai-chat-btn:hover{transform:scale(1.1);}
-        #ai-chat-btn.hidden{display:none;}
     </style>
 </head>
 <body>
     <nav class="fixed top-0 w-full z-50 bg-[#0B111E]/90 backdrop-blur-md border-b border-[#1e293b]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
             <a href="#home" class="logo-container relative group shrink-0">
-                <span class="logo-svg relative z-10" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.6rem; color: #F8FAFC; letter-spacing: -0.04em; line-height: 1;">FYXO</span>
-                <svg class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[130%] text-brand-blue drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] z-20 group-hover:scale-105 transition-transform pointer-events-none" viewBox="0 0 100 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M-5,10 L45,10 L40,14 L105,6 L55,6 L60,2 Z" />
+                <span class="logo-svg relative z-10" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.8rem; color: #ffffff; letter-spacing: -0.02em; line-height: 1;">FYXO.</span>
+                <svg class="absolute top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[140%] z-20 pointer-events-none group-hover:scale-105 transition-transform duration-300" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="filter: blur(2px); opacity: 0.9;" />
+                    <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </a>
             
@@ -395,9 +377,10 @@
         <nav class="absolute top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-md border-b border-[#1e293b]">
             <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
                 <button onclick="returnToHome()" class="logo-container cursor-pointer relative group shrink-0" style="background: none; border: none; padding: 0;">
-                    <span class="logo-svg relative z-10" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.6rem; color: #F8FAFC; letter-spacing: -0.04em; line-height: 1;">FYXO</span>
-                    <svg class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[130%] text-brand-blue drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] z-20 group-hover:scale-105 transition-transform pointer-events-none" viewBox="0 0 100 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M-5,10 L45,10 L40,14 L105,6 L55,6 L60,2 Z" />
+                    <span class="logo-svg relative z-10" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.8rem; color: #ffffff; letter-spacing: -0.02em; line-height: 1;">FYXO.</span>
+                    <svg class="absolute top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[140%] z-20 pointer-events-none group-hover:scale-105 transition-transform duration-300" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="filter: blur(2px); opacity: 0.9;" />
+                        <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
             </div>
@@ -420,30 +403,16 @@
         </div>
     </section>
 
-    <div id="ai-chat-container">
-        <div id="ai-chat-header">
-            <span>FYXO Assistant</span>
-            <button id="ai-chat-close" aria-label="Sluiten">×</button>
-        </div>
-        <div id="ai-chat-messages"></div>
-        <div id="ai-chat-input-area">
-            <input type="text" id="ai-chat-input" placeholder="Stel een vraag..."/>
-            <button id="ai-chat-send" aria-label="Verstuur bericht">Verzend</button>
-        </div>
-    </div>
-    <button id="ai-chat-btn" aria-label="Open Chat">
-        <span style="font-size:28px;font-weight:900;color:white;line-height:1;">F</span>
-    </button>
-
     <style>@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}</style>
     
     <footer class="py-12 border-t border-[#1e293b] px-6 bg-[#0B111E]">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-muted text-sm">
             <div class="mb-4 md:mb-0 flex items-center gap-2">
                 <a href="#home" class="logo-container relative group shrink-0">
-                    <span class="logo-svg relative z-10" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1rem; color: #F8FAFC; letter-spacing: -0.04em; line-height: 1;">FYXO</span>
-                    <svg class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[130%] text-brand-blue drop-shadow-[0_0_5px_rgba(56,189,248,0.8)] z-20 group-hover:scale-105 transition-transform pointer-events-none" viewBox="0 0 100 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M-5,10 L45,10 L40,14 L105,6 L55,6 L60,2 Z" />
+                    <span class="logo-svg relative z-10" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1rem; color: #ffffff; letter-spacing: -0.02em; line-height: 1;">FYXO.</span>
+                    <svg class="absolute top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[140%] z-20 pointer-events-none group-hover:scale-105 transition-transform duration-300" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="filter: blur(2px); opacity: 0.9;" />
+                        <path d="M-5,12 L42,12 L36,16 L70,14 L64,18 L115,12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </a>
                 <span class="ml-2">&copy; 2026</span> <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
@@ -609,8 +578,8 @@
 
         // Pages Hash Navigation logic
         function showThankYouPage() {
-            document.querySelectorAll('body > nav, body > section, body > footer, #ai-chat-btn').forEach(el => {
-                if (el.id !== 'thank-you-section' && el.id !== 'ai-chat-container') {
+            document.querySelectorAll('body > nav, body > section, body > footer').forEach(el => {
+                if (el.id !== 'thank-you-section') {
                     el.style.display = 'none';
                 }
             });
@@ -623,8 +592,8 @@
         }
 
         function returnToHome() {
-            document.querySelectorAll('body > nav, body > section, body > footer, #ai-chat-btn').forEach(el => {
-                if (el.id !== 'thank-you-section' && el.id !== 'ai-chat-container') {
+            document.querySelectorAll('body > nav, body > section, body > footer').forEach(el => {
+                if (el.id !== 'thank-you-section') {
                     el.style.display = '';
                 }
             });
@@ -647,85 +616,6 @@
                 showThankYouPage();
             } else if (window.location.hash === '#home' || window.location.hash === '') {
                 returnToHome();
-            }
-        });
-
-        // AI Chat Box Logic
-        const chatContainer = document.getElementById('ai-chat-container');
-        const chatBtn = document.getElementById('ai-chat-btn');
-        const chatClose = document.getElementById('ai-chat-close');
-        const chatSend = document.getElementById('ai-chat-send');
-        const chatInput = document.getElementById('ai-chat-input');
-        const messagesDiv = document.getElementById('ai-chat-messages');
-
-        async function getAIResponse(userMessage){
-            try {
-                const response = await fetch('/api/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: userMessage })
-                });
-
-                if (!response.ok) {
-                    // Fallback response inside the browser if your serverless endpoint isn't up yet
-                    return new Promise(resolve => {
-                        setTimeout(() => {
-                            const lowerMessage = userMessage.toLowerCase().trim();
-                            if(lowerMessage.includes('prijs') || lowerMessage.includes('kosten')) {
-                                resolve("Onze websites beginnen vanaf €199 (Starter). We hebben ook een Business pakket voor €299 en custom oplossingen. Wat zoek je precies?");
-                            } else {
-                                resolve("Bedankt voor je bericht. We konden even geen verbinding maken met de server. Vul ons contactformulier in of stuur een WhatsApp!");
-                            }
-                        }, 1000);
-                    });
-                }
-
-                const data = await response.json();
-                return data.reply;
-                
-            } catch (error) {
-                console.error("AI Fetch Error:", error);
-                return "Er is helaas een fout opgetreden bij het laden van mijn brein. Neem aub contact op via het formulier of WhatsApp.";
-            }
-        }
-
-        function addChatMessage(text, sender) {
-            const messageEl = document.createElement('div');
-            messageEl.className = `chat-message ${sender}`;
-            messageEl.textContent = text;
-            messagesDiv.appendChild(messageEl);
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-            return messageEl;
-        }
-
-        chatBtn.addEventListener('click', () => {
-            chatContainer.classList.toggle('open');
-            if (chatContainer.classList.contains('open')) {
-                chatInput.focus();
-            }
-        });
-
-        chatClose.addEventListener('click', () => {
-            chatContainer.classList.remove('open');
-        });
-
-        chatSend.addEventListener('click', async () => {
-            const message = chatInput.value.trim();
-            if (message) {
-                addChatMessage(message, 'user');
-                chatInput.value = '';
-                
-                const typingIndicator = addChatMessage('Fyxo is aan het typen...', 'ai typing-indicator');
-                const reply = await getAIResponse(message);
-                
-                typingIndicator.remove();
-                addChatMessage(reply, 'ai');
-            }
-        });
-
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                chatSend.click();
             }
         });
     </script>
