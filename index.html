@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" style="scroll-behavior: smooth; scroll-padding-top: 90px;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fyxo | Meer klanten via een professionele website</title>
     
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&fm=webp">
+    <link rel="preload" as="image" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/TvOQiBXKCExmZAMN.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <meta name="description" content="Fyxo bouwt high-performance, conversie-geoptimaliseerde websites die razendsnel laden en passieve bezoekers omzetten in loyale klanten. Start vandaag.">
     <meta property="og:title" content="Fyxo | Meer klanten via een professionele website">
     <meta property="og:description" content="Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker, beter voor Google.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80&fm=webp">
     <meta property="og:url" content="https://fyxo.online">
     <meta property="og:type" content="website">
 
@@ -16,18 +21,18 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
         :root{--fyxo-blue:#0ea5e9;--fyxo-cyan:#38bdf8;--bg-dark:#0B111E;--bg-card:#111827;--border-color:#1e293b;--text-main:#F8FAFC;--text-muted:#94A3B8;}
-        body{background-color:var(--bg-dark);color:var(--text-main);font-family:'Inter',sans-serif;scroll-behavior:smooth;overflow-x:hidden;}
+        body{background-color:var(--bg-dark);color:var(--text-main);font-family:'Inter',sans-serif;overflow-x:hidden;}
         
         /* Modern Ambient Background Elements */
         .ambient-glow-1 { position: absolute; top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(11,17,30,0) 70%); z-index: -1; pointer-events: none; }
         .ambient-glow-2 { position: absolute; bottom: 10%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, rgba(11,17,30,0) 70%); z-index: -1; pointer-events: none; }
         
-        .hero-bg{background-image:linear-gradient(to bottom,rgba(11,17,30,0.85) 0%,rgba(11,17,30,0.98) 80%,var(--bg-dark) 100%),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;background-attachment:fixed;}
+        .hero-bg{background-image:linear-gradient(to bottom,rgba(11,17,30,0.85) 0%,rgba(11,17,30,0.98) 80%,var(--bg-dark) 100%),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&fm=webp');background-size:cover;background-position:center;background-attachment:fixed;}
         .lightning-overlay{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden;background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/TvOQiBXKCExmZAMN.jpg');background-size:cover;background-position:center;mix-blend-mode:screen;opacity:0.6;animation:lightning-flicker 12s infinite ease-in-out;}
         @keyframes lightning-flicker{0%,100%{opacity:0.4;}45%{opacity:0.4;}47%{opacity:0.7;}48%{opacity:0.3;}50%{opacity:0.8;}52%{opacity:0.4;}54%{opacity:0.6;}56%{opacity:0.4;}}
         
@@ -63,10 +68,11 @@
     <div class="ambient-glow-1"></div>
     <div class="ambient-glow-2"></div>
 
-    <nav class="fixed top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-xl border-b border-white/5 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-            <a href="#home" class="logo-container shrink-0" aria-label="Fyxo Home">
-                <svg viewBox="0 0 350 100" class="h-8 md:h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
+    <nav class="fixed top-0 w-full z-50 bg-[#0B111E]/90 backdrop-blur-xl border-b border-white/5 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+            
+            <a href="#home" class="logo-container shrink-0 w-24 sm:w-28 md:w-36 relative group" aria-label="Fyxo Home">
+                <svg viewBox="0 0 350 100" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <filter id="lightning-glow" x="-50%" y="-50%" width="200%" height="200%">
                             <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1"/>
@@ -97,24 +103,24 @@
                 <a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a>
             </div>
             
-            <div class="hidden md:block">
+            <div class="hidden md:block shrink-0">
                 <button id="lang-toggle" aria-label="Taal wijzigen" class="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 text-muted hover:text-white hover:bg-white/5 transition cursor-pointer bg-[#111827]/50">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                     <span class="text-sm font-bold" id="lang-text">EN</span>
                 </button>
             </div>
 
-            <div class="md:hidden flex items-center gap-3 sm:gap-4">
-                <button id="lang-toggle-mobile" aria-label="Taal wijzigen" class="flex items-center justify-center shrink-0 border border-white/10 rounded-full w-9 h-9 sm:w-10 sm:h-10 text-muted hover:text-white transition cursor-pointer bg-[#111827]/50">
+            <div class="md:hidden flex items-center justify-end gap-2 shrink-0">
+                <button id="lang-toggle-mobile" aria-label="Taal wijzigen" class="flex items-center justify-center shrink-0 border border-white/10 rounded-full w-9 h-9 text-muted hover:text-white transition cursor-pointer bg-[#111827]/50">
                     <span class="text-xs font-bold" id="lang-text-mobile">EN</span>
                 </button>
-                <button id="mobile-menu-btn" aria-label="Menu" class="text-muted hover:text-white focus:outline-none p-1 shrink-0">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <button id="mobile-menu-btn" aria-label="Menu openen" class="text-muted hover:text-white focus:outline-none p-2 shrink-0">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0B111E]/95 backdrop-blur-xl border-b border-[#1e293b] absolute w-full shadow-2xl">
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0B111E]/95 backdrop-blur-xl border-b border-[#1e293b] absolute top-full left-0 w-full shadow-2xl">
             <div class="flex flex-col px-6 py-5 gap-5 font-medium">
                 <a href="#home" class="mobile-nav-link text-brand-blue" data-i18n="nav-home">Home</a>
                 <a href="#werkwijze" class="mobile-nav-link text-muted hover:text-white transition" data-i18n="nav-work">Werkwijze</a>
@@ -437,8 +443,8 @@
     <section id="thank-you-section" class="hidden relative bg-[#0B111E] min-h-screen flex items-center justify-center">
         <nav class="absolute top-0 w-full z-50 bg-[#0B111E]/80 backdrop-blur-md border-b border-[#1e293b]">
             <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                <button onclick="returnToHome()" class="logo-container cursor-pointer relative group shrink-0" style="background: none; border: none; padding: 0;">
-                    <svg viewBox="0 0 350 100" class="h-8 md:h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
+                <button onclick="returnToHome()" class="logo-container cursor-pointer relative group shrink-0 w-24 sm:w-36" style="background: none; border: none; padding: 0;">
+                    <svg viewBox="0 0 350 100" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <filter id="lightning-glow-ty" x="-50%" y="-50%" width="200%" height="200%">
                                 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1"/>
@@ -484,8 +490,8 @@
     <footer class="py-12 border-t border-white/5 px-6 bg-[#0B111E] relative z-10">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-muted text-sm">
             <div class="mb-6 md:mb-0 flex items-center gap-2">
-                <a href="#home" class="logo-container relative group shrink-0">
-                    <svg viewBox="0 0 350 100" class="h-6 md:h-8 w-auto" xmlns="http://www.w3.org/2000/svg">
+                <a href="#home" class="logo-container relative group shrink-0 w-20 sm:w-24">
+                    <svg viewBox="0 0 350 100" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <filter id="lightning-glow-footer" x="-50%" y="-50%" width="200%" height="200%">
                                 <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1"/>
@@ -511,7 +517,6 @@
             <div class="flex gap-8">
                 <a href="#" class="hover:text-white transition-colors" data-i18n="f-1">Privacy</a>
                 <a href="#" class="hover:text-white transition-colors" data-i18n="f-2">Voorwaarden</a>
-                <a href="https://www.linkedin.com" class="hover:text-white transition-colors">LinkedIn</a>
             </div>
         </div>
     </footer>
@@ -546,6 +551,27 @@
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth Scroll Logic for Links (Ensures Offset is Respected)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    e.preventDefault();
+                    const headerOffset = 90;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+                    window.scrollTo({
+                         top: offsetPosition,
+                         behavior: "smooth"
+                    });
+                }
             });
         });
 
@@ -642,7 +668,7 @@
         window.addEventListener('scroll',()=>{
             let current='';
             document.querySelectorAll('section').forEach(section=>{
-                if(pageYOffset>=section.offsetTop-100){
+                if(pageYOffset>=section.offsetTop-120){
                     current=section.getAttribute('id');
                 }
             });
