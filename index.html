@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="nl" style="scroll-behavior: smooth; scroll-padding-top: 90px;">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fyxo | Meer klanten via een professionele website</title>
     
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&fm=webp">
-    <link rel="preload" as="image" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/TvOQiBXKCExmZAMN.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&fm=webp" fetchpriority="high">
+    <link rel="preload" as="image" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663459132698/TvOQiBXKCExmZAMN.jpg" fetchpriority="high">
 
     <meta name="description" content="Fyxo bouwt high-performance, conversie-geoptimaliseerde websites die razendsnel laden en passieve bezoekers omzetten in loyale klanten. Start vandaag.">
     <meta property="og:title" content="Fyxo | Meer klanten via een professionele website">
     <meta property="og:description" content="Wij bouwen high-performance websites die binnen een oogwenk laden. Beter voor de gebruiker, beter voor Google.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80&fm=webp">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
     <meta property="og:url" content="https://fyxo.online">
     <meta property="og:type" content="website">
 
@@ -24,9 +26,13 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
         :root{--fyxo-blue:#0ea5e9;--fyxo-cyan:#38bdf8;--bg-dark:#0B111E;--bg-card:#111827;--border-color:#1e293b;--text-main:#F8FAFC;--text-muted:#94A3B8;}
-        body{background-color:var(--bg-dark);color:var(--text-main);font-family:'Inter',sans-serif;overflow-x:hidden;}
+        
+        /* Smooth Scrolling and Mobile Overflow Fix */
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        html, body { overflow-x: hidden; width: 100%; max-width: 100vw; position: relative; }
+        
+        body{background-color:var(--bg-dark);color:var(--text-main);font-family:'Inter',sans-serif;}
         
         /* Modern Ambient Background Elements */
         .ambient-glow-1 { position: absolute; top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(11,17,30,0) 70%); z-index: -1; pointer-events: none; }
@@ -551,27 +557,6 @@
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Smooth Scroll Logic for Links (Ensures Offset is Respected)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    e.preventDefault();
-                    const headerOffset = 90;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
-                    window.scrollTo({
-                         top: offsetPosition,
-                         behavior: "smooth"
-                    });
-                }
             });
         });
 
