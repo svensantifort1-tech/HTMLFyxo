@@ -656,13 +656,7 @@
                 </div>
             </div>
         </section>
-        
-        <section class="max-w-7xl mx-auto px-6 py-8 relative z-10">
-            <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69cf8f1ac108581919707568" data-style-height="52px" data-style-width="100%" data-token="8575b82b-0f88-426c-aa19-f3c18f325886">
-              <a href="https://www.trustpilot.com/review/fyxo.online" target="_blank" rel="noopener">Trustpilot</a>
-            </div>
-        </section>
-        </main>
+    </main>
 
     <div id="audit-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
         <div class="absolute inset-0 bg-[#0B111E]/80 backdrop-blur-sm" onclick="closeModal('audit-modal')"></div>
@@ -723,7 +717,7 @@
     
     <footer class="py-12 border-t border-white/5 px-6 bg-[#0B111E] relative z-10">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-muted text-sm gap-8 md:gap-0">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 shrink-0">
                 <a href="#home" class="logo-container relative group shrink-0 w-20 sm:w-24" aria-label="Fyxo Home">
                     <svg viewBox="0 0 350 100" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -749,7 +743,10 @@
                 <span class="ml-2">&copy; 2026</span> <span data-i18n="footer-copy">Alle rechten voorbehouden.</span>
             </div>
             
-            <div class="flex flex-wrap justify-center gap-4">
+            <div class="trustpilot-widget w-full md:w-64 flex justify-center shrink-0" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69cf8f1ac108581919707568" data-style-height="52px" data-style-width="100%" data-token="8575b82b-0f88-426c-aa19-f3c18f325886">
+              <a href="https://www.trustpilot.com/review/fyxo.online" target="_blank" rel="noopener">Trustpilot</a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 shrink-0">
                 <a href="#" onclick="openModal('privacy-modal'); return false;" class="bg-white/5 hover:bg-white/10 border border-white/5 px-5 py-2.5 rounded-xl transition-colors text-gray-300 hover:text-white" data-i18n="f-1">Privacy</a>
                 <a href="#" onclick="openModal('voorwaarden-modal'); return false;" class="bg-white/5 hover:bg-white/10 border border-white/5 px-5 py-2.5 rounded-xl transition-colors text-gray-300 hover:text-white" data-i18n="f-2">Voorwaarden</a>
             </div>
