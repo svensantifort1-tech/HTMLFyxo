@@ -156,6 +156,10 @@
         .gradient-border-inner { background: #0B111E; border-radius: 1rem; height: 100%; }
         
         .progress-ring__circle { transition: stroke-dashoffset 1s ease-out; transform: rotate(-90deg); transform-origin: 50% 50%; stroke-linecap: round; }
+
+        @keyframes float-case { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .floating-wrapper { animation: float-case 6s ease-in-out infinite; }
+        .floating-wrapper.delay { animation-delay: -3s; }
     </style>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -358,74 +362,36 @@
                 
                 <div class="grid md:grid-cols-2 gap-8 reveal reveal-delay-100">
                     
-                    <div class="glass-card flex flex-col overflow-hidden group">
-                        <div class="relative h-64 overflow-hidden bg-[#111827] border-b border-white/10">
-                            <div class="absolute inset-0 bg-brand-blue/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none"></div>
-                            <img src="https://api.microlink.io/?url=https://jc-middelharnis.vercel.app/&screenshot=true&meta=false&viewport.width=800&embed=screenshot.url" alt="JC Middelharnis Desktop View" loading="lazy" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex justify-between items-start mb-6">
-                                <h3 class="font-black text-white text-3xl">JC Middelharnis</h3>
-                                <a href="https://jc-middelharnis.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-brand-blue hover:text-white transition-colors bg-brand-blue/10 p-3 rounded-full" aria-label="Bekijk deze live website">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                                </a>
+                    <div class="floating-wrapper">
+                        <div class="glass-card flex flex-col overflow-hidden group h-full">
+                            <div class="relative h-64 overflow-hidden bg-[#111827] border-b border-white/10">
+                                <div class="absolute inset-0 bg-brand-blue/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none"></div>
+                                <img src="https://api.microlink.io/?url=https://jc-middelharnis.vercel.app/&screenshot=true&meta=false&viewport.width=800&embed=screenshot.url" alt="JC Middelharnis Desktop View" loading="lazy" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700">
                             </div>
-                            
-                            <div class="grid grid-cols-3 gap-2 mb-6 border-y border-white/5 py-5">
-                                <div class="text-center flex flex-col justify-center">
-                                    <span class="text-brand-blue text-3xl font-black mb-1 tracking-tight">0.8<span class="text-lg">s</span></span>
-                                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">LCP Speed</span>
+                            <div class="p-8 flex flex-col justify-center flex-grow">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-black text-white text-3xl">JC Middelharnis</h3>
+                                    <a href="https://jc-middelharnis.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-brand-blue hover:text-white transition-colors bg-brand-blue/10 p-3 rounded-full" aria-label="Bekijk deze live website">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
                                 </div>
-                                <div class="text-center flex flex-col justify-center border-l border-white/5">
-                                    <span class="text-green-400 text-3xl font-black mb-1 tracking-tight">+214<span class="text-lg">%</span></span>
-                                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">Leads</span>
-                                </div>
-                                <div class="text-center flex flex-col justify-center border-l border-white/5">
-                                    <span class="text-brand-blue text-3xl font-black mb-1 tracking-tight">100</span>
-                                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">SEO Score</span>
-                                </div>
-                            </div>
-                            
-                            <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="text-xs font-semibold px-3 py-1 bg-[#111827] text-gray-300 border border-white/10 rounded-full">Next.js</span>
-                                <span class="text-xs font-semibold px-3 py-1 bg-[#111827] text-gray-300 border border-white/10 rounded-full">Tailwind CSS</span>
-                                <span class="text-xs font-semibold px-3 py-1 bg-[#111827] text-gray-300 border border-white/10 rounded-full">Technical SEO</span>
                             </div>
                         </div>
                     </div>
     
-                    <div class="glass-card flex flex-col overflow-hidden group">
-                        <div class="relative h-64 overflow-hidden bg-[#111827] border-b border-white/10">
-                            <div class="absolute inset-0 bg-brand-blue/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none"></div>
-                            <img src="https://api.microlink.io/?url=https://stralend-schoon-exemple.vercel.app/&screenshot=true&meta=false&viewport.width=800&embed=screenshot.url" alt="Stralend Schoon Desktop View" loading="lazy" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex justify-between items-start mb-6">
-                                <h3 class="font-black text-white text-3xl">Stralend Schoon</h3>
-                                <a href="https://stralend-schoon-exemple.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-brand-blue hover:text-white transition-colors bg-brand-blue/10 p-3 rounded-full" aria-label="Bekijk deze live website">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                                </a>
+                    <div class="floating-wrapper delay">
+                        <div class="glass-card flex flex-col overflow-hidden group h-full">
+                            <div class="relative h-64 overflow-hidden bg-[#111827] border-b border-white/10">
+                                <div class="absolute inset-0 bg-brand-blue/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none"></div>
+                                <img src="https://api.microlink.io/?url=https://stralend-schoon-exemple.vercel.app/&screenshot=true&meta=false&viewport.width=800&embed=screenshot.url" alt="Stralend Schoon Desktop View" loading="lazy" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700">
                             </div>
-                            
-                            <div class="grid grid-cols-3 gap-2 mb-6 border-y border-white/5 py-5">
-                                <div class="text-center flex flex-col justify-center">
-                                    <span class="text-brand-blue text-3xl font-black mb-1 tracking-tight">-45<span class="text-lg">%</span></span>
-                                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">Bounce Rate</span>
+                            <div class="p-8 flex flex-col justify-center flex-grow">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-black text-white text-3xl">Stralend Schoon</h3>
+                                    <a href="https://stralend-schoon-exemple.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-brand-blue hover:text-white transition-colors bg-brand-blue/10 p-3 rounded-full" aria-label="Bekijk deze live website">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
                                 </div>
-                                <div class="text-center flex flex-col justify-center border-l border-white/5">
-                                    <span class="text-green-400 text-3xl font-black mb-1 tracking-tight">3<span class="text-lg">x</span></span>
-                                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">Aanvragen</span>
-                                </div>
-                                <div class="text-center flex flex-col justify-center border-l border-white/5">
-                                    <span class="text-brand-blue text-3xl font-black mb-1 tracking-tight">100</span>
-                                    <span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase">Performance</span>
-                                </div>
-                            </div>
-                            
-                            <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="text-xs font-semibold px-3 py-1 bg-[#111827] text-gray-300 border border-white/10 rounded-full">Next.js</span>
-                                <span class="text-xs font-semibold px-3 py-1 bg-[#111827] text-gray-300 border border-white/10 rounded-full">Framer Motion</span>
-                                <span class="text-xs font-semibold px-3 py-1 bg-[#111827] text-gray-300 border border-white/10 rounded-full">CRO Design</span>
                             </div>
                         </div>
                     </div>
